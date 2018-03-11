@@ -1,0 +1,201 @@
+\documentclass[letterpaper,11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc} 
+\usepackage{amsmath,multicol}
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref}
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+\def\refname{Bibliograf{\'\i}a}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\firstpageheadrule
+\firstpagefootrule
+\firstpagefooter{}{Pagina \thepage\ de \numpages}{}
+\runningheadrule
+\runningfootrule
+\chead{\bf\normalsize Syllabus}
+\rhead{\bf\normalsize Computaci\'on Cient\'ifica \\ 510007}
+\lhead{\bf\normalsize Depto. de F\'{\i}sica \\ Universidad de Concepci\'on}
+\rfoot{\thepage\ / \numpages \ \tiny GR}
+\lfoot{01/2018}
+\cfoot{}
+%%%%%%%%%%%%%%%%%%%%%%%%%555
+\newcounter{labo}
+\renewcommand\labelenumi{\Roman{labo}.\arabic{enumi}.}
+\renewcommand\labelenumii{\Roman{labo}.\arabic{enumi}.\arabic{enumii}.}
+\renewcommand\labelenumiii{\Roman{labo}.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicols}{2}
+\section{Identificaci'on}
+\begin{center}
+	%{\small
+		\begin{tabular}{ll}
+		Curso  :& 510007 Computaci'on Cient'ifica \\
+		Profesores :& Dr. Guillermo Rubilar (Of. 325)\\
+		& Dr. Felix Borotto (Of. 308)\\
+		Semestre : & 1 / 2018 \\
+		Pre-requisitos : & No tiene \\
+		Blog: & \href{https://cc-cfm.blogspot.com}{cc-cfm.blogspot.com} 
+		\end{tabular}
+	%}
+\end{center}
+
+\section{Horario}
+Los contenidos del curso son impartidos en clases expositivas (2 horas) y sesiones de pr'actica/ejercicios (laboratorios, 4 horas). El curso tiene el siguiente horario de trabajo.
+\begin{center}
+\begin{scriptsize}
+\begin{tabular}{|cccc|}
+\hline 
+\textbf{Clase} & \textbf{D'ia} & \textbf{Hora} & \textbf{Sala} \\ 
+\hline \textbf{Clase} & Lunes & 08:15 - 10:00  &  FM-205 \\
+\hline \textbf{Lab.1} & Ma., Mi. & 08:15 - 10:00  &  LC-304 \\
+\hline \textbf{Lab.2} & Mi., Vi. & 10:15 - 12:00  &  LC-304 \\
+\hline \textbf{Lab.3} & Ju., Vi. & 08:15 - 10:00 &  LC-304 \\
+\hline \textbf{Consultas} & Jueves & 17:15 - 18:30 & Of. 325/\href{http://www.google.com/profiles/gfrubi}{Google} \\
+\hline 
+\end{tabular} 
+\end{scriptsize}
+\end{center}
+\section{Evaluaci'on}
+\begin{itemize}
+\item Se contemplan 3 evaluaciones parciales escritas ($C_1$, $C_2$ y $C_3$).  
+
+\item La Nota de FINAL ser\'a calculada seg\'un la siguiente ponderaci\'on:
+{\small
+\begin{equation}
+N_{\rm f} :=0.3C_1+0.3C_2 + 0.4C3.
+\end{equation}
+}
+\item \textbf{La nota de aprobaci'on del curso es 4,0.}
+\item Al finalizar el curso, se realizar'a un \textit{examen de recuperaci'on} ($E$). El examen comprende \textit{toda la materia del curso}. No hay evaluaciones adicionales.
+
+\item El siguiente es el calendario de evaluaciones del curso:
+\end{itemize} 
+\begin{center}
+\begin{scriptsize}
+\begin{tabular}{|ll|}
+%\hline Evaluacin & Fecha \\ 
+\hline 
+Evaluaci'on &  Fecha\\
+\hline
+Certamen 1 ($C_1$) & ??? \\ 
+Certamen 2 ($C_2$) & ??? \\ 
+Certamen 3 ($C_3$) & ???\\ 
+Examen ($E$) & ??? \\ 
+\hline 
+\end{tabular} 
+\end{scriptsize}
+\end{center}
+\begin{itemize}
+\item Todos los estudiantes tienen derecho a rendir el examen de recuperaci'on. En tal caso, la nota de presentaci'on constituye el 60\% de la nota final, mientras que el examen el 40\%.
+\end{itemize}
+
+\section{Bibliografa Recomendada}
+
+\begin{thebibliography}{77}	% start the bibliography 
+\small
+\bibitem{Li1} Javier Smaldone, ``\textit{Tutorial b'asico de GNU/Linux}'',  v1.0 (2006).
+\url{http://www.smaldone.com.ar/documentos/misdocumentos.shtml}.
+\bibitem{La1} Tobias Oetiker, Hubert Partl, Irene Hyna y Elisabeth Schlegl, ``\textit{La introducci'on no-tan-corta a \LaTeX 2e}'' (2014). \url{http://www.ctan.org/tex-archive/info/lshort/spanish}.
+\bibitem{La2} Walter Mora F., Alex'ander Borb'on A., ``\textit{Edici'on de Textos Cient'ificos en \LaTeX: Composici'on, Dise\~no Editorial, Gr'aficos, Inkscape, Tikz y Presentaciones Beamer}'', 2da edici'on. Actualizaci'on Marzo 2017. \url{http://tecdigital.tec.ac.cr/revistamatematica/Libros/LATEX/}.
+\bibitem{repo} Repositorio p\'ublico con material de la asignatura. \url{https://github.com/gfrubi/CC}.
+\end{thebibliography}	
+
+\newpage
+\section{Planificaci'on}
+\begin{scriptsize}
+
+\subsection*{Semana 1 (12/03)}
+\begin{itemize}
+\item \textbf{Contenido}: Informaci'on de la asignatura. Sistema inform'atico, hardware/software, medidas de informaci'on, sistema binario.
+\item \textbf{Actividades}: Se presentan los principales conceptos que ser'an usados durante la asignatura, as'i como la modalidad de trabajo y de evaluaci'on. Adem'as se comienza con la presentaci'on y discusi'on de las caracter'isticas generales de un computador moderno.
+\end{itemize}
+
+\subsection*{Semana 2 (19/03)}
+\begin{itemize}
+\item \textbf{Contenido}: Caracteres, c'odigo ASCII, Unicode. Sistemas operativos. Licencias de Software. Introducci'on al sistema operativo (GNU/)Linux. 
+\item \textbf{Actividades}: Se presenta un resumen de las convenciones ASCII y Unicode. Se presentan y discuten distintos tipos de licencias de Software usadas actualmente. Se presentan las principales caracter'isticas del sistema operativo Linux, las distintas distribuciones y entornos gr'aficos existentes. 
+\end{itemize}
+
+\subsection*{Semana 3 (26/03)}
+\begin{itemize}
+\item \textbf{Contenido}: Trabajo con la consola de Linux y comandos Bash. 
+\item \textbf{Actividades}: Se demuestra el uso de la consola de comandos y algunos comandos Bash b'asicos para manipular archivos y para crear archivos de texto simple. En las sesiones pr'acticas el estudiante se familiariza con el uso del sistema Linux y con los comandos Bash b'asicos.
+\end{itemize}
+
+\subsection*{Semana 4 (02/04)}
+\begin{itemize}
+\item \textbf{Contenido}: Sistema de edici'on de documentos cient'ificos usando \LaTeX. 
+\item \textbf{Actividades}: Se presentan las principales caracter'isticas del sistema \LaTeX\ para la edici'on de texto cient'ifico. Se discuten sus ventajas respecto a sistema de edici'on wysiwyg, y se muestran ejemplos de textos cient'ificos de distinto tipo (papers, libros, posters, reportes, etc.).
+\end{itemize}
+
+\subsection*{Semana 5 (09/04)}
+\begin{itemize}
+\item \textbf{Contenido}: Sistema de edici'on de documentos cient'ificos usando \LaTeX.
+\item \textbf{Actividades}: Se presentan los comandos b'asicos requeridos para editar un texto cient'ifico en \LaTeX. Se realizan ejemplos en los que se muestra c'omo ir construyendo un texto cada vez m'as complejo, incluyendo comandos para establecer la estructura del documento, distintos tipos de entornos (listas, vi\~netas, citas), as'i como comandos de formato.
+\end{itemize}
+
+\subsection*{Semana 6 (16/04)}
+\begin{itemize}
+\item \textbf{Contenido}: Se continua la presentaci'on de las caracter'isticas b'asicas del sistema de edici'on de documentos cient'ificos usando \LaTeX, discutiendo ahora el uso de texto en idioma espa\~nol, as'i como la inclusi'on de expresiones matem'aticas.
+\item \textbf{Actividades}: Se explica y demuestra el uso de los comandos b'asicos requeridos para incluir texto en idioma espa\~nol en un documento \LaTeX. Adem'as se comienza con la discusi'on y demostraci'on de los distintos tipos de expresiones y s'imbolos matem'aticos que pueden ser usados.
+\end{itemize}
+
+\subsection*{Semana 7 (23/04)}
+\begin{itemize}
+\item \textbf{Contenido}: Se finaliza la discusi'on de las caracter'isticas b'asicas del sistema \LaTeX, discutiendo ahora el uso arreglos en expresiones matem'aticas, de referencias cruzadas, tablas simples y gr'aficos.
+\end{itemize}
+
+\subsection*{Semana 8 (07/05)}
+\begin{itemize}
+\item \textbf{Contenido}: Introducci'on al lenguaje de programaci'on Python.
+\item \textbf{Actividades}: Se presentan y discuten las principales caracter'isticas del lenguaje de programaci'on Python, y su uso en ciencias. Se demuestran distintas tareas de inter'es cient'ifico que pueden ser realizadas con este lenguaje.
+\end{itemize}
+
+\subsection*{Semana 9 (14/05)}
+\begin{itemize}
+\item \textbf{Contenido}: Introducci'on al lenguaje de programaci'on Python: comandos b'asicos, tipos de variables, control de flujo.
+\item \textbf{Actividades}: Se presentan y discuten en forma interactiva los distintos tipos de variables predefinidas en Python y las operaciones b'asicas entre dichas variables. Se explican y ejemplifica los comandos b'asicos de control de flujo (\texttt{if, elif, else}).
+\end{itemize}
+
+
+\subsection*{Semana 10 (28/05)}
+\begin{itemize}
+\item \textbf{Contenido}: Introducci'on al lenguaje de programaci'on Python: ciclos, funciones y m'odulos.
+\item \textbf{Actividades}: Se presentan y discuten en forma interactiva los comandos b'asicos para generar ciclos (\texttt{for}, \texttt{while}). Se presenta y discuten la forma m'as simple de definir nuevas funciones, as'i como del uso de m'odulos. Se listan y discuten distintos m'odulos Python de uso cient'ifico.
+\end{itemize}
+
+\subsection*{Semana 11 (04/06)}
+\begin{itemize}
+\item \textbf{Contenido}: Introducci'on al lenguaje de programaci'on Python: arreglos y gr'aficos. 
+\item \textbf{Actividades}: Se presentan y discuten en forma interactiva el concepto de arreglo implementado en el m'odulo Numpy y su uso m'as simple. Se presenta el m'odulo Matplotlib y su uso b'asico para crear y exportar gr'aficos de distinto tipo. Se discute la diferencia entre formatos de gr'aficos de punto y vectoriales.
+\end{itemize}
+
+\subsection*{Semana 12 (11/06)}
+\begin{itemize}
+\item \textbf{Contenido}: Lenguaje de programaci'on Fortran: Algoritmos. Tipos de datos. Operaciones y funciones
+aritm'eticas. 
+\end{itemize}
+
+\subsection*{Semana 13 (18/06)}
+\begin{itemize}
+\item \textbf{Contenido}: Lenguaje de programaci'on Fortran: Estructuras para la decisi'on. Estructuras de repetici'on. Entrada y salida de informaci'on.
+\end{itemize}
+
+\subsection*{Semana 14 (25/06)}
+\begin{itemize}
+\item Lenguaje de programaci'on Fortran: Vectores y tablas. Programaci'on con funciones y subrutinas. La programaci'on modular. Utilizaci'on de Ficheros. Punteros y estructuras encadenadas.
+\end{itemize}
+\end{scriptsize}
+\end{multicols}
+
+
+\end{document}
