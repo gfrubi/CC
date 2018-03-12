@@ -113,15 +113,31 @@ Un byte puede por lo tanto tomar $2^8=256$ valores distintos.
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{Medidas de Información}
-\textbf{Múltiplos} (k, M, G,...)
+\begin{frame}[fragile]\frametitle{Medidas de Información: Múltiplos (k, M, G,...)}
+A partir de la propuesta en de la Comisión Electrotécnica Internacional (IEC) en 1998:
 \begin{itemize}
-	\item \textbf{k} es la abreviatura de \textbf{kilo}, y representa un factor de multiplicación de $2^{10}= $1024. Así que 1 kbit = 1024 bits y 1 kbyte = 1024 bytes = 8192 bits. 
-
-	\item La \textbf{M} es la abreviatura de \textbf{Mega} y representa el factor de multiplicación $2^{20}= $1.048.576.
-	\item La \textbf{G} es abreviatura de \textbf{Giga} y representa el factor de multiplicación $2^{30} = $1.073.741.824.
+	\item \textbf{k} es la abreviatura de \textbf{kilo}, y representa un factor de multiplicación de $10^3=1000$. Así que 1 kbit = 1000 bits y 1 kbyte = 1000 bytes = 8000 bits. 
+	
+	\item La \textbf{M} es la abreviatura de \textbf{Mega} y representa el factor de multiplicación $10^{6}= $1.000.000.
+	
+	\item La \textbf{G} es abreviatura de \textbf{Giga} y representa el factor de multiplicación $10^{9} = $1.000.000.000.
 \end{itemize}
-\textbf{Ojo:} Estas definiciones son diferentes de las usadas en las Ciencias Físicas, donde k, M y G representan $10^3=1000$, $10^6=$1.000.000 y $10^9=$1.000.000.000 respectivamente (por ejemplo, 1kg = 1000g). En inform'atica se adoptan los valores arriba citados precisamente porque son potencias de 2, y en consecuencia, son valores mucho más convenientes al usar máquinas que trabajan en sistema binario.
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{Medidas de Información: Múltiplos (k, M, G,...)}
+
+\begin{block}{}
+\textbf{Cuidado!:} Estas definiciones a'un no son 100\% adoptadas, ya que anteriormente se prefer'ia usar una base binaria, de modo que anteriormente 1 kB = $2^{10}$ B $=1024$ B, 1 MB $=2^{20}$B = 1.048.576 B y 1 GB $=2^{30}$B = 1.073.741.824 B, etc. 
+\end{block}
+
+\begin{block}{}
+Estas viejas definiciones son ahora denotadas como kiB (kibibite), MiB (mebibyte) y  Gib (gibibyte) respectivamente. 
+\end{block}
+\begin{block}{}
+As'i, por ejemplo, 1 MiB = 1.048.576 B = 1,048576 MB.
+\end{block}
+Ver \url{https://es.wikipedia.org/wiki/Kibibyte} para m'as informaci'on.
 \end{frame}
 
 
