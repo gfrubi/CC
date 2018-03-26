@@ -1,0 +1,175 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,epsfig}
+%\usepackage{graphdicx}
+\usepackage[colorlinks]{hyperref}
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 01}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2018-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\item Cada computador de los laboratorios Linux de nuestra Facultad est'a configurado con \textit{una cuenta com'un}, es decir, a la que potencialmente \textit{acceden todos los estudiantes} que hacen uso de ellos. Por esto, recuerde que \textbf{usted es responsable de traer los archivos que requiera para su trabajo, as'i como de respaldar su trabajo al final de cada sesi'on}.
+
+\item Antes de comenzar a trabajar el Profesor les mostrar\'a brevemente
+el escritorio (\href{http://www.xfce.org/?lang=es}{Xfce}) instalado en el sistema (Ubuntu, y en particular la variante \href{http://xubuntu.org/}{Xubuntu}) y las aplicaciones b\'asicas: navegador de archivos, editor de texto, consola virtual, etc.
+
+\item Busque y abra la consola (virtual) de comandos o \textit{terminal}. En esta consola realice las siguientes tareas:
+\begin{parts}
+\item Liste el contenido de su carpeta, ejecutando el comando 
+
+\begin{minted}[bgcolor=bg]{bash}
+ls
+\end{minted}
+
+Verifique que los archivos listados son los que est'an en la carpeta de usuario.
+
+\item Cree el directorio o carpeta \textbf{test1}, ejecutando el comando 
+
+\begin{minted}[bgcolor=bg]{bash}
+mkdir test1
+\end{minted}
+
+Verifique la creaci'on de la carpeta usando el navegador de archivos.
+
+\item Ingrese a la carpeta reci'en creada, ejecutando el comando 
+
+\begin{minted}[bgcolor=bg]{bash}
+cd test1
+\end{minted}
+
+y en su interior cree una nueva carpeta llamada \textbf{test2}.
+
+\item Usando un editor de texto cree un archivo ascii (es decir, de texto simple) con el nombre \textbf{archivo1.txt}, e ingrese como contenido su nombre completo.
+
+\item Edite ahora el mismo archivo \textit{en la consola}, con el editor ``nano'', ejecutando el comando 
+
+\begin{minted}[bgcolor=bg]{bash}
+nano archivo1.txt
+\end{minted}
+
+ Explore las opciones de este editor de texto. ?`C'omo se guardan los archivos creados/modi\-fi\-ca\-dos?. ?`C'omo se sale del editor?.
+
+\item Mueva el archivo \textbf{archivo1.txt} a \textbf{archivo2.txt}, ejecutando el comando
+
+\begin{minted}[bgcolor=bg]{bash}
+mv archivo1.txt archivo2.txt
+\end{minted}
+
+En este caso, el efecto es equivalente a haber renombrado el archivo.
+
+\item Cambie el nombre de la carpeta \textbf{test2} a \textbf{temp}.
+
+\end{parts}
+
+\item Conozca el comando \texttt{cat}, que concatena (es decir, une) archivos y los despliega en la pantalla (la salida est'andar).
+\begin{parts}
+\item  Inf'ormese de los aspectos generales de este comando desplegando el manual, con 
+
+\begin{minted}[bgcolor=bg]{bash}
+man cat
+\end{minted}
+
+
+
+\item En la consola, cree dos archivos \textbf{test01.txt} y \textbf{test02.txt} usando el editor \texttt{nano} e introduzca en ellos alg'un texto interesante.
+
+\item Ejecute ahora el comando 
+
+\begin{minted}[bgcolor=bg]{bash}
+cat test01.txt test02.txt
+\end{minted}
+
+Observe c'omo los dos archivos se despliegan en pantalla, uno luego del otro.
+
+\item ?`Cu'al es la diferencia del comando anterior respecto a 
+
+\begin{minted}[bgcolor=bg]{bash}
+cat *.txt
+\end{minted}
+
+Compruebe su respuesta con un ejemplo.
+\end{parts}
+
+\item Descargue el archivo \href{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}{Quijote.tar.gz}, disponible tambi'en en el \href{http://cc-cfm.blogspot.com}{blog del curso}. Este archivo contiene (en forma comprimida) cinco archivos correspondientes a algunas secciones iniciales de la obra ``Don Quijote de la Mancha"\, de Miguel de Cervantes. Abra una consola e ingrese (usando el comando \texttt{cd}) a la carpeta donde se encuentra el archivo descargado y realice las siguientes tareas:
+\begin{parts}
+\item Descomprima el archivo, usando el comando 
+
+\begin{minted}[bgcolor=bg]{bash}
+tar -xf Quijote.tar.gz
+\end{minted}
+
+Esto crear'a cinco archivos con extensi'on \textbf{.txt}. 
+\item Inf'ormese de los aspectos generales del comando \texttt{tar}, desplegando el manual del comando \texttt{tar} (ingrese \texttt{man tar}).
+\item Despliege el contenido de cada archivo usando el comando \texttt{more}.
+\item Una los archivos (en orden!) y guarde el resultado en el archivo \textbf{Quijote.txt}. Para esto, la opci'on \texttt{>} para redireccionar la salida de \texttt{cat} al archivo correspondiente.
+\end{parts}
+
+\item Conozca el comando \texttt{grep}, que busca (conjuntos de) palabras dentro de archivos de texto. 
+\begin{parts}
+\item Busque informaci'on en internet sobre este comando. Por ejemplo, realice la b'usqueda ``comando grep linux'' en Google. 'Este es un m'etodo que usualmente permite encontrar r'apidamente informaci'on 'util. Por ejemplo, el correspondiente \href{https://es.wikipedia.org/wiki/Grep}{art\'iculo de Wikipedia} es un buen punto de partida.
+
+\item Usando \texttt{grep}, busque todas las ocurrencias de la palabra \textbf{Mancha} en cada uno de los cinco archivos originales del Quijote (\textbf{c1.txt} \dots \textbf{c5.txt})
+
+\item Agregue la opci'on \texttt{-n} al comando \texttt{grep} usado anteriormente (es decir, use \texttt{grep -n}). ?`Qu'e efecto tiene sobre el resultado?
+\end{parts}
+
+\item Puede escribir y ejecutar una secuencia de comandos almacenados en un ``\textit{script}'' (archivo de comandos).
+\begin{parts}
+\item Para este ejemplo, cree una nueva carpeta y cree en ella una copia del archivo comprimido \textbf{Quijote.tar.gz}.
+
+\item En esta carpeta, cree un archivo con nombre \textbf{mi-script.sh} (la extensi'on .sh es opcional, pero conveniente). En este archivo escriba una variaci'on de los  comandos antes usados, cada uno en una l'inea separada, que realicen las siguientes acciones: 1) descomprima el archivo \textbf{Quijote.tar.gz}, 2) Una los archivos .txt y crea el archivo \textbf{Quijote.txt} y 3) busca todas las ocurrencias de la palabra \textbf{batalla} en este archivo y 4) crea el archivo \textbf{resultado.txt} con el resultado de la b'usqueda.
+
+\item Ejecute su script (es decir, los comandos que contiene el archivo \textbf{mi-script.sh} en el orden en que est'an escritos), ejecutando 
+
+\begin{minted}[bgcolor=bg]{bash}
+bash mi-script.sh
+\end{minted}
+\end{parts}
+
+\item Descargando y manipulando datos reales.
+
+\begin{parts}
+\item Desde el sitio del \textit{Supernova Cosmology Project} (un proyecto de colaboraci'on cient'ifica internacional que reune datos y estudios sobre explosiones de supernovas en el Universo, \url{http://supernova.lbl.gov/}), descargue el archivo de datos  \url{http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt}. En lugar de descargar este archivo usando el navegador, como es usual, h'agalo directamente desde la consola usando el comando \texttt{wget}. En particular, ejecute 
+
+\begin{minted}[bgcolor=bg]{bash}
+wget http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt
+\end{minted}
+
+\item El archivo descargado contiene datos reales correspondientes a la observaci'on de explosiones de Supernovas. Despliege el archivo usando el comando \texttt{more}. La primera columna lista el nombre de la supernova, que comienza con el a\~no en que fue observada. Otras columnas contienen datos f'isicos de relevancia como el m'odulo de distancia y el corrimiento hacia el rojo (redshift) medido para cada supernova. M'as adelante, en este curso, graficaremos estos datos (paciencia!). Note que el listado NO est'a ordenado por a\~no. 
+
+\item Usando comandos bash, encuentre todas las supernovas que fueron observadas el a\~no 2004, y almacene sus datos en un nuevo archivo, llamado \textbf{2004.txt}.
+\end{parts}
+
+
+\item Puede usar el tiempo restante para aprender sobre otros comandos Bash. Algunos de ellos est'an listados \href{https://es.wikipedia.org/wiki/Comandos_Bash}{este art{\'\i}culo de Wikipedia}.
+
+
+\end{questions}
+\end{document} 
