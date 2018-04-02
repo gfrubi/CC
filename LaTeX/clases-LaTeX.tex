@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[hyperref={colorlinks}]{beamer}
 
 \usepackage{graphicx}
 \usepackage{amsfonts,amsmath,color}       
@@ -20,7 +20,7 @@
 
 
 \title[\LaTeX]{Introducci\'on a \LaTeX}
-\author[G.R.]{{Guillermo F. Rubilar} \\ (Basado en el Tutorial de \LaTeX ,\\
+\author[G.R.]{{Guillermo F. Rubilar} \\ \tiny (Basado en el Tutorial de \LaTeX ,\\
 por Juan Antonio Navarro P\'{e}rez, \\Universidad de las Am\'{e}ricas - Puebla)}
 \frame{\titlepage}
 
@@ -37,11 +37,9 @@ por Juan Antonio Navarro P\'{e}rez, \\Universidad de las Am\'{e}ricas - Puebla)}
 \begin{frame}[fragile]\frametitle{?`\TeX{} y \LaTeX?}
 \begin{itemize}
 \item \TeX{} es un sistema profesional de \emph{composici'on tipogr'afica} desarrollado
-por Donald E. Knuth (1977) (Stanford, http://www-cs-faculty.stanford.edu/~knuth/).
-\item \TeX{} fu'e dise\~nado para producir documentos (especialmente de matem'aticas) con
-la m'as alta \emph{calidad de imprenta}.
-\item \LaTeX\ es un \emph{sistema de macros}, desarrollado sobre \TeX{} por Leslie
-Lamport (1980's), para facilitar su uso por parte de los autores.
+por \href{http://www-cs-faculty.stanford.edu/~knuth}{Donald E. Knuth} (1977, Stanford).
+\item \TeX{} fue dise\~nado para producir documentos (especialmente con expresiones matem'aticas) con la m'as alta \emph{calidad de imprenta}.
+\item \LaTeX\ es un \emph{sistema de macros}, desarrollado sobre \TeX{} por \href{https://es.wikipedia.org/wiki/Leslie_Lamport}{Leslie Lamport} (1980's), para facilitar su uso por parte de los autores.
 \end{itemize}
 \end{frame}
 
@@ -87,8 +85,7 @@ $\bullet$ 'Enfasis en Dise\~no & $\bullet$ En Contenido
 \begin{itemize}
 \item Produce documentos con calidad de imprenta.
 \item Es utilizado por editoriales (Springer, Elsevier, \dots), revistas y congresos especializados.
-\item Es una herramienta indispensable para f'isicos y matem'aticos, especialmente para
-investigadores.
+\item Es una herramienta indispensable para f'isic@s, geof'isic@s, astr'onom@s, matem'atic@s, etc. y especialmente para investigador@s.
 \item Es la mejor opci'on para escribir su \emph{tesis}!.
 \end{itemize}
 \end{frame}
@@ -100,7 +97,7 @@ investigadores.
 
 \bigskip
 \begin{block}{}
-La persona que escribe debe de preocuparse por el \textit{contenido} de sus documentos, y no por la \textit{apariencia} que 'estos tendr'an impresos en papel.
+La persona que escribe debe de preocuparse del \textit{contenido} de sus documentos, y no (directamente) de la \textit{apariencia} que 'estos tendr'an en el resultado final.
 \end{block}
 \end{frame}
 
@@ -138,8 +135,7 @@ Hola. Este es mi primer documento.
 
 \begin{frame}[fragile]\frametitle{Proceso de compilaci'on}
 
-\begin{itemize}
-\item Forma tradicional
+\begin{block}{Forma tradicional}
 \begin{itemize}
 \item Compilar: \par
 \texttt{> latex archivo.tex}
@@ -153,12 +149,13 @@ Hola. Este es mi primer documento.
 \texttt{> dvipdf archivo.dvi}\par
 %\texttt{> ps2pdf archivo.ps archivo.pdf}
 \end{itemize}
-\item Forma r'apida
+\end{block}
+\begin{block}{Forma r'apida (Recomendada)}
 \begin{itemize}
 \item Compilar directamente a pdf: \par
 \texttt{> pdflatex archivo.tex}
 \end{itemize}
-\end{itemize}
+\end{block}
 \end{frame}
 
 
