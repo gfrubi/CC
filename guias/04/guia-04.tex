@@ -1,0 +1,163 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 04}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2018-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+%\texttt{Fecha de Entrega: Jueves 28 de Agosto. Env'ie a gfrubi@udec.cl los archivos .py que resuelven cada uno de los problemas propuestos.}
+%\end{center}
+\begin{questions}
+
+\item Cree un nuevo documento \texttt{.tex} que cargue los paquetes \texttt{amsmath} y \texttt{amsfonts} 
+
+(use \verb|\usepackage{amsmath,amsfonts}|) y que genere las siguientes expresiones matem\'aticas:
+\begin{itemize}
+
+\item La siguiente ecuaci'on numerada:
+\begin{equation}\label{asinNnu}
+Y_\nu(x)\approx \sqrt{\frac{2}{\pi x}}\sen\left(x-\frac{\nu\pi}{2}-\frac{\pi}{4}\right), 
+\qquad x\gg\left|\nu^2-\frac{1}{4}\right|.
+\end{equation}
+Usando 
+
+\begin{minted}[bgcolor=bg]{tex}
+	\begin{equation}
+
+	\end{equation}
+\end{minted}
+\item La siguiente ecuaci'on no numerada:
+\begin{equation*}
+\int_{0}^{\infty }\frac{\log (x)}{x^{2}}dx=-\left. \frac{\log (x)}{x}\right]
+_{0}^{\infty }+\int_{0}^{\infty }\frac{1}{x^{2}}dx
+\end{equation*}
+Usando
+
+\begin{minted}[bgcolor=bg]{tex}
+	\begin{equation*}
+
+	\end{equation*}
+\end{minted}
+\item La siguiente expresi'on del m'ultiples l'ineas:
+\begin{align} 
+(a+b)^4 &= (a+b)^2 (a+b)^2 \\
+ &= (a^2+2ab+b^2) (a^2+2ab+b^2) \\
+ &= a^4+4 a^3 b + 6 a^2 b^2 +4 a b^3 +b^4
+\end{align}
+Usando	
+
+\begin{minted}[bgcolor=bg]{tex}
+
+	\begin{align} 
+	 ... &= ...\\
+	 ... &= ...\\
+	 ... &= ...
+	\end{align} 
+\end{minted}
+
+\item Una expresi'on enmarcada, usando el comando \verb|\boxed{}| de \texttt{amsmath}:
+\newline
+\begin{equation*}
+\boxed{\int u \, dv=u\,v-\int v \, du}
+\end{equation*}
+
+\item Diferentes fuentes matem\'aticas con fuentes de la \texttt{amsfonts}:
+\begin{itemize}
+\item 
+\begin{equation}
+\mathsf{C}_{ijkl}=\boldsymbol{\mathsf{C}}
+\end{equation}
+Usando
+
+\begin{minted}[bgcolor=bg]{tex}
+	\mathsf{C}_{ijkl}=\boldsymbol{\mathsf{C}}.
+\end{minted}
+
+\item 
+\begin{equation}
+\mathcal{A} \neq \boldsymbol{\mathcal{A}}
+\end{equation}
+Usando
+
+\begin{minted}[bgcolor=bg]{tex}
+	\mathcal{A} \neq \boldsymbol{\mathcal{A}}
+\end{minted}
+
+
+\end{itemize}
+\end{itemize}
+\item La siguiente expresi\'on
+\begin{equation}
+ |x| = \left\{ \begin{array}{ll}
+         x & \mbox{si $x \geq 0$},\\
+        -x & \mbox{si $x < 0$}.\end{array} \right.
+\end{equation}
+
+\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciento estas expresiones:
+\begin{equation}
+\Lambda^{\mu'}{}_\nu = \begin{pmatrix}
+\gamma & -\beta\gamma/c & 0 & 0\\
+-\beta\gamma c & \gamma & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1 \end{pmatrix},
+\end{equation}
+\begin{equation}
+U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
+\begin{pmatrix} \gamma \\ \gamma v_x \\ \gamma v_y \\ \gamma v_z \end{pmatrix}.
+\end{equation}
+
+\item En su archivo de trabajo, agregue algunas referencias bibliogr'aficas, como por ejemplo las que aparecen al final de este archivo (ojo con los tipos de letras!).
+
+\item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea c'omo afecta al resultado obtenido.
+
+
+\item Agregue texto que incluya referencias autom'aticas a algunas de las ecuaciones que escribi'o (pruebe tanto con \verb|(\ref{..})| como con \verb|\eqref{..}| de \texttt{amsmath}), as'i como a algunas de las referencias bibliogr'aficas (use \verb|\cite{..}|).
+
+\item Agregue ahora el paquete \texttt{hyperref} agregando 
+\verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega autom'aticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los n'umeros de ecuaciones citados, as'i como en los n'umeros correspondientes a las referencias bibliogr'aficas. Note que \texttt{hyperref} tambi'en agrega hyperlinks a la tabla de contenidos de su pdf, si 'esta existe.
+
+\item El paquete \texttt{hyperref} tambi'en permite incluir \textit{hyperlinks externos} a su pdf. Existen b'asicamente dos formas: La m'as simple es incluir comandos como \verb|\url{http://www.cfm.cl}|, que agrega un hyperlink a la direcci'on se\~nalada. Agregue un ejemplo de este tipo a su archivo de trabajo y vea el resultado.
+
+\item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direcci'on anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
+
+
+\end{questions}
+
+\begin{thebibliography}{99}
+\bibitem{libro} C.W. Misner, K.S. Thorne and J.A. Wheleer,
+{\em Gravitation}, W.H. Freeman and Company, San Francisco, (1973).
+
+\bibitem{a2} Usted y un(a) Colaborador(a), {\it Teor'ia Unificada de las Mareas Cu'anticas Ca'oticas y su aplicaci'on a la Fotoac'ustica de plasmas astron'omicos relativistas}, {\sl Revista Condorito}, Volumen \textbf{45}, (2015).
+
+\bibitem{max} John David Jackson, {\it Classical electrodynamics}. Wiley, New York, NY, 3rd ed. edition, (1999).
+\end{thebibliography}
+
+\end{document} 
