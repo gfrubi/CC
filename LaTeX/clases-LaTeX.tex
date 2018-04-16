@@ -3,10 +3,7 @@
 \usepackage{graphicx}
 \usepackage{amsfonts,amsmath,color}       
 \usepackage[spanish,activeacute]{babel}
-\usepackage[utf 8x]{inputenc}
-\usepackage{listings}
-\usepackage{fancyvrb}
-\lstset{basicstyle=\footnotesize\ttfamily,escapeinside={\%*}{*)}}
+\usepackage[utf8]{inputenc}
 
 \usefonttheme{professionalfonts}
 \usetheme{Darmstadt}
@@ -387,31 +384,6 @@ Forma tradicional
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX}
-\verb|\usepackage[spanish, activeacute]{babel}|
-  \begin{center}
-  \begin{tabular}{cc}
-     Input      &   Resultado \\
-     \verb+'o+  &   'o       \\
-     \verb+'u+  &   'u       \\
-     \verb+'a+  &   'a       \\
-     \verb+'i+  &   'i        \\
-     \verb+~n+  &   \~n     \\
-     \verb+'N+  &   'N     \\
-     \verb+?`+  &   ?`     \\
-     \verb+!`+  &   !`  
-  \end{tabular}
-\end{center}
-\end{frame}
-
-\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX}
-\begin{itemize}
-\item El pre'ambulo \verb|\usepackage[spanish,activeacute]{babel}| tambi'en se encarga de los cortes de palabras al final de las l'ineas (recomendado!).
-\item \verb|\usepackage[latin1]{inputenc}|  permite ingresar los tildes directamente en el texto. (no lo recomiendo, si otros usuarios usan Windows!, problemas de codificaci\'on).
-\end{itemize}
-
-De ahora en adelante, supondremos que estamos usando \verb|\usepackage[spanish,activeacute]{babel}|
-\end{frame}
 
 \begin{frame}[fragile]\frametitle{Reglas generales de edici'on}
 \begin{itemize}
@@ -695,39 +667,104 @@ Pasando a otros temas \dots
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}[fragile]\frametitle{Funciones por partes}
 \begin{equation}
   f(x) = \left\{
     \begin{array}{ll}
-      x      & 0 \leq x \leq 1 \\
-      1 - x  & 1 \leq x \leq 2 \\
-      0      & \text{en cualquier otro caso}
+      x,     & -\infty \leq x \leq 1 \\
+      1 - x,  & 1 \leq x \leq 2 \\
+      0,      & x > 2
     \end{array}\right.
 \end{equation}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Funciones por partes}
-
 \begin{block}{}
 \begin{minted}{tex}
-\usepackage{amsmath}
-...
 \begin{equation}
   f(x) = \left\{
     \begin{array}{ll}
-      x      & 0 \leq x \leq 1 \\
-      1 - x  & 1 \leq x \leq 2 \\
-      0      & \text{en cualquier otro caso}
+      x,     & -\infty \leq x \leq 1 \\
+      1 - x,  & 1 \leq x \leq 2 \\
+      0,      & x > 2
     \end{array}\right.
 \end{equation}
 \end{minted}
 \end{block}
 
 \begin{itemize}
-  \item \verb|\right.| coloca un delimitador invisible (para usar \verb|\text|).
-  \item No olvidar incluir el paquete \verb|amsmath|.
+  \item \verb|\right.| coloca un delimitador invisible (para cerrar el par\'entesis corchete).
 \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]\frametitle{Extendiendo \LaTeX con otros paquetes}
+\begin{block}{}
+Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quiz\'as miles) de paquetes disponibles. Una lista de los principales paquetes, ordenada alfab\'eticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
+\end{block}
+
+\begin{block}{Cargando paquetes}
+En general, cada paquete particular que quiera se usado en un documento debe ser cargado en el pre\'ambulo del documento, es decir, \textit{antes} del comando \verb|\begin{document}|
+\end{block}
+\begin{block}{}
+\begin{minted}{tex}
+\usepackage[opciones]{nombre_paquete}
+\end{minted}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX: Babel}
+\begin{block}{}
+\begin{minted}{tex}
+\usepackage[spanish, activeacute]{babel}
+\end{minted}
+\end{block}
+\begin{block}{}
+El paquete Babel se encarga de gestionar los cortes de palabras al final de las l\'ineas (muy \'util!). La opci\'on \texttt{spanish} selecciona nuestro idioma, y \texttt{activeacute} permite acortar un poco la introducci\'on de tildes y caracteres latinos
+\end{block}
+\begin{block}{}
+\begin{minted}{tex}
+'a, 'e, 'i, 'o, 'u, ~n, 'N, ?` y !`
+\end{minted}
+producen
+\begin{center}
+'a, 'e, 'i, 'o, 'u, ~n, 'N, ?` y !`
+\end{center}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX}
+\begin{block}{inputenc}
+\begin{minted}{tex}
+\usepackage[utf8]{inputenc}
+\end{minted}
+permite ingresar los tildes directamente en el texto. Para usar esta opci\'on debe tenerse el cuidado de verificar que el archivo de c\'odigo \LaTeX\ est\'e almacenado en formato UTF8!.
+\end{block}
+\begin{block}{}
+En este caso 
+\begin{minted}{tex}
+á, é, í, ó, ú, ñ, Ñ, ¿ y ¡
+\end{minted}
+producen directamente
+\begin{center}
+á, é, í, ó, ú, ñ, Ñ, ¿ y ¡
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\AmS-\LaTeX}
+\begin{block}{}
+En paquete \href{http://www.ams.org/publications/authors/tex/amslatex}{\AmS-Math}, desarrollado por la \textbf{A}merican \textbf{M}athematical \textbf{S}ociety, implementa extensiones a \LaTeX\ que facilitan la escritura de expresiones matem\'aticas y mejoran la apariencia del resultado final. Se carga agregando 
+\begin{minted}{tex}
+\usepackage{amsmath}
+\end{minted}
+al pre\'ambulo del documento.
+\end{block}
+\end{frame}
+
+
 
 %\begin{frame}[fragile]\frametitle{Ecuaciones muy largas}
 %\begin{equation}
@@ -753,7 +790,7 @@ Pasando a otros temas \dots
 
 \begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas}
 \begin{eqnarray}
-I &=&I_{cm}+MD^{2} \\
+I &=&I_{\rm cm}+MD^{2} \\
 &=&\frac{1}{12}ML^2 +M\left( \frac{L}{2}-\frac{L}{5}\right)^2 \\
 &=&\frac{13}{75}L^2 M \\
 &\approx&9,7067\times 10^{-2} [kg\,m^2] .
@@ -763,9 +800,8 @@ I &=&I_{cm}+MD^{2} \\
 \begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas}
 \begin{block}{}
 \begin{minted}{tex}
-\usepackage{amsmath}
 \begin{eqnarray}
-   I &=&I_{cm}+MD^{2} \\
+   I &=&I_{\rm cm}+MD^{2} \\
      &=&\frac{1}{12} ML^2 + M\left( \frac{L}{2}
      	-\frac{L}{5} \right)^2 \\
      &=&\frac{13}{75} L^{2} M \\
@@ -778,7 +814,7 @@ I &=&I_{cm}+MD^{2} \\
 \begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas:  \texttt{align} de \texttt{amsmath}}
 El paquete \texttt{amsmath} suministra el entorno \texttt{align}, con una sintaxis casi igual a \texttt{eqnarray}, pero con algunas mejoras en detalles de alineaci'on:
 \begin{align}
-I &= I_{cm} + MD^2 \\
+I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}-\frac{L}{5}\right)^2 \\
 &= \frac{13}{75} L^2M \\
 &\approx 9,7067 \times 10^{-2} [kg\,m^2].
@@ -789,7 +825,7 @@ I &= I_{cm} + MD^2 \\
 \begin{block}{}
 \begin{minted}{tex}
 \begin{align}
-I &= I_{cm} + MD^2 \\
+I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}
 	-\frac{L}{5}\right)^2 \\
 &= \frac{13}{75} L^2M \\
@@ -805,7 +841,7 @@ I &= I_{cm} + MD^2 \\
  El torque resultante es la suma del torque aplicado
 sobre 1 m\'as el torque aplicado sobre 2. Es decir:
 \begin{equation}
-\tau_{total}=\tau_1+\tau_2,  \label{Ttotal}
+\tau_{\rm total}=\tau_1+\tau_2,  \label{Ttotal}
 \end{equation}
 donde
 \begin{equation}
@@ -826,7 +862,7 @@ tendremos que \dots
  El torque resultante es la suma del torque aplicado
 sobre 1 m\'as el torque aplicado sobre 2. Es decir:
 \begin{equation}
-\tau_{total}=\tau_1+\tau_2,  \label{Ttotal}
+\tau_{\rm total}=\tau_1+\tau_2,  \label{Ttotal}
 \end{equation}
 donde
 \begin{equation}
