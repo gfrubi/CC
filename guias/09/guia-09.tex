@@ -1,0 +1,59 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 09}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2018-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+ 
+\item El factorial de un n'umero entero positivo $n$, denotado por $n!$ es definido por
+\begin{equation}
+n!=1\cdot 2\cdot 3\cdots (n-1)\cdot n.
+\end{equation}
+Por ejemplo, $3!=1\cdot 2\cdot 3=6$ y $10!=3628800$.
+Escriba un programa en Python que pregunte al usuario por el valor de $n$, y que calcule e imprima su factorial, es decir, $n!$.
+
+\item En el texto de referencia de Python usado en clases, \url{https://github.com/gfrubi/CC/blob/master/Python/01-Introduccion-a-la-Programacion-en-Python.ipynb}, lea la secci'on \textbf{Control de Flujo}. En particular, aprenda sobre los comandos \texttt{if}, \texttt{else}, \texttt{elif}.  Reproduzca todos los ejemplos all'i descritos.
+
+\item Escriba un programa que al ejecutarlo pregunte al usuario un n'umero e imprima su valor absoluto. Recuerde que el valor absoluto (o m'odulo) $|x|$ de un valor real $x$ es definido por
+\begin{equation}
+|x|:=\left\{\begin{array}{cl}
+x, &\text{si } x>0 \\
+-x, & \text{si } x<0 \\
+\end{array}\right. .
+\end{equation}
+
+\item Usando lo que aprendi'o sobre el comando \texttt{if} y asociados, modifique el programa \texttt{test.py} que cre'o en la gu'ia 07 y que resuelve la ecuaci'on cuadr'atica $ax^2+bx+c=0$, para que ahora el programa informe que existen dos soluciones reales, y las imprima, si el discriminante $b^2-4ac$ es positivo, o que informe que no existe soluci'on real (si el discriminante es negativo), o bien que informe que existe s'olo una soluci'on real, y la imprima (si el discriminante es nulo).
+
+\item Modifique ahora el c'odigo que cre'o para calcular el factorial de un n'umero entero (gu'ia 09) para que ahora su programa verifique, antes de calcular el factorial, que el n'umero suministrado es realmente un entero positivo, y s'olo calcule el factorial en ese caso, y que en caso contrario informe al usuario que el n'umero ingresado no es apropiado.
+
+\item Escribir un programa que pregunte al usuario el valor alg'un n'umero natural e imprima todos los números primos que hay hasta ese número. Por ejemplo, si se ingresa el n'umero 8, el programa debe imprimir los n'umeros 2, 3, 5 y 7.
+%\item Descargue el libro ``Algoritmos y Programaci'on I: Aprendiendo a programar usando Python como herramienta", de la Facultad de Ingenier'ia de la Universidad de Buenos Aires, desde el sitio \url{https://algoritmos1rw.ddns.net/} (secci'on ``Material", archivo ``Apunte").
+\end{questions}
+
+
+\end{document} 
