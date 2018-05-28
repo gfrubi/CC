@@ -1,0 +1,56 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 10}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2018-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+ 
+\item Modifique el c'odigo que cre'o para calcular el factorial de un n'umero entero (gu'ia 09) para que ahora su programa verifique, antes de calcular el factorial, que el n'umero suministrado es realmente un entero positivo, y s'olo calcule el factorial en ese caso, y que en caso contrario informe al usuario que el n'umero ingresado no es apropiado.
+
+\item Modifique el programa anterior para que ahora el factorial se defina una funci'on \texttt{mifactorial}, de modo que el factorial de $n$ se pueda luego llamar como \texttt{mifactorial(n)}.
+
+\item La exponencial $e^x$ de un n'umero real $x$ puede ser calculada usando la siguiente serie
+\begin{equation}\label{e}
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}=1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots
+\end{equation}
+Reutilizando su c'odigo para calcular factoriales, escriba un programa que pregunte al usuario el valor de $x$ y calcule e imprima el valor de $e^x$, usando la expresi'on \eqref{e}. Para el c'alculo considere 100 términos en la suma \eqref{e}, es decir, que el programa calcule la suma hasta el t'ermino $x^{99}/{99!}$. 
+
+\textbf{Nota 1}: En el caso $n=0$, se define el factorial de $0$ igual al valor $1$, es decir, $0! :=1$.
+
+\textbf{Nota 2}: El ``truncar'' la serie (es decir, evaluarla hasta cierto n'umero de t'erminos) tiene como consecuencia que el valor calculado es s'olo una \textit{aproximaci'on} del valor exacto ($e^x$). Esta aproximaci'on es mejor si se incluyen m'as t'erminos.
+
+\item Utilice el programa que acaba de escribir para calcular (una aproximaci'on d)el valor de $e$ (el n\'umero de Euler). Compare su resultado con el valor listado en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_e}{art\'iculo de wikipedia}.
+
+\item \textbf{Bonus Track!}: Escriba un programa que eval'ue (una aproximaci'on de) el n'umero $\pi$. Para esto, use la siguiente expresi'on en serie (desarrollada por el gran \href{https://es.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}),
+\begin{equation}
+\pi = \sum_{n=0}^{\infty}\frac{2^{n+1}(n!)^2}{(2n+1)!}=\left[2^1\frac{(0!)^2}{1!} + 2^2\frac{(1!)^2}{3!} + 2^3\frac{(2!)^2}{5!} + 2^4 \frac{(3!)^2}{7!} + \cdots \right].
+\end{equation}
+Lo anterior es un ejemplo de un m'etodo con el que se puede calcular el valor de $\pi$, con precisi'on cada vez mayor al agregar m'as y m'as t'erminos. Dado que $\pi$ es un n'umero irracional, s'olo se conoce su valor (calculado con m'etodos similares) hasta un cierto n'umero de decimales. El record actual lo tiene Shigeru Kondo, quien logr'o calcular $\pi$ con $10 000 000 000 000$ decimales!. Compare el valor que usted obtenido con el listado en en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_pi}{art\'iculo de wikipedia}.
+\end{questions}
+
+\end{document} 
