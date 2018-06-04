@@ -1,0 +1,187 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 11}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2018-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\item En esta pr'actica usted ejercitar'a y explorar'a algunas caracter'isticas del poderoso m'odulo \texttt{Numpy}. Para ello, cargue el m'odulo usando:
+
+\begin{minted}[bgcolor=bg]{python}
+import numpy as np
+\end{minted}
+
+\item En \texttt{Numpy} existe una funci'on llamada \texttt{arange} que es muy similar a la ya conocida funci'on \texttt{range}. La diferencia es que \texttt{range} genera una \textit{lista} mientras que \texttt{arange} genera un \textit{arreglo de \texttt{Numpy}}. Para comprobar esto, ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+x = np.range(10)
+y = np.arange(10)
+print(x,type(x))
+print(y,type(y))
+\end{minted}
+
+En otras palabras, \texttt{np.arange(10)} es equivalente a \texttt{np.array(range(10))}.
+
+\item Usando arreglos de \texttt{Numpy} es posible realizar muchos c'alculos en forma r'apida y eficiente, sin necesidad de recurrir a ciclos (\texttt{for} o \texttt{while}). Por ejemplo, puede calcular la misma suma considerada en el problema 9 de la guía 8, es decir, 
+\begin{equation}
+1 + 2 + 3 + 4  + \cdots + 999 + 1000,
+\end{equation}
+pero ahora usando las funcion \texttt{sum} de \texttt{Numpy} (que suma todos los elementos de un arreglo):
+
+\begin{minted}[bgcolor=bg]{python}
+n = np.arange(1001)
+suma = np.sum(n)
+print(suma)
+\end{minted}
+
+o, en una sola línea
+
+\begin{minted}[bgcolor=bg]{python}
+print(np.sum(np.arange(1001)))
+\end{minted}
+
+Verifique lo anterior y aseg'urese de entender qu'e se est'a calculando.
+
+\item Adapte la idea del c'alculo en el punto anterior para implementar un c'alculo alternativo para el factorial de un n'umero $n$ (entero positivo), pero esta vez usando un arreglo de \texttt{Numpy} y la funci'on \texttt{prod()} que calcula el producto de cada componente de un arreglo de \texttt{Numpy} (similarmente a como \texttt{sum()} calcula la suma).
+
+\item Verifique que, a diferencia de su pariente \texttt{range()}, la funci'on \texttt{arange()} tambi'en funciona con pasos decimales, por ejemplo
+
+\begin{minted}[bgcolor=bg]{python}
+print(np.arange(1,10,0.3))
+\end{minted}
+
+\item Otra funci'on muy 'util para crear arreglos de valores en un intervalo es \texttt{linspace()}, que tiene el formato \texttt{linspace(desde,hasta,numerodeelementos)}. Por ejemplo, ejecute los siguientes comandos:
+
+\begin{minted}[bgcolor=bg]{python}
+x = np.linspace(1,10,20)
+y = np.linspace(-np.pi,np.pi,100)
+print(x,size(x))
+print(y,size(y))
+\end{minted}
+
+\item Otra propiedad importante de los arreglos es que sus elementos pueden usarse para iterar en un ciclo \texttt{for}. Para ver esto, ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+x = np.arange(11)
+y = x**2
+for i in x:
+	print ("la componente "+str(i)+" de y es igual a "+str(y[i]))
+\end{minted}
+
+\item Considere el archivo de datos \href{https://raw.githubusercontent.com/gfrubi/CC/master/guias/11/datos.txt}{datos.txt}. \texttt{Numpy} contiene una funci'on llamada \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensi'on apropiada. Ejecute (en la misma carpeta donde est'a el archivo \texttt{datos.txt}) los siguientes comandos:
+
+\begin{minted}[bgcolor=bg]{python}
+d = np.genfromtxt("datos.txt")
+x = d[:,0]
+y = d[:,1]
+\end{minted}
+
+La primera l'inea carga los datos al arreglo \texttt{d}. Las 'ultimas dos l'ineas asignan la primera columna de datos al arreglo \texttt{x} y la segunda columna a \texttt{y}. Usando las funciones \texttt{shape} y \texttt{size} de \texttt{Numpy}, verifique la forma y tama\~no de los arreglos \texttt{d, x} e \texttt{y}. Aseg'urese de entender que es lo que realiza exactamente cada comando anterior.
+
+\item Usando lo anterior, calcule e imprima:
+\begin{parts}
+\item El promedio de los valores de la primera columna. (puede usar la funci'on \texttt{sum} y \texttt{len} para calcular el promedio, o bien la funci'on \texttt{mean} de \texttt{Numpy}).
+\item El promedio de los cuadrados de los valores de la segunda columna.
+\item La suma de los productos de cada elemento de la primera con la segunda columna (es decir, $0.1*0.738 + 0.25 *	0.826 + 0.41 * 0.981 +\cdots$).
+\end{parts}
+
+\item Escriba y ejecute el siguiente programa, que hace uso de \texttt{Numpy} y del módulo gráfico \texttt{Matplotlib}
+
+\begin{minted}[bgcolor=bg]{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+d = np.genfromtxt("datos.txt")
+x = d[:,0]
+y = d[:,1]
+plt.plot(x,y, marker="o", markersize=5, color="green", 
+	label="Datos experimentales")
+plt.title("Voltaje versus Frecuencia")
+plt.xlabel("Frecuencia $f$ [Hertz]")
+plt.ylabel("Voltaje $V$ [Volt]")
+plt.legend()
+plt.savefig("g1.pdf")
+\end{minted}
+
+Este programa grafica los datos en las listas \texttt{x} e \texttt{y} usando c'irculos verdes, que guarda en el archivo \texttt{g1.pdf}.
+\item Copie el archivo \texttt{g1.py} a \texttt{g2.py}, que en adelante usar'a para realizar pruebas. 
+\item La opci'on \texttt{marker="\,o"} indica que los puntos son representados por c'irculos. Note que, por defecto, estos puntos son unidos por rectas. Otros s'imbolos (``markers'') disponibles son listados en la tabla \ref{t}. Por ejemplo, la opci'on \texttt{marker="s"} indica al comando \texttt{plot} que grafique cuadrados. 
+Adem'as, la opci'on \texttt{color} puede adoptar los valores \texttt{blue} (b), \texttt{green} (g), \texttt{red} (r), \texttt{cyan} (c), \texttt{magenta} (m), \texttt{yellow} (y), \texttt{black} (k) y \texttt{white} (w). Puede encontrar m'as colores listados \href{http://matplotlib.org/examples/color/named_colors.html}{aqu\'i}. Cambie los colores y s'imbolos del grafico en \texttt{g2.py} para familiarizarse con estas opciones.
+
+\item Agregue una grilla (malla) a su gr'afico usando el comando \texttt{plt.grid()} antes de \texttt{np.savefig}, y vea qué efecto tiene esto sobre el gráfico creado.
+\item Cambie los l'imites del gr'afico agregando los comandos
+
+\begin{minted}[bgcolor=bg]{python}
+plt.xlim(0,90)
+plt.ylim(0,15)
+\end{minted}
+
+y vea el cambio que produce.
+
+\item Escriba un programa \texttt{g3.py} que, usando tambi'en el m'odulo \texttt{numpy}, grafique la funci'on 
+\begin{equation}
+y(x)=\frac{\sin(x)}{x}
+\end{equation}
+en el intervalo $x\in[-30,30]$, y que guarde el resultado en el archivo \texttt{g3.pdf}. Asegúrese que la curva luzca suave, evaluando la función en muchos puntos cercanos entre si.
+
+\item Mejore su programa \texttt{g3.py} para que el gr'afico incorpore todos los elementos necesarios para obtener un resultado aceptable (T'itulo que indique la funci'on graficada, ejes con nombres adecuados, grilla (opcional), etc.).
+
+\item Env'ie los archivos que creó al email del profesor G. Rubilar.
+\begin{table}
+\begin{center}
+\begin{tabular}{cc}
+\verb|"."|	& point \\
+\verb|","| & pixel \\
+\verb|"o"|	& circle \\
+\verb|"v"|	& \verb|triangle_down| \\
+\verb|"^"|	& \verb|triangle_up| \\
+\verb|"<"|	& \verb|triangle_left| \\
+\verb|">"|	& \verb|triangle_right| \\
+\verb|"1"|	& \verb|tri_down| \\
+\verb|"2"|	& \verb|tri_up| \\
+\verb|"3"|	& \verb|tri_left| \\
+\verb|"4"|	& \verb|tri_right| \\
+\verb|"8"|	& octagon \\
+\verb|"s"|	& square \\
+\verb|"p"|	& pentagon \\
+\verb|"*"|	& star \\
+\verb|"h"|	& hexagon1 \\
+\verb|"H"|	& hexagon2 \\
+\verb|"+"|	& plus \\
+\verb|"x"|	& x \\
+\verb|"D"|	& diamond \\
+\verb|"d"|	& \verb|thin_diamond| 
+\end{tabular}
+\caption{Algunos s'imbolos disponibles para gr'aficar puntos con el comando \texttt{plot}. Ver \href{http://matplotlib.org/api/markers_api.html}{este link} para m'as detalles y s'imbolos.}
+\label{t}
+\end{center}
+\end{table}
+\item \textbf{Bonus Track (opcional)}: Es posible modificar el estilo de la figura completa agregando el comando \texttt{plt.style.use("\,\!estilo")} al comienzo de los comandos que definen el gr'afico. Aqu'i \texttt{"\,\!estilo"} es el nombre de uno de los estilos disponibles. Pruebe, por ejemplo, usar el estilo ``ggplot", agregando la l'inea \texttt{style.use("\,\!ggplot")} a uno de sus gr'aficos. Una lista completa de los estilos predefinidos en su instalalci'on de \texttt{Matplotlib} puede obtenerse con el comando \texttt{print(plt.style.available)}
+
+\end{questions}
+\end{document}
