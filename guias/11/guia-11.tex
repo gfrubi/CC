@@ -39,7 +39,7 @@ import numpy as np
 \item En \texttt{Numpy} existe una funci'on llamada \texttt{arange} que es muy similar a la ya conocida funci'on \texttt{range}. La diferencia es que \texttt{range} genera una \textit{lista} mientras que \texttt{arange} genera un \textit{arreglo de \texttt{Numpy}}. Para comprobar esto, ejecute:
 
 \begin{minted}[bgcolor=bg]{python}
-x = np.range(10)
+x = np.arange(10)
 y = np.arange(10)
 print(x,type(x))
 print(y,type(y))
@@ -80,8 +80,8 @@ print(np.arange(1,10,0.3))
 \begin{minted}[bgcolor=bg]{python}
 x = np.linspace(1,10,20)
 y = np.linspace(-np.pi,np.pi,100)
-print(x,size(x))
-print(y,size(y))
+print(x,np.size(x))
+print(y,np.size(y))
 \end{minted}
 
 \item Otra propiedad importante de los arreglos es que sus elementos pueden usarse para iterar en un ciclo \texttt{for}. Para ver esto, ejecute:
