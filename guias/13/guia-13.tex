@@ -1,0 +1,96 @@
+\documentclass[11pt]{exam}
+%\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+%\usepackage{minted} 
+
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 13}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2018-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny FB}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{large}\textbf{Estructuras de control }  \end{large}
+\section{Repetitivas}
+\begin{enumerate}
+ \item 
+Escriba un programa en  fortran 90 que permita contar en forma creciente de 1 a $N$, donde $N$ es 
+ingresado por el usuario a trav\'es del teclado. Primero use la estructura repetitiva DO y despu\'es un DO WHILE.
+\item 
+Escriba un programa en  fortran 90 que permita contar en forma decreciente de $N$ a $-N$, 
+donde $N$ es ingresado por el usuario a trav\'es del teclado.
+\item 
+Escriba un programa que permita calcular la suma de los primeros $N$ n\'umeros enteros, 
+
+donde $N$ es ingresado por el usuario a trav\'es del teclado.
+\item 
+Escriba un programa que permita calcular la suma de los primeros $N$ n\'umeros enteros pares, 
+donde $N$ es ingresado por el usuario a trav\'es del teclado.
+\item 
+Calcular el producto de los primero $N$ pares con los primeros $N$ impares.
+\item 
+Escriba un programa que permita calcular el factorial de un n\'umero entero.
+\item 
+Escriba un programa  que muestre en pantalla, los primeros $N$ elementos de la sucesi\'on
+$a_{n}=\dfrac{1}{2^{n}}$
+\item 
+La serie de Fibonacci: 1, 1, 2, 3, 5, 8, 13,....se define que cada t\'ermino subsiguiente 
+ est\'a dado por la suma de los dos t\'erminos anteriores: 1+1=2;  1+2=3;  2+3= 5...
+Escriba un programa que muestre en pantalla los primero 100 t\'erminos de esta serie.
+Modifique el programa anterior para determinar la suma de los primeros $N$ elemento de la sucesi\'on.
+\item 
+Escriba un programa  que permita ver las 100 primeras iteraciones del mapa
+$x_{n+1}=A\,x_{n}(1-x_{n}) $  para $A= 3.3$,  $A= 3.5$   y  $A=3. 57$. Use $x_{0}= 0.5$
+
+\end{enumerate}
+\section{Condicional}
+\begin{enumerate}
+
+ \item 
+
+Escriba un programa que orden de menor a mayor, una secuencia de 3 n\'umeros que son 
+entrados a trav\'es  del teclado, adem\'as que calcule el promedio de ellos.
+\item 
+ Ingrese dos n\'umeros reales por teclado. Si a es mayor que b muestre la suma, caso 
+contrario el producto, si a es igual a b muestre la resta. 
+\item 
+Escriba un programa para determinar si un  entero es par o impar. 
+\item 
+Escriba un programa para determinar si un  entero es cuadrado perfecto. 
+\item
+Escriba un programa que le permita resolver la ecuaci\'on de segundo grado, $ax^{2}+bx+c$ donde los valores
+ de $a$, $b$ y $c$ son valores reales, ingresados por el usuario a trav\'es del teclado.  Adem\'as, debe indicar 
+si NO tiene ra\'ices reales e incluir el caso si $a = 0$.
+\item
+ Dada la sucesi\'on $S_n=80*n-n^2+200$ con $n$ variando de 1 a 100. Determinar cu\'antos elementos son 
+positivos, negativos  y ceros.
+\item
+A partir de que valor de $n$ la sucesi\'on $a_{n}=\dfrac{1}{2n+4}$ varia menos del  2\%. 
+Definiendo variaci\'on relativa como $\vert\frac{a_{n+1}-a_{n}}{a_{n}}\vert$.
+\item 
+Escriba un programa que le permita obtener los d\'ias de los meses del a\~no, ingresando el 
+mes (1-12).
+ \item 
+Igresar la hora del d\'ia por teclado y el programa lo debe saludor con: buenos d\'ias, buenas tardes o buenas noches.
+\end{enumerate}
+
+\end{document}
