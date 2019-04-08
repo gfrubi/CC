@@ -1,0 +1,73 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 02}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\item En Linux, los archivos cuyo nombre comienza con un punto (es decir, el caracter ``.'') son considerados como ``archivos ocultos'', que por defecto no son listados por el comando \texttt{ls} (ni los administradores gráficos de archivos). Aparte de esta característica, son archivos normales, pero que son usados como archivos de configuración del sistema o de algunos programas. La opción \texttt{-a} del comando \texttt{ls} es usada para listar todos los archivos en una carpeta, incluyendo los ocultos. Usando comandos \texttt{Bash}, realice las siguientes tareas
+\begin{parts}
+\item Liste todos los archivos de la carpeta principal en los computadores del laboratorio, incluyendo los ocultos.
+\item Filtre la lista de archivo, usando el comando \texttt{grep}, para listar sólo los archivos ocultos.
+\item Guarde la lista obtenida en el punto anterior en un nuevo archivo con nombre \texttt{ocultos.txt}.
+\item Cambie el nombre a algún archivo que haya creado para convertirlo en archivo oculto. Verifique que ahora \texttt{ls} no lo lista por defecto.
+\end{parts}
+
+\item Investigue qué efecto tiene la opción \texttt{-o} en el comando \texttt{grep} y ejecute algunos comandos de prueba para verificar su funcionamiento. Luego de esto, ejecute comandos \texttt{Bash} que cuenten cuántas veces se repite la letra `a' en el extracto de el Quijote que usó en la \href{https://github.com/gfrubi/CC/tree/master/guias/01}{guía 01} (archivos \texttt{c1.tex} a \texttt{c5.tex}). Si usó las característias de redireccionamiento de \texttt{Bash} (el caracter \texttt{|}) debiese realizar esta tarea con una única línea de comando.
+
+\item El comando \texttt{echo} despliega en la salida principal (la pantalla) un mensaje de texto indicado.
+\begin{parts}
+\item Pruebe qué hace el comando 
+\begin{minted}[bgcolor=bg]{bash}
+echo 'Hola Mundo'
+\end{minted}
+\item Con la opción \texttt{-e} el comando \texttt{echo} reconoce algunos caracteres especiales, por ejemplo \verb|\n| es reconocido como un salto a una nueva línea. Verifique esto ejecutando
+\begin{minted}[bgcolor=bg]{bash}
+echo -e 'Mola\nMundo'
+\end{minted}
+\item Investigue qué otros caracteres especiales son reconocidos por \texttt{echo -e}.
+\end{parts}
+
+\item Además de los caracteres de redireccionamiento $>$ y $\vert$, existe $>>$, que también redirecciona la salida de un comando a un archivo. La diferencia entre $>$ y $>>$ es que en el primer caso el nuevo archivo se crea desde cero (y si ya existe, se reemplaza por el nuevo), mientras que $>>$ agrega la salida al final de un archivo preexistente.
+
+Para ejercitar lo anterior, haga algunas pruebas simples con $>$ y $>>$. Luego de esto escriba un comando \texttt{Bash} que junte todos los trozos del texto del Quijote (archivos \texttt{c1.tex} a \texttt{c5.tex}), lo guarde en el nuevo archivo \texttt{Quijote.txt},   y que luego le agregue al final una nueva línea con la palabra `FIN'. Nuevamente, puede realizar todo esto con una línea de comandos.
+
+\item El comando \texttt{cut} selecciona partes del texto en un archivo. Por ejemplo, usando el archivo de datos de Supernovas descrito en la guía 01 (\texttt{SCPUnion2.1\_mu\_vs\_z.txt}, que consta de varias columnas), podemos seleccionar (`cortar') sólo la segunda tercera columna de datos con el comando
+\begin{minted}[bgcolor=bg]{bash}
+cut -s -f 3 SCPUnion2.1_mu_vs_z.txt
+\end{minted}
+\begin{parts}
+\item Verifique que la opción \texttt{-s} sirve para que \texttt{cut} se salte las primeras líneas del archivo, que contienen comentarios y no datos.
+\item Verifique que la opción \texttt{-f 3} selecciona la tercera columna (pruebe seleccionando otras columnas).
+\end{parts}
+\end{questions}
+\end{document} 
