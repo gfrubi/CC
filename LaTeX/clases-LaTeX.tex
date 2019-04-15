@@ -35,32 +35,24 @@ por Juan Antonio Navarro P\'{e}rez, \\Universidad de las Am\'{e}ricas - Puebla)}
 \section{Introducci\'on}
 \begin{frame}[fragile]\frametitle{?`\TeX{} y \LaTeX?}
 \begin{itemize}
-\item \TeX{} es un sistema profesional de \emph{composici'on tipogr'afica} desarrollado
-por \href{http://www-cs-faculty.stanford.edu/~knuth}{Donald E. Knuth} (1977, Stanford).
+\item \href{https://es.wikipedia.org/wiki/TeX}{\TeX{}} (1978) es un sistema profesional de \emph{composici'on tipogr'afica} desarrollado
+por \href{https://es.wikipedia.org/wiki/Donald_Knuth}{Donald E. Knuth} (1938, prof. emérito U. Stanford).
 \item \TeX{} fue dise\~nado para producir documentos (especialmente con expresiones matem'aticas) con la m'as alta \emph{calidad de imprenta}.
-\item \LaTeX\ es un \emph{sistema de macros}, desarrollado sobre \TeX{} por \href{https://es.wikipedia.org/wiki/Leslie_Lamport}{Leslie Lamport} (1980's), para facilitar su uso por parte de los autores.
+\item \href{https://es.wikipedia.org/wiki/LaTeX}{\LaTeX}\ es un \emph{sistema de macros}, desarrollado sobre \TeX{} por \href{https://es.wikipedia.org/wiki/Leslie_Lamport}{Leslie Lamport} (1983), para facilitar su uso por parte de los autores.
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{?`\TeX{} y \LaTeX?}
 \begin{itemize}
-\item Michael Spivak desarrolla ams-TeX, ahora incorporado en \LaTeX\ como \texttt{amsmath} 
-(1980's).
-  \item \LaTeX\ 2.09 se transforma en \LaTeX2e (1990's).
-  \item El proyecto \LaTeX\ 3. 
+\item \href{https://es.wikipedia.org/wiki/AMS-LaTeX}{\AmS -\LaTeX} es un conjunto de paquetes \LaTeX\ para matemáticas desarrollado por la American Mathematical Society. Disponible en \LaTeX\ como \texttt{amsmath} 
+(1990).
+  \item Versión actual: \LaTeX2e (1994). Código fuente en \href{https://github.com/latex3/latex2e}{GitHub}.
+  \item El futuro: proyecto \href{https://www.latex-project.org/latex3/}{\LaTeX3}. Código fuente en \href{https://github.com/latex3/latex3}{GitHub}.
 	\begin{center}
-		\includegraphics[width=6cm]{figs/tux26.pdf}
+		\includegraphics[height=3cm]{figs/tux26.pdf}\includegraphics[height=2.5cm]{figs/latex-project-logo.pdf}
 	\end{center}
 \end{itemize}
 \end{frame}
-
-
-%\begin{frame}[fragile]\frametitle{Sistema de imprenta}
-%\vspace{1.6cm}
-%\begin{center}
-%	\scalebox{0.8}{\input{imprenta.tex}}
-%\end{center}
-%\end{frame}
 
 
 \begin{frame}[fragile]\frametitle{Word/Writer vs \LaTeX}
@@ -73,9 +65,9 @@ $\bullet$ WYSIWYG            & $\bullet$ Preprocesado          \\
 $\bullet$ Muy f'acil de usar & $\bullet$ No siempre f'acil     \\
 $\bullet$ Facilidades para insertar objetos 
                              & $\bullet$ Limitaciones por formatos de archivo \\[1ex]
-$\bullet$ Lento y malo para tratar f'ormulas
-                             & $\bullet$ Muy bueno para f'ormulas \\
-$\bullet$ 'Enfasis en Dise\~no & $\bullet$ En Contenido         
+$\bullet$ Lento y malo para tratar expresiones matemáticas
+                             & $\bullet$ Muy bueno para expresiones matemáticas \\
+$\bullet$ 'Enfasis en Dise\~no & $\bullet$ Énfasis en Contenido         
 \end{tabular}
 \end{center}
 \end{frame}
@@ -83,10 +75,13 @@ $\bullet$ 'Enfasis en Dise\~no & $\bullet$ En Contenido
 \begin{frame}[fragile]\frametitle{?`Por qu'e usar \LaTeX?}
 \begin{itemize}
 \item Produce documentos con calidad de imprenta.
-\item Es utilizado por editoriales (Springer, Elsevier, \dots), revistas y congresos especializados.
-\item Es una herramienta indispensable para f'isic@s, geof'isic@s, astr'onom@s, matem'atic@s, etc. y especialmente para investigador@s.
+\item Utilizado por editoriales, revistas y congresos especializados.
+\item Indispensable para f'isic@s, geof'isic@s, astr'onom@s, matem'atic@s, et., especialmente para investigador@s.
 \item Es la mejor opci'on para escribir su \emph{tesis}!.
 \end{itemize}
+\begin{center}
+	\includegraphics[height=5cm]{figs/LaTeX_vs_Word.pdf}
+\end{center}
 \end{frame}
 
 
@@ -259,20 +254,20 @@ Para libros, art'iculos y reportes:
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Citas Textuales}
-\dots como la princesa dijo:
+\dots como dijo alguien muy sabio,
 \begin{quote}
-``Gracias por rescatarme. Pero la verdadera princesa est\'a en otro castillo.''
+``The dark side of the Force is a pathway to many abilities, some considered to be unnatural''
 \end{quote}
-Y ten\'ias que avanzar a otro castillo.
+mientras miraba a su futuro aprendiz.
 
 \begin{block}{}
 \begin{minted}{tex}
-\dots como la princesa dijo:
+\dots como dijo alguien muy sabio,
 \begin{quote}
-``Gracias por rescatarme. Pero la verdadera princesa
-est\'a en otro castillo.''
+``The dark side of the Force is a pathway to many 
+abilities, some considered to be unnatural''
 \end{quote}
-Y ten\'ias que avanzar a otro castillo.
+mientras miraba a su futuro aprendiz.
 \end{minted}
 \end{block}
 \end{frame}
@@ -369,8 +364,9 @@ Y \verb|\mathcal{}| $\mathcal{CAL}$.
 \begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX}
 Forma tradicional
   \begin{center}
-  \begin{tabular}{cc}
-     Input      &   Resultado \\
+  \begin{tabular}{c|c}
+     Input      &   Resultado \\ 
+     \hline
      \verb+\'o+  &   'o       \\
      \verb+\'u+  &   'u       \\
      \verb+\'a+  &   'a       \\
