@@ -1,0 +1,99 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+%\usepackage{graphdicx}
+\usepackage[colorlinks]{hyperref}
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 03}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+%\texttt{Fecha de Entrega: Jueves 28 de Agosto. Env'ie a gfrubi@udec.cl los archivos .py que resuelven cada uno de los problemas propuestos.}
+%\end{center}
+\begin{questions}
+
+\item En alg'un editor simple de texto (por ejemplo, \texttt{nano} en la consola, o bien \texttt{gedit} o \texttt{geany} en el ambiente gr'afico \texttt{Xfce}. Ante cualquier duda consulte al profesor encargado), genere un archivo de texto llamado \texttt{plantilla.tex}, con el siguiente contenido:
+
+\begin{minted}[bgcolor=bg]{tex}
+\documentclass[12pt]{article}
+
+\begin{document}
+\'Este es mi primer documento en \LaTeX
+ 
+\end{document}
+\end{minted}
+
+\item Compile el c'odigo \LaTeX\ con el comando \texttt{pdflatex plantilla.tex}. Si todo sale bien, debe generar directamente un archivo .pdf con su primer trabajo en \LaTeX.
+Abra el archivo .pdf para visualizar el resultado.
+
+
+\item Para saciar su infinita curiosidad, mire (en la consola!) el contenido de los archivos auxiliares generados (.aux y .log). Luego de esto, borre todos los archivos generados por la compilaci'on.
+
+
+\item Usando el comando \texttt{cp} haga dos copias de su archivo \texttt{plantilla.tex} con nombres \texttt{test-01.tex} y \texttt{test-02.tex}. Guarde el archivo \texttt{plantilla.tex} en alg'un lugar seguro, le servir'a en el futuro.
+
+\item Agregue a su archivo \texttt{test-01.tex} algunas secciones y texto que involucre caracteres latinos, usando \verb|\'a, \'e, \'i, \'o, \'i, \~n y ?`|, que generan \'a, \'e, \'i, \'o, \'i, \~n, y ?`, respectivamente
+
+\item Ahora agregue el siguiente c'odigo en alguna parte de su documento:
+
+\begin{minted}[bgcolor=bg]{tex}
+\begin{quote}
+``El primer principio es que no te debes enga\~nar a ti mismo - y t\'u eres 
+la persona que m\'as f\'acilmente te enga\~na. As\'i que hay que tener mucho 
+cuidado con eso. Una vez que no te enga\~nas a ti mismo, es f\'acil que no 
+enga\~nes a los otros cient\'ificos''. \texttt{Richard Feynman}.
+\end{quote}
+\end{minted}
+
+Esto introduce el texto dentro del entorno \texttt{quote}, que es apropiado para citar frases c'elebres de alg'un personaje importante. Vea c'omo luce el resultado en su archivo .pdf.
+
+\texttt{Ojo!} Existen tres tipos de comillas: 	las comillas ``simples'' ('\,), las comillas ``dobles'' ("\,), y las comillas ``diagonales hacia la derecha'' (`). \'Estas se obtienen con combinaciones distintas de teclas (que var'ian de teclado en teclado!). Las comillas usadas en el ejemplo del entorno \texttt{quote} son dos comillas diagonales al comienzo y dos comillas simples al final de la frase.
+
+
+\item Cambie el tipo de entorno usado en el punto anterior desde \texttt{quote}, para que ahora sea un entorno \texttt{center}, \texttt{flushleft}, \texttt{flushright} y finalmente \texttt{sloppypar}. En cada caso, vea c'omo esto afecta al resultado final.
+
+\item Lea el pdf de la \href{https://github.com/gfrubi/CC/blob/master/LaTeX/clases-LaTeX.pdf}{presentaci\'on de \LaTeX} usada en clases, hasta la p'agina 23 (``Espa\~nol y \LaTeX'').
+
+\item Descargue el archivo modelo \href{https://github.com/gfrubi/CC/blob/master/guias/03/articulo.pdf}{articulo.pdf} y 'abralo para ver qu'e contiene. 
+
+
+\item Edite \texttt{test-02.tex} para que al compilarlo se reproduzca lo m'as fielmente posible el contenido del model en el archivo \texttt{articulo.pdf} (secciones, subsecciones, listas, texto, etc.).
+
+\item En el archivo \texttt{test-02.tex} realice las siguientes modificaciones y observe qu'e efecto tiene cada una de ellas en el .pdf final.
+\begin{parts}
+\item Agregue el comando \verb|\tableofcontents| en la l'inea siguiente a \verb|\begin{document}|. No olvide compilar dos veces para ver el efecto de este cambio!.
+\item Agregue el comando \verb|\usepackage[spanish]{babel}| en la segunda l'inea del c'odigo, es decir, en la l'inea siguiente a \verb|\documentclass[12pt]{article}|.
+\item Agregue la opci'on \verb|twocolumn| a la declaraci'on de clase de la primera l'inea, es decir, transf'ormela en \verb|\documentclass[12pt,twocolumn]{article}|.
+\item Finalmente, modifique la opci'on \verb|12pt| en la primera l'inea, reemplaz'andola por \verb|10pt|.
+\end{parts}
+
+\item \LaTeX\ es un mundo vasto, bello y desconocido, en el que se pueden seguir aprendiendo y desarrollando nuevos aspectos constantemente. Para explorar un poco m'as, descargue y d'e un vistazo al tutorial ``\textit{La introducci'on no-tan-corta a \LaTeX 2e}'' (2014), de Tobias Oetiker, Hubert Partl, Irene Hyna y Elisabeth Schlegl, disponible en \url{http://www.ctan.org/tex-archive/info/lshort/spanish}. Note que en la subcarpeta \texttt{fuente/src} del link anterior est'a disponible el c'odigo \LaTeX que genera este documento.
+
+\item Finalmente, otra buena referencia para aprender y/o consultar sobre \LaTeX\ es el libro ``\textit{Edici'on de Textos Cient'ificos en \LaTeX: Composici'on, Dise\~no Editorial, Gr'aficos, Inkscape, Tikz y Presentaciones Beamer}'' (2da edici'on. Actualizaci'on Marzo 2017), de Walter Mora y Alex'ander Borb'on, disponible en \url{http://tecdigital.tec.ac.cr/revistamatematica/Libros/LATEX/}. Descargue este libro, mire qu'e contiene y gu'adelo para refencia futura.
+\end{questions}
+\end{document} 
