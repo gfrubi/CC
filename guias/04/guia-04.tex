@@ -1,0 +1,62 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+%\usepackage{graphdicx}
+\usepackage[colorlinks]{hyperref}
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 04}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+%\item Conozca uno de los editores de texto especializados en edici'on de c'odigo \LaTeX. La persona encargada de la pr'actica les mostrar'a las funcionalidades b'asicas del programa \href{http://www.xm1math.net/texmaker/}{TexMaker} (multiplataforma, existen versiones para Linux, Windows y MacOS) o bien de \href{https://kile.sourceforge.io/}{Kile} (versiones para Linux y Windows). Estos programas son muy similares\footnote{De hecho, TexMaker es la ``continuaci'on'' del proyecto Kile, por el mismo autor (Pascal Brachet) que escribi'o originalemente este 'ultimo software.} y proporcionan muchas caracter'isticas que hacen de la edici'on de c'odigo \LaTeX una labor m'as r'apida y simple. En esta semana, intente usar exclusivamente uno de estos programas.
+
+\item Lea el archivo \href{https://github.com/gfrubi/CC/blob/master/LaTeX/clases-LaTeX.pdf}{pdf de clases} hasta la página 35, donde se introduce el entorno \texttt{equation}. Este entorno define una línea especial para ingresar expresiones en modo matemático, de modo que éstas aparecen centradas en la página, con un tamaño un poco más grande, y con una numeración automática a la derecha. Reproduzca los ejemplos de la página 33 y 34, es decir, escriba el código indicado en un archivo \texttt{.tex} y verifique que realiza lo señalado.
+
+\item Una de las preguntas de un certamen de a\~nos anteriores consisti'o en pedirle a l@s estudiantes que escribieran (con lapiz y papel) el c'odigo \LaTeX\ que reproduce la famosa ecuaci'on de \href{https://es.wikipedia.org/wiki/Erwin_Schr\%C3\%B6dinger}{Schr\"odinger} (una de la ecuaciones fundamentales de la Mec'anica Cu'antica):
+\begin{equation}
+-\frac{\hbar^2}{2m}\nabla^2\Psi+V(\vec{x})\Psi=i\hbar\frac{\partial\Psi}{\partial t}.
+\end{equation}
+Escriba el c'odigo \LaTeX\ que reproduce esta hermosa ecuaci'on.
+
+\item Ahora que sabe c'omo escribir la ecuaci'on de Schr\"odinger en \LaTeX, mire el art'iculo de Wikipedia correspondiente, \href{https://es.wikipedia.org/wiki/Ecuaci\%C3\%B3n_de_Schr\%C3\%B6dinger}{aqu\'i}. Encuentre alguna de las versiones all'i escritas de esta ecuaci'on e ingrese al link marcado como [\texttt{editar}] m'as cercano. Observe ah'i c'omo luce el c'odigo que genera el art'iculo en cuesti'on. Como puede ver, las ecuaciones en Wikipedia se generan con un c'odigo que es esencialmente \LaTeX, acompa\~nado con algunos otros c'odigos especiales. Entonces, a partir de ahora usted sabe c'omo editar/agregar ecuaciones en art'iculos de Wikipedia!
+
+\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciento estas expresiones:
+\begin{equation}
+\int \sin^2(x)\,dx=\frac{x-\sin (x)\,\cos (x)}{2}  ,
+\end{equation}
+\begin{equation}
+v = c \ \sqrt{1- \frac{{m^2 c^4}}{{(mc^2+K)^2}}},
+\end{equation}
+\begin{equation}
+\vec{F} = \frac{\text{d}\vec{p}}{\text{d}t} = \frac{\text{d}(\gamma m \vec{v})}{\text{d}t} = m \gamma^3 \vec{a} = \frac{m \vec{a}}{[1-(v^2/c^2)]^{3/2}}.
+\end{equation}
+
+
+\item En \href{https://github.com/gfrubi/CC/blob/master/guias/04/ejemplo-g4.pdf}{este archivo pdf} encontrar'a el extracto de un texto simple de F'isica (Mec'anica) que hace uso de ecuaciones (entorno \texttt{equation}), f'ormulas en l'inea, (sub)secciones, y diversos s'imbolos matem'aticos. Escriba un c'odigo \LaTeX\ que reproduzca lo m'as fielmente posible el contenido de este pdf.
+\end{questions}
+\end{document} 
