@@ -1,0 +1,108 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 09}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Funciones}
+\begin{questions}
+\item Escriba un programa que muestre los valores de las funciones intr\'insecas, seno, coseno y tangente para los \'angulos: 0, $\pi /6$, $\pi /4$, $\pi /3$, $\pi /2$, $\pi$, $2\pi/3$, $3\pi /2$
+y $2 \pi$.
+\item Escriba una funci\'on que permita evaluar el seno hiperb\'olico de una variable real, donde $\senh(x)=\frac{\exp(x)-\exp(-x)} {2}$, cuando
+el(la) usuario(a) ingrese el valor de $x$ a trav\'es del teclado en el programa principal.
+\item Cree un programa que analize n\'umeros enteros que contenga las siguentes funciones:
+\begin{itemize}
+ \item que indique si el n\'umero es par o impar, 
+\item  que indique si el n\'umero es positivo o negativo.
+
+\end{itemize}
+
+\item Usando \texttt{function} escriba un programa que evalue la siguiente  funci\'on real, donde $x\in \Re$:
+\begin{equation}
+f(x)=\left\lbrace 
+\begin{array}{ll}
+x+ 2, &  x \geq 0 \\
+-x +2, & x < 0 \\
+\end{array}\right.
+\end{equation}
+\item 
+Desarrollar un algoritmo de c\'alculo que eval\'ue una funci\'on $f(x,y)$ para diferentes
+valores de $x$ e $ y$. La funci\'on est\'a definida de la siguiente manera:
+\begin{equation}
+f(x,y)=\left\lbrace 
+\begin{array}{lll}
+x+ y, &  x \geq 0 & \wedge \quad  y \geq 0\\
+x + y^{2}, & x \geq 0 & \wedge \quad y < 0\\
+x +y, & x < 0 & \wedge \quad  y\geq0\\
+x^{2}  + y^{2}, &  x < 0 & \wedge \quad y < 0\\
+\end{array}\right.
+\end{equation}
+  El algoritmo de c\'alculo debe desarrollarse con las estructuras de control necesarias para
+que realice los siguientes pasos:
+\begin{itemize}
+\item  Solicite a el(la) usuario(a) los valores de: $x$ e $y$,
+\item Eval\'ue la funciones seg\'un corresponda,
+\item Despliegue el valor de la funci\'on resultante.
+\end{itemize}
+
+\section{Subrutinas}
+\item Escriba una subrutina que entregue la ecuaci\'on de una l\'inea recta, cuando el(la) usuario(a) ingrese dos puntos por teclado en el programa principal.
+ \item Escriba una subrutina que resuelva la ecuaci\'on de segundo grado.
+\item  Cree una subrutina que entregue el promedio aritm\'etico de $N$ notas de un(a) alumno(a).
+\item Cree una subrutina que encuentra el valor m\'aximo entre dos n\'umeros reales.
+%
+\section{Funciones intr\'insecas b\'asicas}
+ \item Escriba un programa donde se usen todas las funciones que est\'an en la siguiente tabla\\
+
+
+\begin{tabular}{|p{2.5cm}|p{6.5cm}|p{3.5cm}|p{3.5cm}|}
+\hline 
+\textbf{Funci\'on} &         \textbf{Significado matem\'atico} &                 \textbf{Tipo argumento}& \textbf{Tipo resultado}\\ \hline 
+
+INT($x$)&           Parte entera de $x$ &                      REAL &          INTEGER\\ \hline 
+FLOOR($x$)&         Mayor entero $\leq x$  &                      REAL &          INTEGER\\ \hline 
+MOD($x, y$)&        Resto de la divisi\'on: $x$-INT($x/y$) &       INTEGER \'o REAL& Como el argumento\\ \hline 
+NINT($x$)  &        $x$ redondeado al entero m\'as pr\'oximo&      REAL  &         INTEGER\\ \hline 
+REAL($x$)  &        Convierte $x$ a REAL  &                 INTEGER&        REAL\\ \hline 
+MAX($x_1$,$\cdots$,$x_n$)&     M\'aximo de $x_1$, $x_2$, $\cdots x_n$ &                  INTEGER \'o REAL& Como el argumento\\ \hline 
+MIN($x_1,cdots,x_n$) &    M\'inimo de $x_1, x_2, \cdots, x_n$ &                  INTEGER \'o REAL& Como el argumento\\ \hline 
+ABS($x$)   &        Valor absoluto de $x$    &                 INTEGER \'o REAL& Como el argumento\\ \hline 
+LOG($x$)   &        Logaritmo natural de $x$ &                 REAL           &REAL\\ \hline
+LOG10($x$)   &        Logaritmo base 10 de $x$ &                 REAL           &REAL\\ \hline  
+EXP($x$)   &        Funci\'on exponencial    &                 REAL           &REAL\\ \hline 
+COS($x$)   &        Coseno de $x$ (en radianes)&               REAL           &REAL\\ \hline 
+SIN($x$)   &        Seno de $x$ (en radianes)   &              REAL           &REAL\\ \hline 
+TAN($x$)   &        Tangente de $x$ (en radianes)&             REAL           &REAL\\ \hline 
+ACOS($x$)  &        Arco coseno de $x$           &             REAL           &REAL\\ \hline 
+ASIN($x$)  &        Arco seno de $x$             &            REAL           &REAL\\ \hline 
+ATAN($x$)  &        Arco tangente de $x$         &             REAL           &REAL\\ \hline 
+SQRT($x$)  &        Ra\'iz cuadrada de $x$ &                     REAL           &REAL\\ \hline 
+
+\end{tabular} 
+\end{questions}
+\end{document}
