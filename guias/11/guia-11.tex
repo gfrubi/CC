@@ -167,6 +167,61 @@ x.find("p")
 x.find("semestre")
 \end{minted}
 
+\item Otro concepto muy importante en Python es el de \textit{listas}. Las listas son  similares a las cadenas, excepto que cada elemento puede ser de un tipo diferente. La sintaxis para crear listas en Python es [..., ..., ...]. Por ejemplo, ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+lista = [1, "hola", 1.0, 1-1j, True]
+type(lista)
+print(lista)
+\end{minted}
+
+Como puede ver, la variable \texttt{lista} es un nuevo tipo de objeto: `list'. En este caso, es una lista cuyos elementos son un entero, un string, un float, un complejo, y un booleano. Para verificar esto, imprima el valor y el tipo de cada elemento de la lista. Por ejemplo,
+
+\begin{minted}[bgcolor=bg]{python}
+print(lista[0],type(lista[0]))
+print(lista[1],type(lista[1]))
+\end{minted}
+
+Este ejemplo tambi'en muestra que los 'indices de cada elemento de la lista son numerados de la misma manera que en un string:
+
+\begin{minted}[bgcolor=bg]{python}
+print(lista[0:3])
+print(lista[::2])
+\end{minted}
+
+\item Los elementos de una lista pueden tener cualquier tipo reconocido por Python, por ejemplo, pueden ser otra lista!:
+
+\begin{minted}[bgcolor=bg]{python}
+superlista = ["cool",lista]
+print(superlista)
+\end{minted}
+
+Imprima el valor y el tipo de cada elementos de esta lista. ?`Cu'antos elementos tiene la lista \texttt{superlista}? (respuesta, use la funci'on \texttt{len()}).
+
+\item Existen diversas funciones en Python que crean listas. La funci'on \texttt{list()} crea una lista, por ejemplo, a partir de un string. Usando el string \texttt{x} definido anteriormente, ejecute
+
+\begin{minted}[bgcolor=bg]{python}
+y = list(x)
+print(y)
+print(type(y))
+\end{minted}
+
+\item Otra funci'on que crea listas 'utiles, esta vez de n'umeros \textit{enteros}, es \texttt{range(inicio,fin,paso)}, que crea una lista de valores desde \texttt{inicio} (cerrado) hasta \texttt{fin} (abierto!!), con paso \texttt{paso}. Ejecute,
+
+\begin{minted}[bgcolor=bg]{python}
+z = list(range(2,26,3))
+print(z)
+\end{minted}
+
+\item ?`Qu'e hacen los siguientes comandos?, ?`Modifican el valor de \texttt{x} y/o \texttt{lista}?
+
+\begin{minted}[bgcolor=bg]{python}
+x.split(" ")
+x.split("e")
+lista.append("chao")
+lista.insert(2,"cool")
+\end{minted}
+
 \end{questions}
 
 
