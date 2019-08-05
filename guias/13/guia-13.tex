@@ -1,0 +1,92 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 13}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+
+\item Modifique el c'odigo que cre'o para calcular el factorial de un n'umero entero (gu'ia 12) para que ahora se defina una funci'on \texttt{mifactorial}, de modo que el factorial de $n$ se pueda luego llamar como \texttt{mifactorial(n)}.
+
+\item La exponencial $e^x$ de un n'umero real $x$ puede ser calculada usando la siguiente serie
+\begin{equation}\label{e}
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}=1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots
+\end{equation}
+Reutilizando su c'odigo para calcular factoriales, escriba un programa que pregunte al usuario el valor de $x$ y calcule e imprima el valor de $e^x$, usando la expresi'on \eqref{e}. Para el c'alculo considere 100 términos en la suma \eqref{e}, es decir, que el programa calcule la suma hasta el t'ermino $x^{99}/{99!}$. 
+
+\textbf{Nota 1}: En el caso $n=0$, se define el factorial de $0$ igual al valor $1$, es decir, $0! :=1$.
+
+\textbf{Nota 2}: El ``truncar'' la serie (es decir, evaluarla hasta cierto n'umero de t'erminos) tiene como consecuencia que el valor calculado es s'olo una \textit{aproximaci'on} del valor exacto ($e^x$). Esta aproximaci'on es mejor si se incluyen m'as t'erminos.
+
+\item Utilice el programa que acaba de escribir para calcular (una aproximaci'on d)el valor de $e$ (el n\'umero de Euler). Compare su resultado con el valor listado en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_e}{art\'iculo de wikipedia}.
+
+\item Escriba un programa que eval'ue (una aproximaci'on de) el n'umero $\pi$. Para esto, use la siguiente expresi'on en serie (desarrollada por el gran \href{https://es.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}),
+\begin{equation}
+\pi = \sum_{n=0}^{\infty}\frac{2^{n+1}(n!)^2}{(2n+1)!}=\left[2^1\frac{(0!)^2}{1!} + 2^2\frac{(1!)^2}{3!} + 2^3\frac{(2!)^2}{5!} + 2^4 \frac{(3!)^2}{7!} + \cdots \right].
+\end{equation}
+Lo anterior es un ejemplo de un m'etodo con el que se puede calcular el valor de $\pi$, con precisi'on cada vez mayor al agregar m'as y m'as t'erminos. Dado que $\pi$ es un n'umero irracional, s'olo se conoce su valor (calculado con m'etodos similares) hasta un cierto n'umero de decimales. El record actual lo tiene Shigeru Kondo, quien logr'o calcular $\pi$ con $10 000 000 000 000$ decimales!. Compare el valor que usted obtenido con el listado en en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_pi}{art\'iculo de wikipedia}.
+
+\item Copie los códigos que escribió anteriormente y que definen su implementación de  la función \texttt{mifactorial(n)}, y además el código que calcula de su aproximación de $\pi$ (almacenada ahora en la variable \texttt{mipi}) en un nuevo archivo llamado \texttt{misfunciones.py}. Este archivo puede usarse para definir un nuevo módulo. A continuación, en una sesión interactiva de Python, importe su función usando primero \texttt{import mimodulo} y llame a las funciones que están ahí definidas. 
+
+\item El factorial es una función comúnmente usada, y ya está implementada en diversos módulos populares de Python, por ejemplo, en el módulo \texttt{math}. Para verificar esto, importe el módulo \texttt{math} y verifique que la función \texttt{math.factorial} entrega los mismos valores ya calculados por usted. Lo mismo ocurre con el valor del número $\pi$ (\texttt{math.pi}). 
+
+\item Aproveche que tiene cargado el módulo \texttt{math} e investigue qué funciones y variables están definidas en este módulo. Para esto, ejecute \texttt{dir(math)}, o bien el comando \texttt{help(math)} para revisar qué contiene. Alternativamente, o revise la \href{https://docs.python.org/3/library/math.html}{documentaci\'on en l\'inea} disponible.
+
+\item Una instalación típica de Python incluye los módulos de la ``\textit{librería estandar}'', con diversas herramienta para realizar una gran variedad de tareas en Python. Ver por ejemplo, \href{http://docs.python.org.ar/tutorial/3/stdlib.html}{este tutorial} para breve introducción.
+
+\item En el módulo \texttt{glob} de la librería estándar está implementada la función \texttt{glob.glob}, que crea una \textit{lista} de los strings de los nombres de los archivos y/o carpetas disponibles en la carpeta del computador en la que se está ejecutando un programa. Para verificar esto, ejecute
+
+\begin{minted}[bgcolor=bg]{python}
+import glob
+
+lista_todos = glob.glob('*')
+print('Lista de todos los archivos y carpetas en la carpeta actual:')
+print(lista_todos)
+
+lista_py = glob.glob('*.py')
+print('Lista de todos los archivos .py en la carpeta actual:')
+print(lista_py)
+print('Numero total de archivos .py en la carpeta actual = ', len(lista_py))
+\end{minted}
+
+\item En el módulo \texttt{os} puede encontrar herramientas para manipular archivos. Por ejemplo \\ \texttt{os.rename(antiguo,nuevo)} renombra el archivo cuyo nombre original está dado por el string \texttt{antiguo} a un nuevo nombre correspondiente al string \texttt{nuevo}. Así, si en la carpeta donde se está ejecutando su programa existe un archivo llamado ``\texttt{01.py}'', entonces el comando 
+\begin{minted}[bgcolor=bg]{python}
+os.rename('01.py','01-old.py')
+\end{minted}
+
+lo renombrará a ``\texttt{01-old.py}''
+
+\item Note que el módulo \texttt{os} también implementa una función similar a \texttt{glob.glob}, llamada \texttt{os.listdir}. Para comprobarlo, ejecute
+\begin{minted}[bgcolor=bg]{python}
+os.listdir()
+\end{minted}
+
+\item Usando lo anterior, escriba un programa en Python que renombre todos los archivos de extensión \texttt{.txt} en una carpeta, asignándoles un nuevo nombre con un número correlativo (es decir `\texttt{01.txt}', `\texttt{02.txt}', `\texttt{03.txt}', etc.).
+\end{questions}
+
+\end{document} 
