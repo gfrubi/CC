@@ -1,4 +1,4 @@
-\documentclass[hyperref={colorlinks}]{beamer}
+\documentclass[hyperref={colorlinks},aspectratio=169]{beamer}
 
 \usepackage{graphicx}
 \usepackage{amsfonts,amsmath,color}       
@@ -94,12 +94,12 @@ GNU/Linux
 \section{Un poco de historia}
 \begin{frame}
     \frametitle{Software libre y GNU}
-    \begin{minipage}{.4\linewidth}
+    \begin{minipage}{.3\linewidth}
     \includegraphics[width=.9\linewidth]{figs/rms.jpeg}\\ 
     \centering\href{https://es.wikipedia.org/wiki/Richard_Stallman}{Richard Stallman}
     \end{minipage}
     \pause
-    \begin{minipage}{.55\linewidth}
+    \begin{minipage}{.65\linewidth}
     \begin{block}{Software libre}
         \begin{enumerate}
         \setcounter{enumi}{-1}
@@ -111,7 +111,7 @@ GNU/Linux
     \end{block}
     \pause
     \begin{block}{1984}
-        \begin{minipage}{.2\linewidth}
+        \begin{minipage}{.15\linewidth}
         \visible<3->{\includegraphics[width=1\linewidth]{figs/gnu.pdf}}
         \end{minipage}
         \begin{minipage}{.75\linewidth}
@@ -124,33 +124,33 @@ GNU/Linux
 \begin{frame}
     \frametitle{Linus Torvalds y Linux}
 
-    \begin{minipage}{.4\linewidth}
+    \begin{minipage}{.3\linewidth}
         \includegraphics[width=.9\linewidth]{figs/torvalds.jpeg}\\
         \centering\href{https://es.wikipedia.org/wiki/Linus_Torvalds}{Linus Torvalds}
     \end{minipage}
-    \begin{minipage}{.55\linewidth}
+    \begin{minipage}{.65\linewidth}
         \begin{block}{El problema}
             \begin{itemize}
                 \item
                     \begin{minipage}{.1\linewidth} \visible<1->{\includegraphics[width=.9\linewidth]{figs/i-3-unix.pdf}} \end{minipage}
-                    \begin{minipage}{.8\linewidth} En la universidad, es un apasionado de los sistemas Unix \end{minipage}
+                    \begin{minipage}{.85\linewidth} En la universidad, es un apasionado de los sistemas Unix \end{minipage}
                     \pause
                 \item
                     \begin{minipage}{.1\linewidth} \visible<2->{\includegraphics[width=.9\linewidth]{figs/pc-i386.png}} \end{minipage}
-                    \begin{minipage}{.8\linewidth} Compra un PC i386 \end{minipage}
+                    \begin{minipage}{.85\linewidth} Compra un PC i386 \end{minipage}
                     \pause
                 \item
                     \begin{minipage}{.1\linewidth} \visible<3->{\includegraphics[width=.9\linewidth]{figs/minix.pdf}} \end{minipage}
-                    \begin{minipage}{.8\linewidth} Instala Minix-Unix en su PC \end{minipage}
+                    \begin{minipage}{.85\linewidth} Instala Minix-Unix en su PC \end{minipage}
                     \pause
                 \item
                     \begin{minipage}{.1\linewidth} \visible<4->{\includegraphics[width=.9\linewidth]{figs/error.pdf}} \end{minipage}
-                    \begin{minipage}{.8\linewidth} Imposibilidad de modificar libremente Minix \end{minipage}
+                    \begin{minipage}{.85\linewidth} Imposibilidad de modificar libremente Minix \end{minipage}
                     \pause
             \end{itemize}
         \end{block}
     \begin{block}{1991}
-        \begin{minipage}{.2\linewidth}
+        \begin{minipage}{.1\linewidth}
         \visible<5->{\includegraphics[width=1\linewidth]{figs/tux.pdf}}
         \end{minipage}
         \begin{minipage}{.75\linewidth}
@@ -163,7 +163,7 @@ GNU/Linux
 \begin{frame}
 \frametitle{El desarrollo de GNU / Linux}
 \begin{center}
-    \includegraphics[width=.50\textwidth]{figs/tux21.png}
+    \includegraphics[width=.40\textwidth]{figs/tux21.png}
 \end{center}
 \begin{itemize}
 \item 1984 -- Nace el sistema operativo GNU
@@ -187,13 +187,13 @@ GNU/Linux
 
     \begin{itemize}
         \item
-            \begin{minipage}{.10\linewidth} \visible<1->{\includegraphics[width=.9\linewidth]{figs/no-cost.pdf}} \end{minipage} Gratuito \pause
+            \begin{minipage}{.10\linewidth} \visible<1->{\includegraphics[width=.5\linewidth]{figs/no-cost.pdf}} \end{minipage} Gratuito \pause
         \item
-            \begin{minipage}{.10\linewidth} \visible<2->{\includegraphics[width=.9\linewidth]{figs/servers.png}} \end{minipage} Soporte multiprocesadores y  multiplataforma \pause
+            \begin{minipage}{.10\linewidth} \visible<2->{\includegraphics[width=.5\linewidth]{figs/servers.png}} \end{minipage} Soporte multiprocesadores y  multiplataforma \pause
         \item
-            \begin{minipage}{.10\linewidth} \visible<3->{\includegraphics[width=.9\linewidth]{figs/apache.png}} \end{minipage} Servidores Web (Apache) \pause
+            \begin{minipage}{.10\linewidth} \visible<3->{\includegraphics[width=.5\linewidth]{figs/apache.png}} \end{minipage} Servidores Web (Apache) \pause
         \item
-            \begin{minipage}{.10\linewidth} \visible<4->{\includegraphics[width=.9\linewidth]{figs/redhat.png}} \end{minipage} Productos comerciales con hardware certificado 
+            \begin{minipage}{.10\linewidth} \visible<4->{\includegraphics[width=.5\linewidth]{figs/redhat.png}} \end{minipage} Productos comerciales con hardware certificado 
     \end{itemize}
 \end{frame}
 
@@ -413,7 +413,7 @@ GNU/Linux
 \begin{frame}\frametitle{Usando Linux}
 \begin{block}{Archivos y carpetas}
 \begin{itemize}
-\item Las extensiones no son imprescindibles (pero es útil usarlas).
+\item Las extensiones no son obligatorias (pero es útil usarlas).
 \item En Linux cualquier archivo puede ser ejecutable.
 \item Se distingue los nombres de archivos entre may'usculas y min'usculas.
 \item Los nombres de archivos pueden tener hasta de 256 caracteres.
