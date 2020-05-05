@@ -20,7 +20,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 01}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2020-1}
 \chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -35,12 +35,13 @@
 
 \begin{questions}
 
-\item Cada computador de los laboratorios Linux de nuestra Facultad est'a configurado con \textit{una cuenta com'un}, es decir, a la que potencialmente \textit{acceden todos los estudiantes} que hacen uso de ellos. Por esto, recuerde que \textbf{usted es responsable de traer los archivos que requiera para su trabajo, as'i como de respaldar su trabajo al final de cada sesi'on}.
+\item En este semestre las actividades prácticas oficiales del curso serán realizadas usando el servicio \href{https://cocalc.com}{Cocalc}, que suministra una plataforma virtual con herramientas de Linux, \LaTeX, Fortran y Python, entre otras. En esta plataforma podrá almacenar los archivos que usted creará durante el curso (aunque siempre es recomendable hacer una copia de respaldo en otro lugar). Como primer paso, cree una cuenta en \href{https://cocalc.com}{Cocalc}, ya sea registrando sus datos o bien usando sus credenciales ya existentes de Google, Facebook o Twitter.
 
-\item Antes de comenzar a trabajar la persona a cargo les mostrar\'a brevemente
-el escritorio (\href{http://www.xfce.org/?lang=es}{Xfce}) instalado en el sistema (Ubuntu, y en particular la variante \href{http://xubuntu.org/}{Xubuntu}) y las aplicaciones b\'asicas: navegador de archivos, editor de texto, consola virtual, etc.
+\item Una vez que haya ingresado a Cocalc, seleccione la opción ``Create New Project" (botón verde) y cree un nuevo proyecto titulado ``Linux", donde almacerará los archivos de su trabajo en el primer módulo (en prácticas futuras creará otros proyectos titulados ``LaTeX'', ``Fortran'' y ``Python'').
 
-\item Busque y abra la consola (virtual) de comandos o \textit{terminal}. En esta consola realice las siguientes tareas:
+\item Ingrese al proyecto ``Linux'' recién creado y luego seleccione ``Create or Upload Files'' y a continuación la opción ``\verb!>_! Linux terminal''. Con esto, Cocalc creará un terminal virtual dentro de su proyecto, titulado con la fecha de su creación. En esa consola virtual podrá realizar todos los ejercicios de comandos Bash propuestos a continuación.
+
+\item En el terminal vitual (o ``consola'') que creó en el punto anterior, realice las siguientes tareas:
 \begin{parts}
 \item Liste el contenido de su carpeta, ejecutando el comando 
 
@@ -48,15 +49,13 @@ el escritorio (\href{http://www.xfce.org/?lang=es}{Xfce}) instalado en el sistem
 ls
 \end{minted}
 
-Verifique que los archivos listados son los que est'an en la carpeta de usuario.
-
 \item Cree el directorio o carpeta \textbf{test1}, ejecutando el comando 
 
 \begin{minted}[bgcolor=bg]{bash}
 mkdir test1
 \end{minted}
 
-Verifique la creaci'on de la carpeta usando el navegador de archivos.
+Verifique la creaci'on de la carpeta ejecutando nuevamente el comando \texttt{ls}.
 
 \item Ingrese a la carpeta reci'en creada, ejecutando el comando 
 
@@ -66,14 +65,15 @@ cd test1
 
 y en su interior cree una nueva carpeta llamada \textbf{test2}.
 
-\item Usando un editor de texto cree un archivo ascii/UTF8 (es decir, de texto simple) con el nombre \textbf{archivo1.txt}, e ingrese como contenido su nombre completo.
+\item Mire \href{https://www.youtube.com/watch?v=4Cz8E71PYd4}{este} video en Youtube, donde se explican los comandos \texttt{man, nano, vi} y \texttt{wget}.
 
-\item Edite ahora el mismo archivo \textit{en la consola}, con el editor ``nano'', ejecutando el comando 
+\item Como vio en el video, en la consola de Linux están disponible (en la mayoría de las instalaciones) algunos \textit{editores de texto}. En particular, aprenderá a usar el editor ``nano''. Con este editor, puede crear y modificar archivos de texto (ascii/utf8). Por ejemplo, ejecutando el comando 
 
 \begin{minted}[bgcolor=bg]{bash}
 nano archivo1.txt
 \end{minted}
 
+usted ingresará al editor nano y podrá crear y/o modificar el archivo \texttt{archivo1.txt}.
  Explore las opciones de este editor de texto. ?`C'omo se guardan los archivos creados/modi\-fi\-ca\-dos?. ?`C'omo se sale del editor?.
 
 \item Mueva el archivo \textbf{archivo1.txt} a \textbf{archivo2.txt}, ejecutando el comando
@@ -117,7 +117,7 @@ cat *.txt
 Compruebe su respuesta con un ejemplo.
 \end{parts}
 
-\item Descargue el archivo \href{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}{Quijote.tar.gz}, disponible tambi'en en el \href{http://cc-cfm.blogspot.com}{blog del curso}. Este archivo contiene (en forma comprimida) cinco archivos correspondientes a algunas secciones iniciales de la obra ``Don Quijote de la Mancha"\, de Miguel de Cervantes. Abra una consola e ingrese (usando el comando \texttt{cd}) a la carpeta donde se encuentra el archivo descargado y realice las siguientes tareas:
+\item Descargue el archivo \href{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}{Quijote.tar.gz} (desde la dirección \url{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}) a su computador local y luego súbala a su proyecto en Cocalc. Para esto, ingrese a la pestaña ``Files'' en su proyecto y luego en ``Upload''. Este archivo contiene (en forma comprimida) cinco archivos correspondientes a algunas secciones iniciales de la obra ``Don Quijote de la Mancha"\, de Miguel de Cervantes. Abra una consola e ingrese (usando el comando \texttt{cd}) a la carpeta donde se encuentra el archivo descargado y realice las siguientes tareas:
 \begin{parts}
 \item Descomprima el archivo, usando el comando 
 
@@ -153,19 +153,8 @@ bash mi-script.sh
 \end{minted}
 \end{parts}
 
-\item Descargando y manipulando datos reales.
 
-\begin{parts}
-\item Desde el sitio del \textit{Supernova Cosmology Project} (un proyecto de colaboraci'on cient'ifica internacional que reune datos y estudios sobre explosiones de supernovas en el Universo, \url{http://supernova.lbl.gov/}), descargue el archivo de datos  \url{http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt}. En lugar de descargar este archivo usando el navegador, como es usual, h'agalo directamente desde la consola usando el comando \texttt{wget}. En particular, ejecute 
-
-\begin{minted}[bgcolor=bg]{bash}
-wget http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt
-\end{minted}
-
-\item El archivo descargado contiene datos reales correspondientes a la observaci'on de explosiones de Supernovas. Despliege el archivo usando el comando \texttt{more}. La primera columna lista el nombre de la supernova, que comienza con el a\~no en que fue observada. Otras columnas contienen datos f'isicos de relevancia como el m'odulo de distancia y el corrimiento hacia el rojo (redshift) medido para cada supernova. M'as adelante, en este curso, graficaremos estos datos (paciencia!). Note que el listado NO est'a ordenado por a\~no. 
-
-\item Usando comandos bash, encuentre todas las supernovas que fueron observadas el a\~no 2004, y almacene sus datos en un nuevo archivo, llamado \textbf{2004.txt}.
-\end{parts}
+\item Usando comandos Bash, encuentre todas líneas del texto del Quijote en las que se menciona la palabra ``Mancha'' (primera letra en mayúsculas!), y almacene el texto de estas líneas en el archivo \textbf{Manchas.txt}.
 
 
 \item Puede usar el tiempo restante para aprender sobre otros comandos Bash. Algunos de ellos est'an listados \href{https://es.wikipedia.org/wiki/Comandos_Bash}{este art{\'\i}culo de Wikipedia}.
