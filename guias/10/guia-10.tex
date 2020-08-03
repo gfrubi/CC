@@ -17,123 +17,212 @@
 \firstpageheadrule
 \runningheadrule
 \lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 10}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2020-1}
 \chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
 \cfoot{ }
-\lfoot{\tiny FB/GR}
+\lfoot{\tiny GR}
 \begin{flushleft}
 \vspace{0.2in}
 
 \vspace{0.25cm}
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Parte I, construcci\'on de arrays}
-Para  construir un array de dimensi\'on 1 (vector) que contiene valores espec\'ificos, los valores se pueden entregar list\'andolos, escribiendos uno a uno, o bien usando un bucle impl\'icito o una combinaci\'on de ambos:
-\begin{center}
-\begin{tabular}{llll}
-A = &(/ 1, 2, 3, 4, 5,6/) 		&! = (/1,2,3,4,5,6/) &¸\\
-B = &(/(i, i = 1,7)/)         		&! = (/1,2,3,4,5,6,7/)&\\
-C = &(/7, (i, i=1,4), 9/)     		&! = (/7,1,2,3,4,9/) & \\
-D = &(/(i**2, i = 1,6)/)		&! =(/1, 4, 9, 16, 25, 36/) & \\
-E = &(/((i+j, i=1,3), j=1,2)/)		&! = (/((1+j,2+j,3+j),j=1,2)/)	&! = (/2,3,4,3,4,5/) 
-\end{tabular} 
-\end{center}
 \begin{questions}
- \item 
-Escriba un programa en  fortran 90 que muestre en pantalla los valores de los vectores de A hasta E.
-\item 
-Escriba un programa en  fortran 90 que sume todos los vectores compatible del problema anterior y muestre el resultado en pantalla.
-\item 
-Funciones intr\'insecas para arrays. Aplicar las siguientes funciones a los vectores A hasta E:  a) \texttt{SUM(array)} b) \texttt{MAXVAL(array)} c) \texttt{MINVAL(array)} d) \texttt{PRODUCT(array)}. Discuta el resultado.
+\item  El lenguaje Python, además de ser usado para interpretar y ejecutar programas ya escritos (con extensión \texttt{.py}), puede ser usado en forma \textit{interactiva}, es decir, ingresando comandos que serán ejecutados inmediatamente en la consola. Para esto, realice las siguientes tareas:
 
-Para  construir un array de rango 2 (matriz) conteniendo valores especificados. Los valores se pueden dar list\'andolos o bien usando un bucle impl\'icito o una combinaci\'on de ambos:\\
-Ejemplo  integer F(3,3), G(2,2)
+\begin{parts}
+\item Abra una consola y ejecute el int'erprete de Python (es decir, ejecute el comando \texttt{python}, sin indicar un arhivo \texttt{.py}). ?`Qu'e versi'on de Python est'a instalada?
+\item Ejecute los siguientes comandos en forma consecutiva:
 
-\begin{tabular}{llll}
-F(1,1:3)& =& (/1, 3, 5/)    	&! ingresados por filas\\
-F(2,1:3)& = &(/2, 6, 10/) 	&! ingresados por filas\\
-F(3,1:3)& = &(/3, 9, 15/)	&! ingresados por filas\\
-G(1:2,1)& = &(/(2*i, i = 1,2)/)  &! ingresados por columnas\\
-G(1:2,2)& = &(/(3*i+2, i = 1,2)/)&! ingresados por columnas\\
-\end{tabular}
-\item 
-Escriba un programa que muestre en pantalla los valores de las matrices F y G
-\item 
-Escriba un programa que muestre en pantalla los valores de la suma de cada columna de las matrices F y G. Nota: usar \texttt{SUM(array, DIM=1)}.
-\item 
-Escriba un programa que muestre en pantalla los valores de la suma de cada fila de las matrices F y G. Nota, usar \texttt{SUM(array, DIM=2)}.
-\item 
-Escriba un programa que muestre en pantalla los m\'aximos valores de las matrices F y G, trabaje por columnas y filas. Nota, usar \texttt{MAXVAL(array, DIM=1)} y \texttt{MAXVAL(array, DIM=2)} repectivamente.
-\item 
-Dada una matriz A, explorar las operaciones aritm\'eticas para matrices de fortran 90, es decir, \texttt{A*A, A/A, A+A y A-A}, discuta el resultado.
-\item 
-Escriba un programa     que permita calcular el valor promedio de los elementos que pertenecen a un arreglo bidimensional A, de tipo real, utilizando la ecuaci\'on:
-$$prom=\dfrac{1}{m*n}\sum a_{ij}$$
-\\
-
-\noindent
-\section{Parte II, arrays din\'amicos y aplicaciones}
-Fortran 90 permite obtener y liberar memoria din\'amica a trav\'es de los arrays din\'amicos. Permite a los arrays locales a un procedimiento tener tama\~nos y formas diferentes en cada llamada a trav\'es de los vectores autom\'aticos. Reduce los recursos globales necesarios para almacenamiento en memoria.
-Ejemplo\\
-\begin{minted}[bgcolor=bg]{fortran}
-Program array_dinamicos
-   integer :: N
-   real, dimension(:,:), allocatable :: A
-   print*,"ingrese la extension de la matriz cuadrada"
-   read*, N
-   allocate(A(N,N))
-   do j=1,N
-     A(j,1:N)=(/(i, i=1,N)/)
-     print*,A(j,1:N)
-   end do
-   deallocate(A)
-end program 
+\begin{minted}[bgcolor=bg]{python}
+x = 1
+y = 2
+print(x,y)
+print("El valor de x es ",x," y el valor de y es ",y)
 \end{minted}
-\item 
-Escriba un programa, que ordene de mayor a menor 4 n\'umeros enteros que fueron ingresados por el(la) usuario(a).
-\item 
-Escriba un programa que permita ingresar un vector (arreglo unidimensional) de tipo entero desde el teclado y luego emitirlo por pantalla. Suponer: a) el n\'umero de elementos del arreglo es conocido; b) el n\'umero de elementos del arreglo no es conocido.  
-\item 
-Escriba un programa que permita calcular el promedio de un vector de tipo real de tama\~no $N$, previamente ingresado por teclado. 
-\item 
-Escriba un programa que permita calcular el producto escalar de dos vectores de tipo real de tama\~no $N$, compare su resultado con la funci\'on intr\'inseca  \texttt{DOT\_PRODUCT(arg1,arg2)}.
-\item     
-Escriba un programa que permita evaluar un polinomio $P_{n}(x)$ de la forma:
+\item ejecute \texttt{quit()} para salir del intérprete interactivo y volver a la consola (Bash).
+\item Vuelva a ingresar a una sesión interactiva de Python y ahora ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+sx = str(x)
+type(sx)
+\end{minted}
+
+?`Qu'e tipo de variable es \texttt{sx}? Entonces, ?`qu'e hace la funci'on \texttt{str()}?
+\item Ahora ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+mensaje = "El valor de x es " + str(x) + " y el valor de y es " + str(y)
+print(mensaje)
+\end{minted}
+
+?`Qu'e diferencia observa en el resultado?
+\item Conozca la funci'on \texttt{len()}, para esto ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+n = len(mensaje)
+print(n)
+type(n)
+\end{minted}
+
+?`Qu'e valor entrega la funci'on \texttt{len()} aplicada a un string\footnote{``String"\, es el nombre usado com'unmente para una \textit{cadena} de caracteres alfanum'ericos.}?, ?`Qu'e tipo de variable suministra? (pruebe aplic'andola a otros strings).
+
+\end{parts}
+\item Existen diversas operaciones definidas entre distintos tipos de variables. Para aprender c'omo funcionan algunas de ellas defina primero las siguientes variables y verifique su tipo:
+\begin{itemize}
+
+\begin{minted}[bgcolor=bg]{python}
+a = 3.14
+b = 2
+c = 5
+d = 6+2j
+e = "hola "
+f = "mechones"
+g = True
+\end{minted}
+A continuaci'on imprima el valor y el tipo del resultado de las siguientes operaciones: \texttt{a+b, a+d, a+e, b+c, b+d, b+e, f+e, e+f, a*b, a*d, a*e, b*c, b*d, c*e, e*f, a**b, a**d, a**e, b**c, e**a, e**b, e**f, a/b, a/d, a/e, b/c, b/d, b/e, c/b, d/a, d/b, e/a, e/b, e/f,  a*g, b*g, not(g), g and False, g and True, g or False, g or True}. ?`Cu'ales de estas operaciones no est'an definidas?
+\item ?`Qu'e pas'o en los casos \texttt{b/c} y \texttt{c/b}?. Busque en las referencias sugeridas la explicaci'on de este comportamiento.
+\item Tambi'en existen operaciones que transforman el tipo de variable. Por ejemplo, como continuaci'on del ejercicio anterior, calcule y verifique el tipo de las siguientes operaciones: \texttt{int(a), float(b), d.real, d.imag, a==b, a>b}.
+
+\item Cree un programa Python llamado \texttt{test01.py} e incluya como primeras l'ineas el siguiente c'odigo:
+
+\begin{minted}[bgcolor=bg]{python}
+print("Resolveremos la ecuacion a*x**2 + b*x + c = 0")
+a = float(input("Valor de a = "))
+b = float(input("Valor de b = "))
+c = float(input("Valor de c = "))
+\end{minted}
+
+Este peque\~no programa Python, al ser ejecutado con el comando \texttt{python test.py}, pregunta al usuario por los valores de las variables $a$, $b$ y $c$, que son asignadas como valores decimales (float). Ahora modifique el programa para que adem'as \textit{calcule e imprima} las dos soluciones de la ecuaci'on cuadr'atica, es decir, los valores 
 \begin{equation}
-P_{n}(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\ldots+a_{1}x^{1}+a_{0}x^{0},
+x_\pm=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
 \end{equation}
-suponiendo que los coeficientes $a_{n}$ son reales y  el entero $n$ son datos entregados por el(la) usuario(a).
-\item 
-Escriba un programa  que permita determinar el mayor de un arreglo de $N$ n\'umeros enteros ingresados por teclado.
-\item 
-Modifique el programa anterior para que determine el mayor y el menor de un arreglo de $N$ n\'umeros enteros.
-\item 
-Escriba un programa  que permita ingresar un arreglo bidimensional de tipo real desde el teclado y luego emitirlo por pantalla. Suponer que se conoce el tama\~no del arreglo.
+Para calcular la raiz cuadrada involucrada eleve el valor correspondiente la potencia $0.5$, es decir, use el hecho que $\sqrt{\alpha}=\alpha^{0.5}$.
+\end{itemize}
 
-\item 
-Escriba un programa que permita obtener la suma de los elementos de la diagonal principal y la suma de los elementos de la diagonal secundaria de una matriz cuadrada. 
-\begin{equation}
-A=\begin{bmatrix}
- 1&2&3\\
-4&5&6\\
-7&8&9\\
-\end{bmatrix}
-\end{equation}
-Ejemplo: En la matriz el vector $[1, 5, 9]$ es el que se obtiene a partir de la diagonal principal, y el vector $[3, 5, 7]$ el que se obtiene a partir de la diagonal secundaria. 
+\item Los caracteres individuales que forman una cadena alfanum'erica (string) pueden ser accesados usando el n'umero del \textit{'indice} correspondiente. En Python \textbf{el valor de los 'indices siempre comienza en 0}, luego 1, 2, etc. Para ilustrar esto, abra un int'erprete Python y ejecute los siguientes comandos:
 
-\item 
-Escriba un programa  que permita hacer la suma de dos matrices $A$ y $B$, suponer que las matrices son conocidas y compatibles.
-\item 
-Sea $A$ una matriz conocida, escriba un programa que obtenga la matriz resultante de la multiplicaci\'on de un escalar $K$ por $A$.
-\item 
-Dada una matriz $A(n,m)$ escriba un programa que obtenga la matriz transpuesta.
-\item 
-Escriba un programa  que permita hacer el producto de dos matrices $A$ y $B$, suponer que las matrices son conocidas. Comparar su resultado con la funci\'on \texttt{MATMUL(Arg1,Arg2)}.
-\item 
-Dada una matriz de $2\times 2$, obtenga el determinante.
+\begin{minted}[bgcolor=bg]{python}
+x = "Hola estudiantes de primer semestre"
+print(x[0])
+print(x[1])
+print(x[2])
+print(x[3])
+\end{minted}
 
+\item Como comprob'o anteriormente la funci'on \texttt{len()} entrega el largo del string, es decir, el n'umero de caracteres que contiene. Por lo tanto
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[len(x)-1])
+\end{minted}
+
+imprime el 'ultimo caracter del string, cuyo 'indice es \texttt{len(x)-1}, debido que el 'indice del primer caracter es 0. El mismo resultado, puede ser conseguido usando
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[-1])
+\end{minted}
+
+Similarmente,
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[-2])
+\end{minted}
+
+imprime el pen'ultimo caracter, y as'i sucesivamente. Por ejemplo, ejecute
+
+\begin{minted}[bgcolor=bg]{python}
+x[-3] == x[len(x)-3]
+\end{minted}
+
+para comprobar que se refieren al mismo caracter.
+
+\item Tambi'en es posible acceder a un subconjunto de caracteres del string usando, en nuestro caso, \texttt{x[inicio:fin:paso]}, donde \texttt{inicio} y \texttt{fin} son los 'indices de los caracteres iniciales y finales y \texttt{paso} es un entero que define el paso. Si \texttt{paso} no es ingresado, el int'erprete considera que \texttt{paso = 1} . Por ejemplo, ejecute y verifique qu'e hacen los siguientes comandos
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[0:4:1])
+print(x[0:4])
+print(x[5:16])
+print(x[1:20:2])
+\end{minted}
+
+Note que el caracter correspondiente al 'indice \texttt{fin} \underline{NO} es desplegado. En lenguaje matem'atico podr'iamos decir que \texttt{x[inicio:fin]} suministra los caracteres de \texttt{x} con 'indices en el intervalo desde \texttt{inicio} \textit{cerrado} hasta \texttt{fin} \textit{abierto}.
+
+\item Adem'as, si no se especifica \texttt{inicio} se asume el valor 0 (inicio del string) y si no se especifica \texttt{fin} se asume el valor \texttt{len(x)} (fin del string). Verifique esto ejecutando:
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[:4])
+print(x[5:])
+print(x[5:-3])
+print(x[::-1])
+\end{minted}
+
+\item \textbf{Bonus track}: 
+
+?`Qu'e hace cada uno de los siguientes comandos?, ?`Modifican el valor de \texttt{x}?
+
+\begin{minted}[bgcolor=bg]{python}
+x.upper()
+x.replace("a","e")
+x.find("p")
+x.find("semestre")
+\end{minted}
+
+\item Otro concepto muy importante en Python es el de \textit{listas}. Las listas son  similares a las cadenas, excepto que cada elemento puede ser de un tipo diferente. La sintaxis para crear listas en Python es [..., ..., ...]. Por ejemplo, ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+lista = [1, "hola", 1.0, 1-1j, True]
+type(lista)
+print(lista)
+\end{minted}
+
+Como puede ver, la variable \texttt{lista} es un nuevo tipo de objeto: `list'. En este caso, es una lista cuyos elementos son un entero, un string, un float, un complejo, y un booleano. Para verificar esto, imprima el valor y el tipo de cada elemento de la lista. Por ejemplo,
+
+\begin{minted}[bgcolor=bg]{python}
+print(lista[0],type(lista[0]))
+print(lista[1],type(lista[1]))
+\end{minted}
+
+Este ejemplo tambi'en muestra que los 'indices de cada elemento de la lista son numerados de la misma manera que en un string:
+
+\begin{minted}[bgcolor=bg]{python}
+print(lista[0:3])
+print(lista[::2])
+\end{minted}
+
+\item Los elementos de una lista pueden tener cualquier tipo reconocido por Python, por ejemplo, pueden ser otra lista!:
+
+\begin{minted}[bgcolor=bg]{python}
+superlista = ["cool",lista]
+print(superlista)
+\end{minted}
+
+Imprima el valor y el tipo de cada elementos de esta lista. ?`Cu'antos elementos tiene la lista \texttt{superlista}? (respuesta, use la funci'on \texttt{len()}).
+
+\item Existen diversas funciones en Python que crean listas. La funci'on \texttt{list()} crea una lista, por ejemplo, a partir de un string. Usando el string \texttt{x} definido anteriormente, ejecute
+
+\begin{minted}[bgcolor=bg]{python}
+y = list(x)
+print(y)
+print(type(y))
+\end{minted}
+
+\item Otra funci'on que crea listas 'utiles, esta vez de n'umeros \textit{enteros}, es \texttt{range(inicio,fin,paso)}, que crea una lista de valores desde \texttt{inicio} (cerrado) hasta \texttt{fin} (abierto!!), con paso \texttt{paso}. Ejecute,
+
+\begin{minted}[bgcolor=bg]{python}
+z = list(range(2,26,3))
+print(z)
+\end{minted}
+
+\item ?`Qu'e hacen los siguientes comandos?, ?`Modifican el valor de \texttt{x} y/o \texttt{lista}?
+
+\begin{minted}[bgcolor=bg]{python}
+x.split(" ")
+x.split("e")
+lista.append("chao")
+lista.insert(2,"cool")
+\end{minted}
 
 \end{questions}
-%
-\end{document}
+
+
+\end{document} 
