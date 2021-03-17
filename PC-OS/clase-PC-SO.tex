@@ -20,7 +20,7 @@
 
 
 
-\title[PC-OS]{Introducci'on a la Inform'atica: \\
+\title[PC-OS]{Introducción a la Informática: \\
 Hardware, Software y Sistemas Operativos}
 \author[G.R.]{Guillermo F. Rubilar}
 \frame{\titlepage}
@@ -34,24 +34,24 @@ Hardware, Software y Sistemas Operativos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introducci\'on}
-\begin{frame}[fragile]\frametitle{Sistema Inform'atico}
+\section{Introducción}
+\begin{frame}[fragile]\frametitle{Sistema Informático}
 \begin{figure}
 \begin{center}
 \includegraphics[height=3cm]{figs/notebook.jpg}\hspace{1cm}\includegraphics[height=3cm]{figs/desktop.jpg}
 \end{center}
-\caption{Sistema Inform'atico: Sistema de procesamiento de la informaci'on basado en computadores}
+\caption{Sistema Informático: Sistema de procesamiento de la información basado en computadores}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Computador}
 \begin{itemize}
-\item M'aquina capaz de aceptar datos a trav'es de un medio de entrada, procesarlos autom'aticamente bajo el control de un programa previamente almacenado, y proporcionar la informaci'on resultante a trav'es de un medio de salida
+\item Máquina capaz de aceptar datos a través de un medio de entrada, procesarlos automáticamente bajo el control de un programa previamente almacenado, y proporcionar la información resultante a través de un medio de salida.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Inform'atica}
-La Inform'atica se ocupa de la informaci'on como materia esencial de estudio; con esta informaci'on es necesario:
+\begin{frame}[fragile]\frametitle{Informática}
+La Informática se ocupa de la información como materia esencial de estudio; con esta información es necesario:
 \begin{itemize}
 \item \textbf{Representarla} en forma eficiente y automatizable.
 \item \textbf{Retransmitirla} sin errores ni pérdidas.
@@ -142,7 +142,19 @@ Dec& Bin  & & & Dec& Bin\\ \hline
 \end{frame}
 \begin{frame}[fragile]\frametitle{Ventajas del Sistema Binario}
 \begin{itemize}
-	\item \textbf{Sentido de magnetización}: distinguir entre distintos valores de campo magnético es complicado; distinguir entre magnetización Norte--Sur y su contraria Sur--Norte es mucho más fácil y fiable.
+	\item \textbf{Sentido de magnetización}: Los dispositivos magnéticos de almacenamiento usan el \textit{sentido de magnetización} de un material magnetizable.
+	\begin{figure}
+		\begin{center}
+		\includegraphics[height=2.7cm]{figs/1280px-Laptop-hard-drive-exposed.jpg}	\includegraphics[height=2.7cm]{figs/1280px-Hard_disk_platters_and_head.jpg}\hspace{0.3cm}\includegraphics[height=2.7cm]{figs/HardDrivesGrainsSEM100nm-300x225.jpg}
+		\end{center}
+	%	\caption{Originales en https://es.wikipedia.org/wiki/Unidad_de_disco_duro y https://volga.eng.yale.edu/teaching-resources/hard-drives/methods-and-materials}
+		\end{figure}
+		\begin{figure}
+			\begin{center}
+			\includegraphics[height=2.5cm]{figs/Recording_Diagram.png}
+			\end{center}
+		%	\caption{Original en https://en.wikipedia.org/wiki/Magnetic_storage#/media/File:Perpendicular_Recording_Diagram.svg}
+			\end{figure}
 \end{itemize}
 \end{frame}
 \begin{frame}[fragile]\frametitle{Medidas de Información}
@@ -157,11 +169,11 @@ Un byte puede por lo tanto adoptar $2^8=256$ estados (valores) distintos.
 
 
 \begin{frame}[fragile]\frametitle{Medidas de Información: Múltiplos (k, M, G,...)}
-A partir de la propuesta en de la \href{https://es.wikipedia.org/wiki/Comisi%C3%B3n_Electrot%C3%A9cnica_Internacional}{Comisi\'on Electrot\'ecnica Internacional} (IEC) en 1998:
+A partir de la propuesta en de la \href{https://es.wikipedia.org/wiki/Comisi%C3%B3n_Electrot%C3%A9cnica_Internacional}{Comisión Electrotécnica Internacional} (IEC) en 1998:
 \begin{itemize}
 	\item \textbf{k} es la abreviatura de \textbf{kilo}, y representa un factor de multiplicación de mil, es decir $10^3$. Así que 1 kbit = 1000 bits y 1 kbyte = 1000 bytes = 8000 bits. 
 	
-	\item La \textbf{M} es la abreviatura de \textbf{Mega} y representa el factor de multiplicación de un mill\'on, $10^{6}= $1.000.000.
+	\item La \textbf{M} es la abreviatura de \textbf{Mega} y representa el factor de multiplicación de un millón, $10^{6}= $1.000.000.
 	
 	\item La \textbf{G} es abreviatura de \textbf{Giga} y representa el factor de multiplicación de mil millones, $10^{9} = $1.000.000.000.
 \end{itemize}
@@ -171,17 +183,38 @@ A partir de la propuesta en de la \href{https://es.wikipedia.org/wiki/Comisi%C3%
 \begin{frame}[fragile]\frametitle{Medidas de Información: Múltiplos (k, M, G,...)}
 
 \begin{block}{}
-\textbf{Cuidado!:} Estas definiciones a'un no son 100\% adoptadas, ya que anteriormente se prefer'ia usar una base binaria, de modo que la definici\'on previa a 1998 era: 1kB = $2^{10}$ B $=1024$ B, 1MB $=2^{20}$B = 1.048.576 B y 1GB $=2^{30}$B = 1.073.741.824 B, etc. 
+\textbf{Cuidado!:} Estas definiciones aún no son 100\% adoptadas, ya que anteriormente se prefería usar una base binaria, de modo que la definición previa a 1998 era: 1kB = $2^{10}$ B $=1024$ B, 1MB $=2^{20}$B = 1.048.576 B y 1GB $=2^{30}$B = 1.073.741.824 B, etc. 
 \end{block}
 
 \begin{block}{}
 Estas viejas definiciones son ahora denotadas como kiB (kibibite), MiB (mebibyte) y  Gib (gibibyte) respectivamente. 
 \end{block}
 \begin{block}{}
-As'i, por ejemplo, 1 MiB = 1.048.576 B = 1,048576 MB.
+Así, por ejemplo, 1 MiB = 1.048.576 B = 1,048576 MB.
 \end{block}
-Ver \url{https://es.wikipedia.org/wiki/Kibibyte} para m'as informaci'on.
+Ver \url{https://es.wikipedia.org/wiki/Kibibyte} para más información.
 \end{frame}
+
+\section{Operaciones}
+\begin{frame}\frametitle{Operaciones}
+	\begin{center}
+	\begin{tabular}{cr}
+	  & CXXIII \\
+	  & LXXXIV \\ \hline
+	+ & CCVII\\
+	\end{tabular}\hspace{2cm}
+	\begin{tabular}{cr}
+		& 123 \\
+		& 84 \\ \hline
+	  + & 207\\
+	  \end{tabular}\hspace{2cm}
+	  \begin{tabular}{cr}
+		& 1111011 \\
+		& 1010100 \\ \hline
+	  + & 11001111\\
+	  \end{tabular}
+	\end{center}
+\end{frame}	
 
 \section{Caracteres}
 \begin{frame}[fragile]\frametitle{Caracteres}
@@ -195,7 +228,7 @@ Ver \url{https://es.wikipedia.org/wiki/Kibibyte} para m'as informaci'on.
 		\item \textbf{Numéricos}: los dígitos numéricos del 0 al 9.
 		\item \textbf{Especiales}: todos los restantes (signos de puntuación, signos monetarios, signos de operaciones aritméticas, etc).
 	\end{itemize}
-	\item Normalmente, en un computador, para representar un carácter se usa 1 byte de informaci'on.
+	\item Normalmente, en un computador, para representar un carácter se usa 1 byte de información.
 \end{itemize}
 \end{frame}
 
@@ -213,27 +246,27 @@ Ver \url{https://es.wikipedia.org/wiki/Kibibyte} para m'as informaci'on.
 
 \begin{frame}[fragile]\frametitle{Código de caracteres ASCII}
 \begin{itemize}
-\item Los (95) caracteres imprimibles m'as usados en inform'atica:
+\item Los (95) caracteres imprimibles más usados en informática:
 \begin{verbatim}
   ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 
   : ; < = > ? @ A B C D E F G H I J K L M N O P Q R 
   S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k 
   l m n o p q r s t u v w x y z { | } ~ 
 \end{verbatim}
-\item ASCII ordena estos caracteres asoci'andoles un n'umero entre el 32 y el 126. 
-\item Otros 32 caracteres no imprimibles, asociados a n'umeros 0 al 31. Representan acciones sobre el texto o el computador. P. ej, activar may'usculas (14) o el pulsar la tecla Suprimir (127). 
+\item ASCII ordena estos caracteres asociándoles un número entre el 32 y el 126. 
+\item Otros 32 caracteres no imprimibles, asociados a números 0 al 31. Representan acciones sobre el texto o el computador. P. ej, activar mayúsculas (14) o el pulsar la tecla Suprimir (127). 
 \item Listado completo, $32+95 = 127$ caracteres en \href{https://es.wikipedia.org/wiki/ASCII}{Wikipedia}.
 
-\item ASCII original no incorpora 'a'e'i'o'u, ni  \~n. Se crearon extensiones de 8 bits del c'odigo ASCII que incorporan estos y otros caracteres, p.ej. c'odigo \href{https://es.wikipedia.org/wiki/ISO/IEC_8859-1}{ISO 8859-1}.
+\item ASCII original no incorpora áéíóú, ni  \~n. Se crearon extensiones de 8 bits del código ASCII que incorporan estos y otros caracteres, p.ej. código \href{https://es.wikipedia.org/wiki/ISO/IEC_8859-1}{ISO 8859-1}.
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Unicode/UTF-8}
 \begin{itemize}
-\item Otro est'andar de codificaci'on de caracteres crecientemente popular es \href{https://es.wikipedia.org/wiki/Unicode}{Unicode}. 
-\item Dise\~nado para dar soporte a m'ultiples lenguajes, incluyendo caracteres árabes, japoneses, chinos, griegos, y tambi'en s'imbolos matem'aticos, t'ecnicos, musicales y de otros tipos, incluidos emoticones! 
-\item Hoy Unicode posee (versi'on 5.1) 100.713 caracteres, ver p'agina oficial del \href{http://www.unicode.org/charts/}{Consorcio Unicode}, encargado de mantener y actualizar este est'andar. 
-\item Una de las implementaciones m'as populares de Unicode es la codificaci'on \href{https://es.wikipedia.org/wiki/UTF-8}{UTF-8} (``8-bit Unicode Transformation Format'', es decir ``Formato de transformaci'on Unicode de 8-bits"). La codificaci'on UTF-8 es la m'as popular en la web.
+\item Otro estándar de codificación de caracteres crecientemente popular es \href{https://es.wikipedia.org/wiki/Unicode}{Unicode}. 
+\item Dise\~nado para dar soporte a múltiples lenguajes, incluyendo caracteres árabes, japoneses, chinos, griegos, y también símbolos matemáticos, técnicos, musicales y de otros tipos, incluidos emoticones! 
+\item Hoy Unicode posee (versión 5.1) 100.713 caracteres, ver página oficial del \href{http://www.unicode.org/charts/}{Consorcio Unicode}, encargado de mantener y actualizar este estándar. 
+\item Una de las implementaciones más populares de Unicode es la codificación \href{https://es.wikipedia.org/wiki/UTF-8}{UTF-8} (``8-bit Unicode Transformation Format'', es decir ``Formato de transformación Unicode de 8-bits"). La codificación UTF-8 es la más popular en la web.
 \end{itemize}
 \end{frame}
 
@@ -266,10 +299,10 @@ Ver \url{https://es.wikipedia.org/wiki/Kibibyte} para m'as informaci'on.
 Una licencia es un \textit{contrato} que estipula los derechos y deberes del creador o distribuidor del software y el usuario
 \end{block}
 \begin{block}{}
-T'ipicamente, la licencia estipula bajo qu'e condiciones el usuario puede:
+Típicamente, la licencia estipula bajo qué condiciones el usuario puede:
 \begin{itemize}
 \item Usar el software.
-\item Modificar el software (requiere c'odigo fuente).
+\item Modificar el software (requiere código fuente).
 \item Distribuir copias del software y sus modificaciones.
 \end{itemize}
 \end{block}
@@ -280,10 +313,10 @@ T'ipicamente, la licencia estipula bajo qu'e condiciones el usuario puede:
 \begin{block}{Tipos de Licencias}
 Dependiendo de las restricciones que el autor imponga sobre cada uno de estos tres aspectos, es posible clasificar un determinado software en dos grandes grupos:
 \begin{itemize}
-\item \textbf{Software Propietario}: El autor restringe alguno de los aspectos anteriores. P.ej. permite el uso gratuito del software y su distribuci'on, pero no su modificaci'on (Freeware).
-\item \textbf{Software Libre}: El autor permite tanto el uso y la modificaci'on del software, as'i como la distribuci'on de copias.
+\item \textbf{Software Propietario}: El autor restringe alguno de los aspectos anteriores. P.ej. permite el uso gratuito del software y su distribución, pero no su modificación (Freeware).
+\item \textbf{Software Libre}: El autor permite tanto el uso y la modificación del software, así como la distribución de copias.
 \end{itemize}
 \end{block}
-Para m'as informaci'on, ver art'iculo en \href{https://es.wikipedia.org/wiki/Licencia_de_software}{Wikipedia}.
+Para más información, ver artículo en \href{https://es.wikipedia.org/wiki/Licencia_de_software}{Wikipedia}.
 \end{frame}
 \end{document}
