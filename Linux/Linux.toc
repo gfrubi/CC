@@ -1,7 +1,0 @@
-\babel@toc {spanish}{}
-\beamer@sectionintoc {1}{Un poco de historia}{3}{0}{1}
-\beamer@sectionintoc {2}{Linux hoy}{12}{0}{2}
-\beamer@subsectionintoc {2}{1}{Distribuciones}{17}{0}{2}
-\beamer@subsectionintoc {2}{2}{Componentes de GNU/Linux}{20}{0}{2}
-\beamer@subsectionintoc {2}{3}{Archivos y Procesos}{24}{0}{2}
-\beamer@subsectionintoc {2}{4}{Bash}{40}{0}{2}
