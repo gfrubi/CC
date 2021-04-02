@@ -1,0 +1,12 @@
+\frametitle{Licencias de Software}
+\begin{block}{}
+Una licencia es un \textit{contrato} que estipula los derechos y deberes del creador o distribuidor del software y el usuario
+\end{block}
+\begin{block}{}
+Típicamente, la licencia estipula bajo qué condiciones el usuario puede:
+\begin{itemize}
+\item Usar el software.
+\item Modificar el software (requiere código fuente).
+\item Distribuir copias del software y sus modificaciones.
+\end{itemize}
+\end{block}

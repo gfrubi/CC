@@ -1,0 +1,51 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Un poco de historia}{3}{Un poco de historia}{0}}
+\headcommand {\slideentry {1}{0}{1}{3/5}{}{0}}
+\headcommand {\beamer@framepages {3}{5}}
+\headcommand {\slideentry {1}{0}{2}{6/10}{}{0}}
+\headcommand {\beamer@framepages {6}{10}}
+\headcommand {\slideentry {1}{0}{3}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@sectionpages {3}{11}}
+\headcommand {\beamer@subsectionpages {3}{11}}
+\headcommand {\sectionentry {2}{Linux hoy}{12}{Linux hoy}{0}}
+\headcommand {\slideentry {2}{0}{1}{12/15}{}{0}}
+\headcommand {\beamer@framepages {12}{15}}
+\headcommand {\slideentry {2}{0}{2}{16/16}{}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@subsectionpages {12}{16}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{17}{Distribuciones}}
+\headcommand {\slideentry {2}{1}{1}{17/17}{Distribuciones}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{1}{2}{18/18}{Distribuciones}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{1}{3}{19/19}{Distribuciones}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@subsectionpages {17}{19}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{20}{Componentes de GNU/Linux}}
+\headcommand {\slideentry {2}{2}{1}{20/23}{Componentes de GNU/Linux}{0}}
+\headcommand {\beamer@framepages {20}{23}}
+\headcommand {\beamer@subsectionpages {20}{23}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{24}{Archivos y Procesos}}
+\headcommand {\slideentry {2}{3}{1}{24/24}{Archivos y Procesos}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {2}{3}{2}{25/38}{Archivos y Procesos}{0}}
+\headcommand {\beamer@framepages {25}{38}}
+\headcommand {\slideentry {2}{3}{3}{39/39}{Archivos y Procesos}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\beamer@subsectionpages {24}{39}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{40}{Bash}}
+\headcommand {\slideentry {2}{4}{1}{40/40}{Bash}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {2}{4}{2}{41/41}{Bash}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@partpages {1}{41}}
+\headcommand {\beamer@subsectionpages {40}{41}}
+\headcommand {\beamer@sectionpages {12}{41}}
+\headcommand {\beamer@documentpages {41}}
+\headcommand {\gdef \inserttotalframenumber {16}}

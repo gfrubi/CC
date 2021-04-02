@@ -1,0 +1,6 @@
+\babel@toc {spanish}{}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
+\beamer@sectionintoc {2}{Medidas de Informaci\IeC {\'o}n}{8}{0}{2}
+\beamer@sectionintoc {3}{Operaciones}{16}{0}{3}
+\beamer@sectionintoc {4}{Caracteres}{17}{0}{4}
+\beamer@sectionintoc {5}{Licencias de Software}{21}{0}{5}
