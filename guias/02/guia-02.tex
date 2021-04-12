@@ -19,7 +19,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 02}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2020-1}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2021-1}
 \chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -42,7 +42,21 @@
 \item Cambie el nombre a algún archivo que haya creado para convertirlo en archivo oculto. Verifique que ahora \texttt{ls} no lo lista por defecto.
 \end{parts}
 
+\item Entre las funcionalidades más interesantes y útiles del uso de comandos en Linux es el de las ``tuberías'' (``pipes" en inglés), que permiten redireccionar el resultado de un comando (su ``salida") a (la ``entrada" de) otro. Para esto, usamos el símbolo \texttt{|}. Por ejemplo, el comando
+\begin{minted}[bgcolor=bg]{bash}
+history | grep cd
+\end{minted}
+redirige la salida del comando \texttt{history} (que despliega el historial de comandos que ha ejecutado) al comando \texttt{grep} que entonces buscará la parabra \texttt{cd} en el texto generado por \texttt{history}. Compruebe lo anterior ejecutando el comando \texttt{history} por separado y luego el comando compuesto mostrado arriba.
+
+\item También es posible redireccionar la salida de un comando a un archivo, usando el caracter \texttt{>}. Verifique que el comando
+\begin{minted}[bgcolor=bg]{bash}
+history > historial.txt
+\end{minted}
+redirecciona la salida del comando \texttt{history} a un (nuevo) archivo con nombre \texttt{historial.txt}. ¿Qué ocurre si ese archivo ya existía?.
+
 \item Investigue qué efecto tiene la opción \texttt{-o} en el comando \texttt{grep} y ejecute algunos comandos de prueba para verificar su funcionamiento. Luego de esto, ejecute comandos \texttt{Bash} que cuenten cuántas veces se repite la letra ``a'' en el extracto de el Quijote que usó en la \href{https://github.com/gfrubi/CC/tree/master/guias/01}{guía 01} (archivos \texttt{c1.txt} a \texttt{c5.txt}). Si usó las característias de redireccionamiento de \texttt{Bash} (el caracter \texttt{|}) debiese realizar esta tarea con una única línea de comando.
+
+\item Vea \href{https://youtu.be/VSH1XpWN1us}{este video} para aprender un poco más sobre el uso de \texttt{|}. Reproduzca/adapte los ejemplos ahí mostrados.
 
 \item El comando \texttt{echo} despliega en la salida principal (la pantalla) un mensaje de texto indicado.
 \begin{parts}
