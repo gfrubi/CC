@@ -36,13 +36,13 @@
 
 \item En Linux, los archivos cuyo nombre comienzan con un punto (es decir, el caracter ``.'') son considerados como ``archivos ocultos'', que por defecto no son listados por el comando \texttt{ls} (ni por los administradores gráficos de archivos). Aparte de esta característica, son archivos normales, pero que son usados como archivos de configuración del sistema o de algunos programas. La opción \texttt{-a} del comando \texttt{ls} es usada para listar todos los archivos en una carpeta, incluyendo los ocultos. Usando comandos \texttt{Bash}, realice las siguientes tareas
 \begin{parts}
-\item Liste todos los archivos de la carpeta principal en los computadores del laboratorio, incluyendo los ocultos.
+\item Liste todos los archivos de la carpeta en la que está trabajando (p.ej. en su proyecto de Cocalc), incluyendo los ocultos.
 \item Filtre la lista de archivo, usando el comando \texttt{grep}, para listar sólo los archivos ocultos.
 \item Guarde la lista obtenida en el punto anterior en un nuevo archivo con nombre \texttt{ocultos.txt}.
 \item Cambie el nombre a algún archivo que haya creado para convertirlo en archivo oculto. Verifique que ahora \texttt{ls} no lo lista por defecto.
 \end{parts}
 
-\item Entre las funcionalidades más interesantes y útiles del uso de comandos en Linux es el de las ``tuberías'' (``pipes" en inglés), que permiten redireccionar el resultado de un comando (su ``salida") a (la ``entrada" de) otro. Para esto, usamos el símbolo \texttt{|}. Por ejemplo, el comando
+\item Entre las funcionalidades más interesantes y útiles del uso de comandos en Linux es el de las ``tuberías'' (``pipes"\ en inglés), que permiten redireccionar el resultado de un comando (su ``salida") a (la ``entrada" de) otro. Para esto, usamos el símbolo \texttt{|}. Por ejemplo, el comando
 \begin{minted}[bgcolor=bg]{bash}
 history | grep cd
 \end{minted}
@@ -54,6 +54,14 @@ history > historial.txt
 \end{minted}
 redirecciona la salida del comando \texttt{history} a un (nuevo) archivo con nombre \texttt{historial.txt}. ¿Qué ocurre si ese archivo ya existía?.
 
+\item Borre el archivo creado en el punto anterior con el comando \texttt{rm}, ejecutando
+\begin{minted}[bgcolor=bg]{bash}
+rm historial.txt
+\end{minted}
+Aprenda un poco más sobre las opciones disponibles para este comando llamando a su manual en la consola, por medio de
+\begin{minted}[bgcolor=bg]{bash}
+man rm
+\end{minted}
 \item Investigue qué efecto tiene la opción \texttt{-o} en el comando \texttt{grep} y ejecute algunos comandos de prueba para verificar su funcionamiento. Luego de esto, ejecute comandos \texttt{Bash} que cuenten cuántas veces se repite la letra ``a'' en el extracto de el Quijote que usó en la \href{https://github.com/gfrubi/CC/tree/master/guias/01}{guía 01} (archivos \texttt{c1.txt} a \texttt{c5.txt}). Si usó las característias de redireccionamiento de \texttt{Bash} (el caracter \texttt{|}) debiese realizar esta tarea con una única línea de comando.
 
 \item Vea \href{https://youtu.be/VSH1XpWN1us}{este video} para aprender un poco más sobre el uso de \texttt{|}. Reproduzca/adapte los ejemplos ahí mostrados.
