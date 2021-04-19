@@ -16,9 +16,9 @@
 
 \begin{document}
 
-\title[\LaTeX]{Introducci\'on a \LaTeX}
+\title[\LaTeX]{Introducción a \LaTeX}
 \author[G.R.]{{Guillermo F. Rubilar} \\ \tiny (Basado en el Tutorial de \LaTeX ,\\
-por Juan Antonio Navarro P\'{e}rez, \\Universidad de las Am\'{e}ricas - Puebla)}
+por Juan Antonio Navarro Pérez, \\Universidad de las Américas - Puebla)}
 \frame{\titlepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,12 +30,12 @@ por Juan Antonio Navarro P\'{e}rez, \\Universidad de las Am\'{e}ricas - Puebla)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introducci\'on}
+\section{Introducción}
 \begin{frame}[fragile]\frametitle{?`\TeX{} y \LaTeX?}
 \begin{itemize}
-\item \href{https://es.wikipedia.org/wiki/TeX}{\TeX{}} (1978) es un sistema profesional de \emph{composici'on tipogr'afica} desarrollado
+\item \href{https://es.wikipedia.org/wiki/TeX}{\TeX{}} (1978) es un sistema profesional de \emph{composición tipográfica} desarrollado
 por \href{https://es.wikipedia.org/wiki/Donald_Knuth}{Donald E. Knuth} (1938, prof. emérito U. Stanford).
-\item \TeX{} fue dise\~nado para producir documentos (especialmente con expresiones matem'aticas) con la m'as alta \emph{calidad de imprenta}.
+\item \TeX{} fue dise\~nado para producir documentos (especialmente con expresiones matemáticas) con la más alta \emph{calidad de imprenta}.
 \item \href{https://es.wikipedia.org/wiki/LaTeX}{\LaTeX}\ es un \emph{sistema de macros}, desarrollado sobre \TeX{} por \href{https://es.wikipedia.org/wiki/Leslie_Lamport}{Leslie Lamport} (1983), para facilitar su uso por parte de los autores.
 \end{itemize}
 \end{frame}
@@ -60,7 +60,7 @@ por \href{https://es.wikipedia.org/wiki/Donald_Knuth}{Donald E. Knuth} (1938, pr
 \\
 
 $\bullet$ WYSIWYG            & $\bullet$ Preprocesado          \\
-$\bullet$ Muy f'acil de usar & $\bullet$ No siempre f'acil     \\
+$\bullet$ Muy fácil de usar & $\bullet$ No siempre fácil     \\
 $\bullet$ Facilidades para insertar objetos 
                              & $\bullet$ Limitaciones por formatos de archivo \\[1ex]
 $\bullet$ Lento y malo para tratar expresiones matemáticas
@@ -74,8 +74,8 @@ $\bullet$ 'Enfasis en Dise\~no & $\bullet$ Énfasis en Contenido
 \begin{itemize}
 \item Produce documentos con calidad de imprenta.
 \item Utilizado por editoriales, revistas y congresos especializados.
-\item Indispensable para f'isic@s, geof'isic@s, astr'onom@s, matem'atic@s, etc.
-\item Es la mejor opci'on para escribir su \emph{tesis}!.
+\item Indispensable para f'isic@s, geof'isic@s, astrónom@s, matemátic@s, etc.
+\item Es la mejor opción para escribir su \emph{tesis}!.
 \end{itemize}
 \begin{center}
 	\includegraphics[height=5cm]{figs/LaTeX_vs_Word.pdf}
@@ -89,11 +89,11 @@ $\bullet$ 'Enfasis en Dise\~no & $\bullet$ Énfasis en Contenido
 
 \bigskip
 \begin{block}{}
-La persona que escribe debe de preocuparse del \textit{contenido} de sus documentos, y no (directamente) de la \textit{apariencia} que 'estos tendr'an en el resultado final.
+La persona que escribe debe de preocuparse del \textit{contenido} de sus documentos, y no (directamente) de la \textit{apariencia} que 'estos tendrán en el resultado final.
 \end{block}
 \end{frame}
 
-\section{Edici\'on B\'asica}
+\section{Edición Básica}
 
 
 \begin{frame}[fragile]\frametitle{Mi primer documento}
@@ -112,21 +112,21 @@ Hola. Este es mi primer documento.
 \end{block}
 \end{frame}
 
-%\begin{frame}[fragile]\frametitle{Proceso de compilaci'on}
+%\begin{frame}[fragile]\frametitle{Proceso de compilación}
 %\vspace{0.6cm}
 %\begin{center}
 %	\scalebox{0.8}{\input{compilado.tex}}
 %\end{center}
 %\end{frame}
 
-%\begin{frame}[fragile]\frametitle{Obtenci'on de PDF}
+%\begin{frame}[fragile]\frametitle{Obtención de PDF}
 %\vspace{0.6cm}
 %\begin{center}
 %	\scalebox{0.8}{\input{compilado2.tex}}
 %\end{center}
 %\end{frame}
 
-\begin{frame}[fragile]\frametitle{Proceso de compilaci'on}
+\begin{frame}[fragile]\frametitle{Proceso de compilación}
 
 \begin{block}{Forma tradicional}
 \begin{itemize}
@@ -143,7 +143,7 @@ Hola. Este es mi primer documento.
 %\texttt{> ps2pdf archivo.ps archivo.pdf}
 \end{itemize}
 \end{block}
-\begin{block}{Forma r'apida (Recomendada)}
+\begin{block}{Forma rápida (Recomendada)}
 \begin{itemize}
 \item Compilar directamente a pdf: \par
 \texttt{> pdflatex archivo.tex}
@@ -153,7 +153,7 @@ Hola. Este es mi primer documento.
 
 
 \begin{frame}[fragile]\frametitle{Clases de documentos}
-Clases est'andares
+Clases estándares
 \begin{itemize}
   \item \texttt{article} -- Art'iculo.
   \item \texttt{report} -- Reporte.
@@ -290,17 +290,17 @@ dos enteros \dots
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{Notas al pie de p\'agina}
+\begin{frame}[fragile]\frametitle{Notas al pie de página}
 \begin{block}{}
 \begin{minted}{tex}
 Uno de los grandes personajes de la F\'isica sin duda 
 es Sir Isaac Newton\footnote{Isaac Newton: 25 de 
 diciembre de 1642 (jul.) / 4 de enero de 1643 (greg) 
 -- 20 de marzo (jul.) / 31 de marzo de 1727 (greg.) 
-fue un f\'isico, fil\'osofo, te\'ologo, inventor, 
-alquimista y matem\'atico ingl\'es.} quien, entre 
-otras cosas, desarroll\'o los fundamentos de la 
-\emph{Mec\'anica}.
+fue un f\'isico, filósofo, teólogo, inventor, 
+alquimista y matemático ingl\'es.} quien, entre 
+otras cosas, desarrolló los fundamentos de la 
+\emph{Mecánica}.
 \end{minted}
 \end{block}
 
@@ -308,9 +308,9 @@ Uno de los grandes personajes de la F\'isica sin duda es
 Sir Isaac Newton\footnote{Isaac Newton: 25 de diciembre de 
 1642 (jul.) / 4 de enero de 1643 (greg) -- 20 de marzo 
 (jul.) / 31 de marzo de 1727 (greg.) fue un f\'isico, 
-fil\'osofo, te\'ologo, inventor, alquimista y matem\'atico 
-ingl\'es.} quien, entre otras cosas, desarroll\'o los 
-fundamentos de la \emph{Mec\'anica}.
+filósofo, teólogo, inventor, alquimista y matemático 
+ingl\'es.} quien, entre otras cosas, desarrolló los 
+fundamentos de la \emph{Mecánica}.
 \end{frame}
 
 
@@ -322,14 +322,14 @@ fundamentos de la \emph{Mec\'anica}.
 \verb|\textsf{}|  & \textsf{Serif} \\
 \verb|\texttt{}|  & \texttt{Typewriter} \\
 \verb|\textbf{}|  & \textbf{Negritas} \\
-\verb|\textit{}|   & \textit{It'alicas} \\
+\verb|\textit{}|   & \textit{Itálicas} \\
 \verb|\textsl{}|   & \textsl{Slanted} \\
 \verb|\textsc{}|  & \textsc{Small Caps} \\
 \verb|\underline{}|  & \underline{Subrayado} \\
 \end{tabular}
 \end{center}
 
-Hay versiones \verb|\mathXX{}| equivalentes para modo matem'atico.
+Hay versiones \verb|\mathXX{}| equivalentes para modo matemático.
 Y \verb|\mathcal{}| $\mathcal{CAL}$.
 \end{frame}
 
@@ -350,7 +350,7 @@ Y \verb|\mathcal{}| $\mathcal{CAL}$.
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Comandos de Alineaci'on}
+\begin{frame}[fragile]\frametitle{Comandos de Alineación}
 \begin{itemize}
 \item \verb|\begin{center}| \par \verb|\end{center}|
 \item \verb|\begin{flushleft}| \par \verb|\end{flushleft}|
@@ -365,9 +365,9 @@ Forma tradicional
   \begin{tabular}{c|c}
      Input      &   Resultado \\ 
      \hline
-     \verb+\'o+  &   'o       \\
+     \verb+ó+  &   ó       \\
      \verb+\'u+  &   'u       \\
-     \verb+\'a+  &   'a       \\
+     \verb+á+  &   á       \\
      \verb+\'i+  &   'i        \\
      \verb+\~n+  &   \~n     \\
      \verb+\~N+  &   \~N     \\
@@ -379,15 +379,15 @@ Forma tradicional
 
 
 
-\begin{frame}[fragile]\frametitle{Reglas generales de edici'on}
+\begin{frame}[fragile]\frametitle{Reglas generales de edición}
 \begin{itemize}
 \item Usar espacios para separar \emph{palabras}.
 \item Un espacio vale igual que mil.
-\item Los fines de l{\'\i}nea sencillos no valen.
+\item Los fines de línea sencillos no valen.
 \end{itemize}
 \begin{itemize}
-\item Usar l{\'\i}neas vac'ias para separar \emph{p'arrafos}.
-\item Una l{\'\i}nea vac'ia vale igual que mil.
+\item Usar líneas vac'ias para separar \emph{párrafos}.
+\item Una línea vac'ia vale igual que mil.
 \end{itemize}
 \begin{itemize}
 \item El espaciado y las sangr'ias son trabajo de \LaTeX, y lo
@@ -398,10 +398,10 @@ Forma tradicional
 
 
 
-\section{Matem'aticas con \LaTeX}
+\section{Matemáticas con \LaTeX}
 
-\begin{frame}[fragile]\frametitle{F'ormulas en l'inea}
-Las f'ormulas en l'inea ocurren dentro de la secuencia natural de un p'arrafo.
+\begin{frame}[fragile]\frametitle{Fórmulas en l'inea}
+Las fórmulas en l'inea ocurren dentro de la secuencia natural de un párrafo.
 
 \begin{block}{}
 \begin{minted}{tex}
@@ -417,12 +417,12 @@ Observe tambi'en que $0 < x^{2} < 1$.
 
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{F'ormulas en l'inea}
+\begin{frame}[fragile]\frametitle{Fórmulas en l'inea}
 \begin{itemize}
-  \item Los signos \verb|$ $| indican el contenido matem'atico.
-  \item Todo el contenido matem'atico (y s'olo el contenido matem'atico) debe ser marcado.
-  \item No usar el contenido matem'atico para poner it'alicas.
-  \item Y no usar comandos de formato para marcar contenido matem'atico.
+  \item Los signos \verb|$ $| indican el contenido matemático.
+  \item Todo el contenido matemático (y sólo el contenido matemático) debe ser marcado.
+  \item No usar el contenido matemático para poner itálicas.
+  \item Y no usar comandos de formato para marcar contenido matemático.
   \item Pensar en el contenido, \emph{!`no en el formato!}.
 \end{itemize}
 \end{frame}
@@ -461,7 +461,7 @@ $\Lambda $ & \verb|\Lambda| & & $\Upsilon $ & \verb|\Upsilon|  \\
           $\setminus$& \verb+\setminus+&  $\cap$   & \verb+\cap+
        \end{tabular}
     \end{center}
-  \item Acentos matem'aticos
+  \item Acentos matemáticos
   \begin{center}
   \begin{tabular}{llcll}
    \verb|\hat a| & $\hat a$ & &\verb|\check a| & $\check a$ \\
@@ -530,7 +530,7 @@ $\ell $& \verb|\ell| & &$\top $& \verb|\top| \\
 \begin{itemize}
   \item Exponentes: \verb|x^2|: $x^2$
   \item Sub'indices: \verb|x_i|: $x_i$
-  \item Para usar exponentes y sub'indices de m'as de un caracter, usar \verb|{}|. Ejemplos
+  \item Para usar exponentes y sub'indices de más de un caracter, usar \verb|{}|. Ejemplos
   \begin{center}
   \begin{tabular}{ll}
     \verb|x^{2\pi}|      & $x^{2\pi}$ \\
@@ -563,7 +563,7 @@ La suma de cuadrados
 \begin{equation}
   \sum_{i=0}^n i^2
 \end{equation}
-tiene una f\'ormula muy sencilla.
+tiene una fórmula muy sencilla.
 \end{minted}
 \end{block}
 
@@ -572,15 +572,15 @@ La suma de cuadrados
 \begin{equation}
   \sum_{i=0}^{n} i^{2}
 \end{equation}
-tiene una f\'ormula muy sencilla.
+tiene una fórmula muy sencilla.
 \end{quote}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Entorno ``equation''}
 \begin{block}{}
 \begin{minted}{tex}
-\dots y despu\'es de muchos c\'alculos llegamos a la
-inevitable conclusi\'on que 
+\dots y despu\'es de muchos cálculos llegamos a la
+inevitable conclusión que 
 \begin{equation}
   \lim_{x \to 0} \frac{\sin(x)}{x} = 1.
 \end{equation}
@@ -591,8 +591,8 @@ Pasando a otros temas \dots
 
 
 \begin{quote}
-\dots y despu\'es de muchos c\'alculos llegamos a la
-inevitable conclusi\'on que 
+\dots y despu\'es de muchos cálculos llegamos a la
+inevitable conclusión que 
 \begin{equation}
   \lim_{x \to 0} \frac{\sin(x)}{x} = 1.
 \end{equation}
@@ -601,23 +601,23 @@ Pasando a otros temas \dots
 \end{quote}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Notas de Redacci'on}
+\begin{frame}[fragile]\frametitle{Notas de Redacción}
 \begin{itemize}
-  \item Las f'ormulas deben ocurrir de manera natural dentro de la lectura 
-    de un p'arrafo (las ecuaciones se leen como parte del texto!).
-%  \item Recuerda los signos de puntuaci'on. Utiliza los comandos 
-%     \verb|\,,| o \verb|\,.| al final de una f'ormula en modo display si es necesario.
-  \item No dejar l{\'\i}neas en blanco entre los comandos \verb|\begin{equation}|,
-   \verb|\end{equation}| y el resto de las l'ineas del p'arrafo. Recuerda que la
-   f'ormula \emph{forma parte} del p'arrafo.
-\item \LaTeX\ numera autom'aticamente las ecuaciones!.
+  \item Las fórmulas deben ocurrir de manera natural dentro de la lectura 
+    de un párrafo (las ecuaciones se leen como parte del texto!).
+%  \item Recuerda los signos de puntuación. Utiliza los comandos 
+%     \verb|\,,| o \verb|\,.| al final de una fórmula en modo display si es necesario.
+  \item No dejar líneas en blanco entre los comandos \verb|\begin{equation}|,
+   \verb|\end{equation}| y el resto de las l'ineas del párrafo. Recuerda que la
+   fórmula \emph{forma parte} del párrafo.
+\item \LaTeX\ numera automáticamente las ecuaciones!.
 \item En ocasiones es conveniente agregar peque\~nos espacios:
 	\begin{itemize}
 		\item \verb|\,| espacio delgado: $\int f(x)\,dx$ (\verb|$\int f(x)\,dx$|).
 		\item \verb|\;| espacio ancho: $\int f(x)\; dx$ (\verb|$\int f(x)\; dx$|).
 		\item \verb|\ | espacio normal: $\int f(x)\ dx$ (\verb|$\int f(x)\  dx$|).
 		\item \verb|\quad| espacio grande: $\int f(x)\quad dx$ (\verb|$\int f(x)\quad  dx$|).
-		\item \verb|\qquad| espacio m'as grande: $\int f(x)\qquad dx$ (\verb|$\int f(x)\qquad  dx$|)
+		\item \verb|\qquad| espacio más grande: $\int f(x)\qquad dx$ (\verb|$\int f(x)\qquad  dx$|)
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -654,7 +654,7 @@ Pasando a otros temas \dots
   \item Los comandos \verb|\left| y \verb|\right| ponen par'entesis que se adaptan al tama\~no del conenido que encierran. Se pueden usar combinaciones de: \verb|(|, \verb|)|, \verb|[|, \verb|]|,    \verb|\{|, \verb|\}|, \verb#|#, \verb|.|, \dots
   \item El entorno \verb|array| recibe una lista de las columnas del arreglo,
      una letra: \verb|l| (left), \verb|c| (center), \verb|r| (right) para
-     indicar la al{\'\i}neaci'on de cada columna.
+     indicar la alíneación de cada columna.
   \item Las columnas se separan con \verb|&| y los renglones con \verb|\\|.
 \end{itemize}
 \end{frame}
@@ -690,13 +690,13 @@ Pasando a otros temas \dots
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Extendiendo \LaTeX\ paquetes/m\'odulos adicionales}
+\begin{frame}[fragile]\frametitle{Extendiendo \LaTeX\ paquetes/módulos adicionales}
 \begin{block}{}
-Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quiz\'as miles) de paquetes disponibles. Una lista de los principales paquetes, ordenada alfab\'eticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
+Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quizás miles) de paquetes disponibles. Una lista de los principales paquetes, ordenada alfab\'eticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
 \end{block}
 
 \begin{block}{Cargando paquetes}
-En general, cada paquete particular que quiera ser usado en un documento debe ser cargado en el pre\'ambulo del documento, es decir, \textit{antes} del comando \verb|\begin{document}|
+En general, cada paquete particular que quiera ser usado en un documento debe ser cargado en el preámbulo del documento, es decir, \textit{antes} del comando \verb|\begin{document}|
 \end{block}
 \begin{block}{}
 \begin{minted}{tex}
@@ -712,15 +712,15 @@ En general, cada paquete particular que quiera ser usado en un documento debe se
 \end{minted}
 \end{block}
 \begin{block}{}
-El paquete Babel se encarga de gestionar los cortes de palabras al final de las l\'ineas (muy \'util!). La opci\'on \texttt{spanish} selecciona nuestro idioma, y \texttt{activeacute} permite acortar un poco la introducci\'on de tildes y caracteres latinos
+El paquete Babel se encarga de gestionar los cortes de palabras al final de las l\'ineas (muy \'util!). La opción \texttt{spanish} selecciona nuestro idioma, y \texttt{activeacute} permite acortar un poco la introducción de tildes y caracteres latinos
 \end{block}
 \begin{block}{}
 \begin{minted}{tex}
-'a, 'e, 'i, 'o, 'u, ~n, 'N, ?` y !`
+á, 'e, 'i, ó, 'u, ~n, 'N, ?` y !`
 \end{minted}
 producen
 \begin{center}
-'a, 'e, 'i, 'o, 'u, ~n, 'N, ?` y !`
+á, 'e, 'i, ó, 'u, ~n, 'N, ?` y !`
 \end{center}
 \end{block}
 \end{frame}
@@ -732,7 +732,7 @@ producen
 \begin{minted}{tex}
 \usepackage[utf8]{inputenc}
 \end{minted}
-permite ingresar los tildes directamente en el texto. Para usar esta opci\'on debe tenerse el cuidado de verificar que el archivo de c\'odigo \LaTeX\ est\'e almacenado en formato UTF8!.
+permite ingresar los tildes directamente en el texto. Para usar esta opción debe tenerse el cuidado de verificar que el archivo de código \LaTeX\ est\'e almacenado en formato UTF8!.
 \end{block}
 \begin{block}{}
 En este caso 
@@ -748,11 +748,11 @@ producen directamente
 
 \begin{frame}[fragile]\frametitle{\AmS-\LaTeX}
 \begin{block}{}
-En paquete \href{http://www.ams.org/publications/authors/tex/amslatex}{\AmS-Math}, desarrollado por la \textbf{A}merican \textbf{M}athematical \textbf{S}ociety, implementa extensiones a \LaTeX\ que facilitan la escritura de expresiones matem\'aticas y mejoran la apariencia del resultado final. Se carga agregando 
+En paquete \href{http://www.ams.org/publications/authors/tex/amslatex}{\AmS-Math}, desarrollado por la \textbf{A}merican \textbf{M}athematical \textbf{S}ociety, implementa extensiones a \LaTeX\ que facilitan la escritura de expresiones matemáticas y mejoran la apariencia del resultado final. Se carga agregando 
 \begin{minted}{tex}
 \usepackage{amsmath}
 \end{minted}
-al pre\'ambulo del documento.
+al preámbulo del documento.
 \end{block}
 \end{frame}
 
@@ -804,7 +804,7 @@ I &=&I_{\rm cm}+MD^{2} \\
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas:  \texttt{align} de \texttt{amsmath}}
-El paquete \texttt{amsmath} suministra el entorno \texttt{align}, con una sintaxis casi igual a \texttt{eqnarray}, pero con algunas mejoras en detalles de alineaci'on:
+El paquete \texttt{amsmath} suministra el entorno \texttt{align}, con una sintaxis casi igual a \texttt{eqnarray}, pero con algunas mejoras en detalles de alineación:
 \begin{align}
 I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}-\frac{L}{5}\right)^2 \\
@@ -831,7 +831,7 @@ I &= I_{\rm cm} + MD^2 \\
 
 \begin{frame}[fragile]\frametitle{Referencias Cruzadas}
  El torque resultante es la suma del torque aplicado
-sobre 1 m\'as el torque aplicado sobre 2. Es decir:
+sobre 1 más el torque aplicado sobre 2. Es decir:
 \begin{equation}
 \tau_{\rm total}=\tau_1+\tau_2,  \label{Ttotal}
 \end{equation}
@@ -839,11 +839,11 @@ donde
 \begin{equation}
 \tau_1 =r_1 F_1 \sin\theta_1,  \label{T11}
 \end{equation}
-es positivo ya que la rotaci\'on va en sentido anti-horario, mientras que
+es positivo ya que la rotación va en sentido anti-horario, mientras que
 \begin{equation}
 \tau_2 = -r_2 F_2 \sin\theta_2,  \label{T22}
 \end{equation}
-es negativo ya que la rotaci\'on va en sentido horario. 
+es negativo ya que la rotación va en sentido horario. 
 Luego, reemplazando (\ref{T11}) y (\ref{T22}) en (\ref{Ttotal}), 
 tendremos que \dots
 \end{frame}
@@ -852,7 +852,7 @@ tendremos que \dots
 \begin{block}{}
 \begin{minted}{tex}
  El torque resultante es la suma del torque aplicado
-sobre 1 m\'as el torque aplicado sobre 2. Es decir:
+sobre 1 más el torque aplicado sobre 2. Es decir:
 \begin{equation}
 \tau_{\rm total}=\tau_1+\tau_2,  \label{Ttotal}
 \end{equation}
@@ -860,12 +860,12 @@ donde
 \begin{equation}
 \tau_1 =r_1 F_1 \sin\theta_1,  \label{T11}
 \end{equation}
-es positivo ya que la rotaci\'on va en sentido 
+es positivo ya que la rotación va en sentido 
 anti-horario, mientras que
 \begin{equation}
 \tau_2 = -r_2 F_2 \sin\theta_2,  \label{T22}
 \end{equation}
-es negativo ya que la rotaci\'on va en sentido 
+es negativo ya que la rotación va en sentido 
 horario. Luego, reemplazando (\ref{T11}) y (\ref{T22}) 
 en (\ref{Ttotal}), tendremos que \dots
 \end{minted}
@@ -891,9 +891,9 @@ en (\ref{Ttotal}), tendremos que \dots
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Consejos de Redacci\'on}
+\begin{frame}[fragile]\frametitle{Consejos de Redacción}
   \begin{itemize}
-%  \item Notaci'on: \verb|Cap\'itulo~\ref{intro}|
+%  \item Notación: \verb|Cap\'itulo~\ref{intro}|
 %  \begin{itemize}
 %    \item La palabra clave en may'uscula.
 %    \item No olvides usar `\verb|~|'{} en lugar de espacio.
@@ -911,7 +911,7 @@ en (\ref{Ttotal}), tendremos que \dots
 
 
 
-\begin{frame}[fragile]\frametitle{Citas Bibliogr\'aficas}
+\begin{frame}[fragile]\frametitle{Citas Bibliográficas}
 \begin{block}{}
 \begin{minted}{tex}
 \begin{document}
@@ -938,7 +938,7 @@ San Francisco (1973).
 
 \begin{center}
 \begin{tabular}{c|cc}
-A\~no  & Ventas   & Inversi\'on \\ \hline
+A\~no  & Ventas   & Inversión \\ \hline
 1999  & \$ 3.900 &    1.4\%   \\
 2000  & \$ 2.700 &    3.6\%   \\
 2001  & \$ 3.200 &    2.3\%   \\
@@ -954,7 +954,7 @@ A\~no  & Ventas   & Inversi\'on \\ \hline
 \begin{minted}{tex}
 \begin{center}
   \begin{tabular}{c|cc}
-    A\~no  & Ventas   & Inversi\'on \\ \hline
+    A\~no  & Ventas   & Inversión \\ \hline
     1999  & \$ 3.900 &    1.4\%   \\
     2000  & \$ 2.700 &    3.6\%   \\
     2001  & \$ 3.200 &    2.3\%   \\
@@ -970,9 +970,9 @@ A\~no  & Ventas   & Inversi\'on \\ \hline
 \begin{itemize}
   \item El ambiente \verb|tabular| se parece mucho a \verb|array|, pero funciona
     en modo texto.
-  \item Usa barras \verb$|$ en la descripci'on de la columna para indicar lineas
+  \item Usa barras \verb$|$ en la descripción de la columna para indicar lineas
     verticales, y el comando \verb|\hline| para l'ineas horizontales.
-  \item \textbf{Sugerencia}: No agreges demasiadas l'ineas a una tabla, usa s'olo las 
+  \item \textbf{Sugerencia}: No agreges demasiadas l'ineas a una tabla, usa sólo las 
     necesarias para separar o distinguir los valores importantes.
 \end{itemize}
 \end{frame}
@@ -1013,7 +1013,7 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 \begin{table}
 	\begin{center}
     \begin{tabular}{c|cc}
-      A\~no  & Ventas   & Inversi'on \\ \hline
+      A\~no  & Ventas   & Inversión \\ \hline
       1999  & \$ 3.900 &    1.4\%   \\
       2000  & \$ 2.700 &    3.6\%   \\
       2001  & \$ 3.200 &    2.3\%   \\
@@ -1046,9 +1046,9 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 
 \begin{frame}[fragile]\frametitle{Elementos Flotantes}
 \begin{itemize}
-  \item \LaTeX\ tratar'a de acomodar los elementos flotantes lo mejor que
-    pueda en las p'aginas cercanas al c'odigo de la tabla.
-  \item No tratar de forzar la posici'on de la tabla en el documento.
+  \item \LaTeX\ tratará de acomodar los elementos flotantes lo mejor que
+    pueda en las páginas cercanas al código de la tabla.
+  \item No tratar de forzar la posición de la tabla en el documento.
     \underline{\textit{Dejar que \LaTeX\ haga su trabajo}}.
   \item Utilizar \verb|\ref{..}| y \verb|\label{..}| para hacer referencia a la
     tabla. Evitar redacciones del tipo: ``\dots en el cuadro siguiente:''
@@ -1086,17 +1086,17 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 
 \begin{frame}[fragile]\frametitle{Insertar Figuras}
 \begin{itemize}
-  \item (Cuando se generan archivos \texttt{.ps} (compilando con \texttt{latex}) se pueden insertar im'agenes en formato \texttt{.eps}, \texttt{.ps}.)
-  \item Cuando se generan archivos \texttt{.pdf} (compilando con \texttt{pdflatex}) se pueden insertar im'agenes en formato \texttt{.jpg}, \texttt{.png}, \texttt{.pdf}.
-  \item Recomiendo Inkscape, Python, LibreOffice  para crear \textit{gr'aficos vectoriales} (.svg, .ps, .eps, .pdf); Gimp para fotos (.png, .jpg).
+  \item (Cuando se generan archivos \texttt{.ps} (compilando con \texttt{latex}) se pueden insertar imágenes en formato \texttt{.eps}, \texttt{.ps}.)
+  \item Cuando se generan archivos \texttt{.pdf} (compilando con \texttt{pdflatex}) se pueden insertar imágenes en formato \texttt{.jpg}, \texttt{.png}, \texttt{.pdf}.
+  \item Recomiendo Inkscape, Python, LibreOffice  para crear \textit{gráficos vectoriales} (.svg, .ps, .eps, .pdf); Gimp para fotos (.png, .jpg).
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Insertar Figuras}
 \begin{itemize}
-\item La opci'on  \verb|[width=6cm]| se puede usar para modificar el ancho
-  tama\~no de una imagen. Tambi'en existe la opci'on \texttt{height}, p.ej. \verb|[height=5cm]|.
-\item Tambi'en puede usarse la opci'on \verb|[scale=0.6]| para re-escalar la figura.
+\item La opción  \verb|[width=6cm]| se puede usar para modificar el ancho
+  tama\~no de una imagen. Tambi'en existe la opción \texttt{height}, p.ej. \verb|[height=5cm]|.
+\item Tambi'en puede usarse la opción \verb|[scale=0.6]| para re-escalar la figura.
 \begin{verbatim}
 	\includegraphics[scale=0.6]{transistor.pdf}
 \end{verbatim}  
@@ -1108,7 +1108,7 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 \begin{itemize}
 \item Los comandos \verb|\listoffigures| y \verb|\listoftables| generan
 los 'indices de figuras y tablas respectivamente.
-\item En los 'indices se agregan s'olo las figuras y tablas que hayas agregado como
+\item En los 'indices se agregan sólo las figuras y tablas que hayas agregado como
 elementos flotantes.
 \end{itemize}
 \end{frame}
@@ -1120,9 +1120,9 @@ elementos flotantes.
 %\begin{frame}[fragile]\frametitle{Nuevos Comandos}
 %
 %\begin{itemize}
-%\item La instrucci'on 
+%\item La instrucción 
 %\begin{center}
-%\verb|\newcommand{|\textit{comando}\verb|}{|\textit{definici'on}\verb|}|
+%\verb|\newcommand{|\textit{comando}\verb|}{|\textit{definición}\verb|}|
 %\end{center}
 %se utiliza para definir nuevos comandos.
 %\end{itemize}
