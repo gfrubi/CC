@@ -1,7 +1,7 @@
 \documentclass[11pt]{exam}
 \usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,epsfig}
+\usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
 
 \usepackage{minted} 
@@ -19,7 +19,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 05}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2020-1}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2021-1}
 \chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -138,9 +138,6 @@ U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
 
 \item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea c'omo afecta al resultado obtenido.
 
-
-\item Agregue texto que incluya referencias autom'aticas a algunas de las ecuaciones que escribi'o (pruebe tanto con \verb|(\ref{..})| como con \verb|\eqref{..}| de \texttt{amsmath}), as'i como a algunas de las referencias bibliogr'aficas (use \verb|\cite{..}|).
-
 \item Agregue ahora el paquete \texttt{hyperref} agregando 
 \verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega autom'aticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los n'umeros de ecuaciones citados, as'i como en los n'umeros correspondientes a las referencias bibliogr'aficas. Note que \texttt{hyperref} tambi'en agrega hyperlinks a la tabla de contenidos de su pdf, si 'esta existe.
 
@@ -148,45 +145,5 @@ U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
 
 \item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direcci'on anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
 
-\item En alg'un archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=4cm]{marcaderecha.png}
-\end{center}
-\caption{Marca alineaci'on derecha, Formato PNG.}
-\label{fig:escudo}
-\end{figure}
-
-Vea \href{http://www.udec.cl/normasgraficas/node/4}{esta} p'agina para conocer otras variaciones oficiales del escudo de la UdeC. 
-Puede encontrar m'as informaci'on acerca de las normas gr'aficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} p'agina.
-
-\item Ahora su misi'on es escribir su primer ``art'iculo cient'ifico'' en \LaTeX, que debe reproducir lo m'as fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/05/ejemplo-articulo.pdf}{este} ejemplo. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/05/fig-ajuste-lineal.pdf}{aqu\'i}.
-
-El t'itulo, autor, y resumen puede ser incorporado usando los siguientes comandos despu'es del conocido \verb|\documentclass|:
-
-\begin{minted}[bgcolor=bg]{tex}
-\title{Escribiendo mi primer art\'iculo con formato Cient\'ifico, en \LaTeX}
-\author{Su nombre (autor(a))}
-
-\begin{document}
-
-\maketitle
-\begin{abstract}
-Este es el resumen del art\'iculo...
-\end{abstract}
-\end{minted}
-
-
-
 \end{questions}
-
-\begin{thebibliography}{99}
-\bibitem{libro} C.W. Misner, K.S. Thorne and J.A. Wheleer,
-{\em Gravitation}, W.H. Freeman and Company, San Francisco, (1973).
-
-\bibitem{a2} Usted y un(a) Colaborador(a), {\it Teor'ia Unificada de las Mareas Cu'anticas Ca'oticas y su aplicaci'on a la Fotoac'ustica de plasmas astron'omicos relativistas}, {\sl Revista Condorito}, Volumen \textbf{45}, (2015).
-
-\bibitem{max} John David Jackson, {\it Classical electrodynamics}. Wiley, New York, NY, 3rd ed. edition, (1999).
-\end{thebibliography}
-
 \end{document} 
