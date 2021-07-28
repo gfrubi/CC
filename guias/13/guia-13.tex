@@ -16,8 +16,8 @@
 
 \firstpageheadrule
 \runningheadrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 14}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
+\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 13}
+\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2021-1}
 \chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
 \cfoot{ }
 \lfoot{\tiny GR}
@@ -48,28 +48,30 @@ print(y,type(y))
 
 En otras palabras, \texttt{np.arange(10)} es equivalente a \texttt{np.array(range(10))}.
 
-\item Usando arreglos de \texttt{Numpy} es posible realizar muchos c'alculos en forma r'apida y eficiente, sin necesidad de recurrir a ciclos (\texttt{for} o \texttt{while}). Por ejemplo, puede calcular la misma suma considerada en el problema 9 de la guía 8, es decir, 
+\item Usando arreglos de \texttt{Numpy} es posible realizar muchos c'alculos en forma r'apida y eficiente, sin necesidad de recurrir a ciclos (\texttt{for} o \texttt{while}). Por ejemplo, puede calcular la misma suma considerada en el problema 3 de la guía 11, es decir, 
 \begin{equation}
 1 + 2 + 3 + 4  + \cdots + 999 + 1000,
 \end{equation}
-pero ahora usando las funcion \texttt{sum} de \texttt{Numpy} (que suma todos los elementos de un arreglo):
+pero ahora usando las función \texttt{sum} de \texttt{Numpy} (que suma todos los elementos de un arreglo):
 
 \begin{minted}[bgcolor=bg]{python}
 n = np.arange(1001)
 suma = np.sum(n)
 print(suma)
 \end{minted}
-
 o, en una sola línea
 
 \begin{minted}[bgcolor=bg]{python}
 print(np.sum(np.arange(1001)))
 \end{minted}
-
 Verifique lo anterior y aseg'urese de entender qu'e se est'a calculando.
 
 \item Adapte la idea del c'alculo en el punto anterior para implementar un c'alculo alternativo para el factorial de un n'umero $n$ (entero positivo), pero esta vez usando un arreglo de \texttt{Numpy} y la funci'on \texttt{prod()} que calcula el producto de cada componente de un arreglo de \texttt{Numpy} (similarmente a como \texttt{sum()} calcula la suma).
 
+\item Usando Numpy, calcule el valor de la suma de los primeros 101 términos de la forma
+\begin{equation}
+1+\left(\frac{1}{2}\right)+\left(\frac{1}{2}\right)^2+\left(\frac{1}{2}\right)^3+\dots +\left(\frac{1}{2}\right)^{100}.
+\end{equation}
 \item Verifique que, a diferencia de su pariente \texttt{range()}, la funci'on \texttt{arange()} tambi'en funciona con pasos decimales, por ejemplo
 
 \begin{minted}[bgcolor=bg]{python}
@@ -94,7 +96,9 @@ for i in x:
 	print ("la componente "+str(i)+" de y es igual a "+str(y[i]))
 \end{minted}
 
-\item Descargue el archivo de datos \href{https://raw.githubusercontent.com/gfrubi/CC/master/guias/14/datos.txt}{datos.txt} y guárdelo en la carpeta donde está trabajando. El módulo \texttt{Numpy} contiene una funci'on llamada \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensi'on apropiada. Ejecute (en la misma carpeta donde est'a el archivo \texttt{datos.txt}) los siguientes comandos:
+\item Lea sobre el comandos \texttt{shape} y \texttt{len} y \texttt{size} y sobre el\textit{ indexado de arreglos} (tanto uni- como bi-dimensionales) en el \href{https://github.com/gfrubi/CC/blob/master/Python/02-Numpy.ipynb}{archivo sobre Numpy} en el repositorio. Asegúrese de entender los ejemplos ahí discutidos.
+
+\item Descargue el archivo de datos \href{https://udec.instructure.com/courses/684/files/folder/guias?preview=631637}{datos.txt} y guárdelo en la carpeta donde está trabajando. El módulo \texttt{Numpy} contiene una funci'on llamada \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensi'on apropiada. Ejecute (en la misma carpeta donde est'a el archivo \texttt{datos.txt}) los siguientes comandos:
 
 \begin{minted}[bgcolor=bg]{python}
 d = np.genfromtxt("datos.txt")
@@ -141,18 +145,11 @@ Adem'as, la opci'on \texttt{color} puede adoptar los valores \texttt{blue} (b), 
 plt.xlim(0,90)
 plt.ylim(0,15)
 \end{minted}
-
 y vea el cambio que produce.
 
-\item Escriba un programa \texttt{g3.py} que, usando tambi'en el m'odulo \texttt{Numpy}, grafique la funci'on 
-\begin{equation}
-y(x)=\frac{\sin(x)}{x}
-\end{equation}
-en el intervalo $x\in[-30,30]$, y que guarde el resultado en el archivo \texttt{g3.pdf}. Asegúrese que la curva luzca suave, evaluando la función en muchos puntos cercanos entre si.
 
-\item Mejore su programa \texttt{g3.py} para que el gr'afico incorpore todos los elementos necesarios para obtener un resultado aceptable (T'itulo que indique la funci'on graficada, ejes con nombres adecuados, grilla (opcional), etc.).
+\item Exporte el gráfico anterior directamente a formato \texttt{.png}, simplemente cambiando \newline \texttt{plt.savefig("g2.pdf")} por \texttt{plt.savefig("g2.png")} en su programa \texttt{g2.py}. Comparta su lindo gráfico personalizado subiendo el archivo \texttt{p2.png} al foro de Teams de la práctica.
 
-\item Env'ie los archivos que creó al email del profesor G. Rubilar.
 \begin{table}
 \begin{center}
 \begin{tabular}{cc}
@@ -182,7 +179,6 @@ en el intervalo $x\in[-30,30]$, y que guarde el resultado en el archivo \texttt{
 \label{t}
 \end{center}
 \end{table}
-\item \textbf{Bonus Track (opcional)}: Es posible modificar el estilo de la figura completa agregando el comando \texttt{plt.style.use("\,\!estilo")} al comienzo de los comandos que definen el gr'afico. Aqu'i \texttt{"\,\!estilo"} es el nombre de uno de los estilos disponibles. Pruebe, por ejemplo, usar el estilo ``ggplot", agregando la l'inea \texttt{style.use("\,\!ggplot")} a uno de sus gr'aficos. Una lista completa de los estilos predefinidos en su instalalci'on de \texttt{Matplotlib} puede obtenerse con el comando \texttt{print(plt.style.available)}
 
 \end{questions}
 
