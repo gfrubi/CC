@@ -660,11 +660,11 @@ Pasando a otros temas \dots
 
 \begin{frame}[fragile]\frametitle{Arreglos y matrices}
 \begin{itemize}
-  \item Los comandos \verb|\left| y \verb|\right| ponen par'entesis que se adaptan al tama\~no del conenido que encierran. Se pueden usar combinaciones de: \verb|(|, \verb|)|, \verb|[|, \verb|]|,    \verb|\{|, \verb|\}|, \verb#|#, \verb|.|, \dots
+  \item Los comandos \verb|\left| y \verb|\right| agregan par'entesis que se adaptan al tama\~no del conenido que encierran. Se pueden usar combinaciones de: \verb|(|, \verb|)|, \verb|[|, \verb|]|,    \verb|\{|, \verb|\}|, \verb#|# y \verb|.|
   \item El entorno \verb|array| recibe una lista de las columnas del arreglo,
      una letra: \verb|l| (left), \verb|c| (center), \verb|r| (right) para
      indicar la alíneación de cada columna.
-  \item Las columnas se separan con \verb|&| y los renglones con \verb|\\|.
+  \item Las columnas se separan con \verb|&| y los líneas con \verb|\\|.
 \end{itemize}
 \end{frame}
 
@@ -695,13 +695,13 @@ Pasando a otros temas \dots
 \end{block}
 
 \begin{itemize}
-  \item \verb|\right.| coloca un delimitador invisible (para cerrar el par\'entesis corchete).
+  \item \verb|\right.| coloca un delimitador invisible (para cerrar el paréntesis llave).
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Extendiendo \LaTeX\ paquetes/módulos adicionales}
 \begin{block}{}
-Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quizás miles) de paquetes disponibles. Una lista de los principales paquetes, ordenada alfab\'eticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
+Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quizás miles) de paquetes disponibles. Una lista de los principales paquetes, ordenada alfabéticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
 \end{block}
 
 \begin{block}{Cargando paquetes}
@@ -725,11 +725,11 @@ El paquete Babel se encarga de gestionar los cortes de palabras al final de las 
 \end{block}
 \begin{block}{}
 \begin{minted}{tex}
-á, 'e, 'i, ó, 'u, ~n, 'N, ?` y !`
+'a, 'e, 'i, 'o, 'u, ~n, 'N, ?` y !`
 \end{minted}
 producen
 \begin{center}
-á, 'e, 'i, ó, 'u, ~n, 'N, ?` y !`
+'a, 'e, 'i, 'o, 'u, ~n, 'N, ?` y !`
 \end{center}
 \end{block}
 \end{frame}
@@ -741,7 +741,7 @@ producen
 \begin{minted}{tex}
 \usepackage[utf8]{inputenc}
 \end{minted}
-permite ingresar los tildes directamente en el texto. Para usar esta opción debe tenerse el cuidado de verificar que el archivo de código \LaTeX\ est\'e almacenado en formato UTF8!.
+permite ingresar los tildes directamente en el texto. Para usar esta opción debe tenerse el cuidado de verificar que el archivo de código \LaTeX\ esté almacenado en formato UTF8!.
 \end{block}
 \begin{block}{}
 En este caso 
@@ -883,7 +883,7 @@ que \dots
 
 \begin{frame}[fragile]\frametitle{Referencias Cruzadas}
 \begin{itemize}
-\item Se puede poner \verb|\label{..}| despu'es de:
+\item Se puede poner \verb|\label{..}| después de:
   \begin{itemize}
     \item \verb|\begin{equation}|, \verb|\begin{eqnarray}|, \dots
     \item \verb|\begin{table}|, \verb|\begin{figure}|, \dots
@@ -895,7 +895,7 @@ que \dots
     \item !`Donde quieras en el documento!
   \end{itemize}
 \item Recuerda recompilar para actualizar referencias.
-\item \texttt{amsmath} tambi'en suministra \verb|\eqref{..}| para citar ecuaciones, que permite reemplazar \verb|(\ref{..})| por \verb|\eqref{..}|.
+\item El paquete \texttt{amsmath} también suministra \verb|\eqref{..}| para citar ecuaciones, que permite reemplazar \verb|(\ref{..})| por \verb|\eqref{..}|.
 \end{itemize}
 \end{frame}
 
@@ -978,7 +978,7 @@ Año  & Ventas   & Inversión \\ \hline
 \begin{itemize}
   \item El ambiente \verb|tabular| se parece mucho a \verb|array|, pero funciona
     en modo texto.
-  \item Usa barras \verb$|$ en la descripción de la columna para indicar lineas
+  \item Usa barras \verb$|$ en la descripción de la columna para indicar líneas
     verticales, y el comando \verb|\hline| para l'ineas horizontales.
   \item \textbf{Sugerencia}: No agreges demasiadas l'ineas a una tabla, usa sólo las 
     necesarias para separar o distinguir los valores importantes.
@@ -1103,8 +1103,8 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 \begin{frame}[fragile]\frametitle{Insertar Figuras}
 \begin{itemize}
 \item La opción  \verb|[width=6cm]| se puede usar para modificar el ancho
-  tama\~no de una imagen. Tambi'en existe la opción \texttt{height}, p.ej. \verb|[height=5cm]|.
-\item Tambi'en puede usarse la opción \verb|[scale=0.6]| para re-escalar la figura.
+  tama\~no de una imagen. También existe la opción \texttt{height}, p.ej. \verb|[height=5cm]|.
+\item También puede usarse la opción \verb|[scale=0.6]| para re-escalar la figura.
 \begin{verbatim}
 	\includegraphics[scale=0.6]{transistor.pdf}
 \end{verbatim}  
@@ -1145,7 +1145,7 @@ elementos flotantes.
 %
 %\begin{frame}[fragile]\frametitle{Nuevos Comandos}
 %\begin{itemize}
-%\item Puedes tambi'en definir nuevos comandos con argumentos
+%\item Puedes también definir nuevos comandos con argumentos
 %\begin{verbatim}[escapechar=\$]
 %\newcommand{\set}[1]{\left\{#1\right\}}
 %\newcommand{\iprod}[2]{\left\langle #1, #2 \right\rangle}
