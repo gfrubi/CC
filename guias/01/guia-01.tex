@@ -20,7 +20,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 01}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2022-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -35,12 +35,14 @@
 
 \begin{questions}
 
-\item Cada computador de los laboratorios Linux de nuestra Facultad está configurado con \textit{una cuenta común}, es decir, a la que potencialmente \textit{acceden tod@s l@s estudiantes} que hacen uso de ellos. Por esto, recuerde que \textit{usted es responsable de traer los archivos que requiera para su trabajo, así como de respaldar su trabajo al final de cada sesión}.
+\item Cada computador de los laboratorios Linux de nuestra Facultad está configurado con \textit{una cuenta común}, es decir, a la que potencialmente \textit{acceden tod@s l@s estudiantes} que hacen uso de ellos. Por esto, recuerde que \textit{usted es responsable de traer los archivos que requiera para su trabajo, así como de respaldar su trabajo al final de cada sesión}. Recomendamos alojar sus documentos (en alguna carpeta destinada a esta asignatura) en el servicio de almancenamiento OneDrive (1TB!) de la suite \href{https://www.office.com/}{Microsoft 365} asociada a su cuenta UdeC.
 
 \item Antes de comenzar a trabajar la persona a cargo les mostrar\'a brevemente
 el escritorio (\href{http://www.xfce.org/?lang=es}{Xfce}) instalado en el sistema (Ubuntu, y en particular la variante \href{http://xubuntu.org/}{Xubuntu}) y las aplicaciones b\'asicas: navegador de archivos, editor de texto, consola virtual, etc.
 
-\item Busque y abra la consola (virtual) de comandos o \textit{terminal}. En esta consola realice las siguientes tareas:
+\item En un sistema Linux moderno, muchas de las tareas se realizan de forma similar a otros sistemas operativos. Sin embargo, una característica distintiva de Linux (que lo hace muy poderoso y versátil) es la existencia de la \textit{consola (virtual) de comandos} o \textit{terminal}. En esta consola/terminal, se pueden escribir directamente \textit{comandos}, que el sistema Linux ejecuta. 
+
+Abra una consola y realice las siguientes tareas:
 \begin{parts}
 \item Liste el contenido de su carpeta, ejecutando el comando 
 
@@ -74,13 +76,13 @@ y habrá vuelto a su carpeta principal.
 
 \item Mire \href{https://www.youtube.com/watch?v=4Cz8E71PYd4}{este} video en Youtube, donde se explican los comandos \texttt{man, nano, vi} y \texttt{wget}.
 
-\item Como vio en el video, en la consola de Linux están disponibles (en la mayoría de las instalaciones) algunos \textit{editores de texto}. En particular, aprenderá a usar el editor ``nano''. Con este editor, puede crear y modificar archivos de texto (ascii/utf8). Por ejemplo, ejecutando el comando 
+\item Como vio en el video, en la consola de Linux están disponibles (en la mayoría de las instalaciones) algunos \textit{editores de texto}. En particular, aprenderá a usar el editor ``nano''. Con este editor, puede crear y modificar archivos de texto (UTF-8/ASCII). Por ejemplo, ejecutando el comando 
 
 \begin{minted}[bgcolor=bg]{bash}
 nano archivo1.txt
 \end{minted}
 
-usted ingresará al editor nano y podrá crear y/o modificar el archivo \texttt{archivo1.txt}.
+Al ejecutarlo Usted ingresará al editor nano y podrá crear y/o modificar el archivo \texttt{archivo1.txt}.
  Explore las opciones de este editor de texto. ?`Cómo se guardan los archivos creados/modi\-fi\-ca\-dos?. ?`Cómo se sale del editor?.
 
 \item Mueva el archivo \textbf{archivo1.txt} a \textbf{archivo2.txt}, ejecutando el comando
@@ -95,76 +97,76 @@ En este caso, el efecto es equivalente a haber renombrado el archivo.
 
 \end{parts}
 
-\item Conozca el comando \texttt{cat}, que con\textbf{cat}ena (es decir, une) archivos y los despliega en la pantalla (la salida estándar).
-\begin{parts}
-\item  Infórmese de los aspectos generales de este comando desplegando el manual, con 
-
-\begin{minted}[bgcolor=bg]{bash}
-man cat
-\end{minted}
-
-
-
-\item En la consola, cree dos archivos \textbf{test01.txt} y \textbf{test02.txt} usando el editor \texttt{nano} e introduzca en ellos alg'un texto interesante.
-
-\item Ejecute ahora el comando 
-
-\begin{minted}[bgcolor=bg]{bash}
-cat test01.txt test02.txt
-\end{minted}
-
-Observe cómo los dos archivos se despliegan en pantalla, uno luego del otro.
-
-\item ?`Cuál es la diferencia del comando anterior respecto a 
-
-\begin{minted}[bgcolor=bg]{bash}
-cat *.txt
-\end{minted}
-
-Compruebe su respuesta con un ejemplo.
-\end{parts}
-
-\item Descargue el archivo \href{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}{Quijote.tar.gz} (desde la dirección \url{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}) a su computador local. Este archivo contiene (en forma comprimida) cinco archivos correspondientes a algunas secciones iniciales de la obra ``Don Quijote de la Mancha"\, de Miguel de Cervantes. Abra una consola e ingrese (usando el comando \texttt{cd}) a la carpeta donde se encuentra el archivo descargado y realice las siguientes tareas:
-\begin{parts}
-\item Descomprima el archivo, usando el comando 
-
-\begin{minted}[bgcolor=bg]{bash}
-tar -xf Quijote.tar.gz
-\end{minted}
-
-Esto creará cinco archivos con extensión \textbf{.txt}. 
-\item Infórmese de los aspectos generales del comando \texttt{tar}, desplegando el manual del comando \texttt{tar} (ingrese \texttt{man tar}).
-\item Despliege el contenido de cada archivo usando el comando \texttt{more}.
-\item Una los archivos (en orden!) y guarde el resultado en el archivo \textbf{Quijote.txt}. Para esto, la opción \texttt{>} para redireccionar la salida de \texttt{cat} al archivo correspondiente.
-\end{parts}
-
-\item Conozca el comando \texttt{grep}, que busca (conjuntos de) palabras dentro de archivos de texto. 
-\begin{parts}
-\item Busque información en internet sobre este comando. Por ejemplo, realice la b'usqueda ``comando grep linux'' en Google. 'Este es un m'etodo que usualmente permite encontrar rápidamente información 'util. Por ejemplo, el correspondiente \href{https://es.wikipedia.org/wiki/Grep}{artículo de Wikipedia} es un buen punto de partida.
-
-\item Usando \texttt{grep}, busque todas las ocurrencias de la palabra \textbf{Mancha} en cada uno de los cinco archivos originales del Quijote (\textbf{c1.txt} \dots \textbf{c5.txt})
-
-\item Agregue la opción \texttt{-n} al comando \texttt{grep} usado anteriormente (es decir, use \texttt{grep -n}). ?`Qu'e efecto tiene sobre el resultado?
-\end{parts}
-
-\item Puede escribir y ejecutar una secuencia de comandos almacenados en un ``\textit{script}'' (archivo de comandos).
-\begin{parts}
-\item Para este ejemplo, cree una nueva carpeta y cree en ella una copia del archivo comprimido \textbf{Quijote.tar.gz}.
-
-\item En esta carpeta, cree un archivo con nombre \textbf{mi-script.sh} (la extensión .sh es opcional, pero conveniente). En este archivo escriba una variación de los  comandos antes usados, cada uno en una l'inea separada, que realicen las siguientes acciones: 1) descomprima el archivo \textbf{Quijote.tar.gz}, 2) Una los archivos .txt y crea el archivo \textbf{Quijote.txt} y 3) busca todas las ocurrencias de la palabra \textbf{batalla} en este archivo y 4) crea el archivo \textbf{resultado.txt} con el resultado de la b'usqueda.
-
-\item Ejecute su script (es decir, los comandos que contiene el archivo \textbf{mi-script.sh} en el orden en que están escritos), ejecutando 
-
-\begin{minted}[bgcolor=bg]{bash}
-bash mi-script.sh
-\end{minted}
-\end{parts}
-
-
-\item Usando comandos Bash, encuentre todas líneas del texto del Quijote en las que se menciona la palabra ``Mancha'' (primera letra en mayúsculas!), y almacene el texto de estas líneas en el archivo \textbf{Manchas.txt}.
-
-
-\item Puede usar el tiempo restante para aprender sobre otros comandos Bash. Algunos de ellos están listados \href{https://es.wikipedia.org/wiki/Comandos_Bash}{este art{\'\i}culo de Wikipedia}.
+%\item Conozca el comando \texttt{cat}, que con\textbf{cat}ena (es decir, une) archivos y los despliega en la pantalla (la salida estándar).
+%\begin{parts}
+%\item  Infórmese de los aspectos generales de este comando desplegando el manual, con 
+%
+%\begin{minted}[bgcolor=bg]{bash}
+%man cat
+%\end{minted}
+%
+%
+%
+%\item En la consola, cree dos archivos \textbf{test01.txt} y \textbf{test02.txt} usando el editor \texttt{nano} e introduzca en ellos alg'un texto interesante.
+%
+%\item Ejecute ahora el comando 
+%
+%\begin{minted}[bgcolor=bg]{bash}
+%cat test01.txt test02.txt
+%\end{minted}
+%
+%Observe cómo los dos archivos se despliegan en pantalla, uno luego del otro.
+%
+%\item ?`Cuál es la diferencia del comando anterior respecto a 
+%
+%\begin{minted}[bgcolor=bg]{bash}
+%cat *.txt
+%\end{minted}
+%
+%Compruebe su respuesta con un ejemplo.
+%\end{parts}
+%
+%\item Descargue el archivo \href{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}{Quijote.tar.gz} (desde la dirección \url{https://github.com/gfrubi/CC/raw/master/guias/01/Quijote.tar.gz}) a su computador local. Este archivo contiene (en forma comprimida) cinco archivos correspondientes a algunas secciones iniciales de la obra ``Don Quijote de la Mancha"\, de Miguel de Cervantes. Abra una consola e ingrese (usando el comando \texttt{cd}) a la carpeta donde se encuentra el archivo descargado y realice las siguientes tareas:
+%\begin{parts}
+%\item Descomprima el archivo, usando el comando 
+%
+%\begin{minted}[bgcolor=bg]{bash}
+%tar -xf Quijote.tar.gz
+%\end{minted}
+%
+%Esto creará cinco archivos con extensión \textbf{.txt}. 
+%\item Infórmese de los aspectos generales del comando \texttt{tar}, desplegando el manual del comando \texttt{tar} (ingrese \texttt{man tar}).
+%\item Despliege el contenido de cada archivo usando el comando \texttt{more}.
+%\item Una los archivos (en orden!) y guarde el resultado en el archivo \textbf{Quijote.txt}. Para esto, la opción \texttt{>} para redireccionar la salida de \texttt{cat} al archivo correspondiente.
+%\end{parts}
+%
+%\item Conozca el comando \texttt{grep}, que busca (conjuntos de) palabras dentro de archivos de texto. 
+%\begin{parts}
+%\item Busque información en internet sobre este comando. Por ejemplo, realice la b'usqueda ``comando grep linux'' en Google. 'Este es un m'etodo que usualmente permite encontrar rápidamente información 'util. Por ejemplo, el correspondiente \href{https://es.wikipedia.org/wiki/Grep}{artículo de Wikipedia} es un buen punto de partida.
+%
+%\item Usando \texttt{grep}, busque todas las ocurrencias de la palabra \textbf{Mancha} en cada uno de los cinco archivos originales del Quijote (\textbf{c1.txt} \dots \textbf{c5.txt})
+%
+%\item Agregue la opción \texttt{-n} al comando \texttt{grep} usado anteriormente (es decir, use \texttt{grep -n}). ?`Qu'e efecto tiene sobre el resultado?
+%\end{parts}
+%
+%\item Puede escribir y ejecutar una secuencia de comandos almacenados en un ``\textit{script}'' (archivo de comandos).
+%\begin{parts}
+%\item Para este ejemplo, cree una nueva carpeta y cree en ella una copia del archivo comprimido \textbf{Quijote.tar.gz}.
+%
+%\item En esta carpeta, cree un archivo con nombre \textbf{mi-script.sh} (la extensión .sh es opcional, pero conveniente). En este archivo escriba una variación de los  comandos antes usados, cada uno en una l'inea separada, que realicen las siguientes acciones: 1) descomprima el archivo \textbf{Quijote.tar.gz}, 2) Una los archivos .txt y crea el archivo \textbf{Quijote.txt} y 3) busca todas las ocurrencias de la palabra \textbf{batalla} en este archivo y 4) crea el archivo \textbf{resultado.txt} con el resultado de la b'usqueda.
+%
+%\item Ejecute su script (es decir, los comandos que contiene el archivo \textbf{mi-script.sh} en el orden en que están escritos), ejecutando 
+%
+%\begin{minted}[bgcolor=bg]{bash}
+%bash mi-script.sh
+%\end{minted}
+%\end{parts}
+%
+%
+%\item Usando comandos Bash, encuentre todas líneas del texto del Quijote en las que se menciona la palabra ``Mancha'' (primera letra en mayúsculas!), y almacene el texto de estas líneas en el archivo \textbf{Manchas.txt}.
+%
+%
+%\item Puede usar el tiempo restante para aprender sobre otros comandos Bash. Algunos de ellos están listados \href{https://es.wikipedia.org/wiki/Comandos_Bash}{este art{\'\i}culo de Wikipedia}.
 
 
 \end{questions}
