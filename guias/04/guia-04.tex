@@ -1,8 +1,13 @@
 \documentclass[11pt]{exam}
 \usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{amsmath,epsfig}
+%\usepackage{graphdicx}
 \usepackage[colorlinks]{hyperref}
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
 
 \pagestyle{headandfoot}
 
@@ -13,9 +18,9 @@
 %\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
 %\runningfootrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 04}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2022-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\lhead{\bf\normalsize Computación Científica\\ Guía 04}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
 \lfoot{\tiny GR}
@@ -27,33 +32,52 @@
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \begin{questions}
-\item Conozca uno de los editores de texto especializados en edici'on de c'odigo \LaTeX. La persona encargada de la pr'actica les mostrar'a las funcionalidades b'asicas del programa \href{http://www.xm1math.net/texmaker/}{TexMaker} (multiplataforma, existen versiones para Linux, Windows y MacOS) o bien de \href{https://kile.sourceforge.io/}{Kile} (versiones para Linux y Windows). Estos programas son muy similares\footnote{De hecho, TexMaker es la ``continuaci'on'' del proyecto Kile, por el mismo autor (Pascal Brachet) que escribi'o originalemente este 'ultimo software.} y proporcionan muchas caracter'isticas que hacen de la edici'on de c'odigo \LaTeX una labor m'as r'apida y simple. En esta semana, intente usar exclusivamente uno de estos programas.
+\item Trabaje con el archivo con el código \LaTeX\ que creó al final de la guía pasada (\texttt{plantilla.tex}) y compílelo con el comando \texttt{pdflatex plantilla.tex}. Si todo sale bien, debe generar directamente un archivo .pdf con su primer trabajo en \LaTeX.
+Abra el archivo .pdf para visualizar el resultado.
 
-\item Vea el video titulado ``páginas 30 a 35"\, que puede encontrar es \href{https://udec.instructure.com/courses/29314/pages/expresiones-matematicas-en-latex}{esta página de Canvas}, en el que se explica el contenido de las páginas 30 a 35 el archivo \href{https://udec.instructure.com/courses/17852/pages/latex-pdf-presentacion?module_item_id=531012}{pdf de clases}.
+\item Para saciar su infinita curiosidad, mire (en la consola!) el contenido de los archivos auxiliares generados (.aux y .log). Luego de esto, borre todos los archivos generados por la compilación.
 
-\item Entre los temas discutidos en el punto anterior está el entorno \texttt{equation}. Este entorno define una línea especial para ingresar expresiones en modo matemático, de modo que éstas aparecen centradas en la página, con un tamaño un poco más grande, y con una numeración automática a la derecha. Reproduzca los ejemplos de la página 33 y 34, es decir, escriba el código indicado en un archivo \texttt{.tex} y verifique que realiza lo señalado.
+\item Usando el comando \texttt{cp} haga dos copias de su archivo \texttt{plantilla.tex} con nombres \texttt{test-01.tex} y \texttt{test-02.tex}. Guarde el archivo \texttt{plantilla.tex} en algún lugar seguro, le servirá en el futuro.
 
-\item Una de las preguntas de un certamen de a\~nos anteriores consisti'o en pedirle a l@s estudiantes que escribieran (con lapiz y papel) el c'odigo \LaTeX\ que reproduce la famosa ecuaci'on de \href{https://es.wikipedia.org/wiki/Erwin_Schr\%C3\%B6dinger}{Schr\"odinger} (una de la ecuaciones fundamentales de la Mec'anica Cu'antica):
-\begin{equation}
--\frac{\hbar^2}{2m}\nabla^2\Psi+V(\vec{x})\Psi=i\hbar\frac{\partial\Psi}{\partial t}.
-\end{equation}
-Escriba el c'odigo \LaTeX\ que reproduce esta hermosa ecuaci'on.
+\item Si bien en la gran mayoría de instalaciones de versiones actuales de \LaTeX\, las tildes que usamos en nuestro idioma son reconocidas automáticamente\footnote{Siempre que se graben los archivos en formato UTF-8 o similar.}, puede que en algunas ocasiones encuentre o necesite usar la ``forma tradicional"\, de generar estos caracteres. Para familiazarse con éstos, agregue a su archivo \texttt{test-01.tex} algunas secciones y texto que involucre caracteres latinos, usando \verb|\'a, \'e, \'i, \'o, \'u, \~n y ?`|, que generan á, é, í, ó, í, \~n, y ?`, respectivamente
 
-\item Ahora que sabe c'omo escribir la ecuaci'on de Schr\"odinger en \LaTeX, mire el art'iculo de Wikipedia correspondiente, \href{https://es.wikipedia.org/wiki/Ecuaci\%C3\%B3n_de_Schr\%C3\%B6dinger}{aqu\'i}. Encuentre alguna de las versiones all'i escritas de esta ecuaci'on e ingrese al link marcado como [\texttt{editar}] m'as cercano. Observe ah'i c'omo luce el c'odigo que genera el art'iculo en cuesti'on. Como puede ver, las ecuaciones en Wikipedia se generan con un c'odigo que es esencialmente \LaTeX, acompa\~nado con algunos otros c'odigos especiales. Entonces, a partir de ahora usted sabe c'omo editar/agregar ecuaciones en art'iculos de Wikipedia!
+\item Ahora agregue el siguiente código en alguna parte de su documento:
 
-\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciendo estas expresiones:
-\begin{equation}
-\int \sin^2(x)\,dx=\frac{x-\sin (x)\,\cos (x)}{2}  ,
-\end{equation}
-\begin{equation}
-v = c \ \sqrt{1- \frac{{m^2 c^4}}{{(mc^2+K)^2}}},
-\end{equation}
-\begin{equation}
-\vec{F} = \frac{\text{d}\vec{p}}{\text{d}t} = \frac{\text{d}(\gamma m \vec{v})}{\text{d}t} = m \gamma^3 \vec{a} = \frac{m \vec{a}}{[1-(v^2/c^2)]^{3/2}}.
-\end{equation}
+\begin{minted}[bgcolor=bg]{tex}
+\begin{quote}
+``El primer principio es que no te debes engañar a ti mismo - y tú eres 
+la persona que más fácilmente te engaña. Así que hay que tener mucho 
+cuidado con eso. Una vez que no te engañas a ti mismo, es fácil que no 
+engañes a los otros científicos''. \texttt{Richard Feynman}.
+\end{quote}
+\end{minted}
+
+Esto introduce el texto dentro del entorno \texttt{quote}, que es apropiado para citar frases célebres de algún personaje importante. Vea cómo luce el resultado en su archivo .pdf.
+
+\texttt{Ojo!} Existen tres tipos de comillas: 	las comillas ``simples'' ('\,), las comillas ``dobles'' ("\,), y las comillas ``diagonales hacia la derecha'' (`). Éstas se obtienen con combinaciones distintas de teclas (que var'ian de teclado en teclado!). Las comillas usadas en el ejemplo del entorno \texttt{quote} son dos comillas diagonales al comienzo y dos comillas simples al final de la frase.
 
 
-\item En \href{https://github.com/gfrubi/CC/blob/master/guias/04/ejemplo-g4.pdf}{este archivo pdf} encontrar'a el extracto de un texto simple de F'isica (Mec'anica) que hace uso de ecuaciones (entorno \texttt{equation}), f'ormulas en l'inea, (sub)secciones, y diversos s'imbolos matem'aticos. Escriba un c'odigo \LaTeX\ que reproduzca lo m'as fielmente posible el contenido de este pdf.
+\item Cambie el tipo de entorno usado en el punto anterior desde \texttt{quote}, para que ahora sea un entorno \texttt{center}, \texttt{flushleft}, \texttt{flushright} y finalmente \texttt{sloppypar}. En cada caso, vea cómo esto afecta al resultado final.
+
+\item Lea el pdf de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de \LaTeX} usada en clases, hasta la página 24 (``Espa\~nol y \LaTeX'').
+
+\item Descargue el archivo modelo \href{https://github.com/gfrubi/CC/blob/master/guias/03/articulo.pdf}{articulo.pdf} y ábralo para ver qué contiene. 
+
+
+\item Edite \texttt{test-02.tex} para que al compilarlo se reproduzca lo más fielmente posible el contenido del model en el archivo \texttt{articulo.pdf} (secciones, subsecciones, listas, texto, etc.).
+
+\item En el archivo \texttt{test-02.tex} realice las siguientes modificaciones y observe qué efecto tiene cada una de ellas en el .pdf final.
+\begin{parts}
+\item Agregue el comando \verb|\tableofcontents| en la l'inea siguiente a \verb|\begin{document}|. No olvide compilar dos veces para ver el efecto de este cambio!.
+\item Agregue el comando \verb|\usepackage[spanish]{babel}| en la segunda l'inea del código, es decir, en la l'inea siguiente a \verb|\documentclass[12pt]{article}|.
+\item Agregue la opción \verb|twocolumn| a la declaración de clase de la primera l'inea, es decir, transfórmela en \verb|\documentclass[12pt,twocolumn]{article}|.
+\item Finalmente, modifique la opción \verb|12pt| en la primera l'inea, reemplazándola por \verb|10pt|.
+\end{parts}
+
+\item \LaTeX\ es un mundo vasto, bello y desconocido, en el que se pueden seguir aprendiendo y desarrollando nuevos aspectos constantemente. Para explorar un poco más, descargue y dé un vistazo al tutorial ``\textit{La introducción no-tan-corta a \LaTeX 2e}'' (2014), de Tobias Oetiker, Hubert Partl, Irene Hyna y Elisabeth Schlegl, disponible en \url{http://www.ctan.org/tex-archive/info/lshort/spanish}. Note que en la subcarpeta \texttt{fuente/src} del link anterior está disponible el código \LaTeX\, que genera este documento.
+
+\item Finalmente, otra muy buena referencia para aprender y/o consultar sobre \LaTeX\ es el libro ``\textit{Edición de Textos Cient'ificos en \LaTeX: Composición, Dise\~no Editorial, Gráficos, Inkscape, Tikz y Presentaciones Beamer}'' (2da edición, actualización Enero 2021), de Alexánder Borbón y Walter Mora , disponible en \url{https://pics.latexstudio.net/uploads/20210513/4dfe259635765e9f9eb588d41d9c9275.pdf}. Descargue este libro, mire qué contiene y guárdelo para refencia futura.
 \end{questions}
 \end{document} 
