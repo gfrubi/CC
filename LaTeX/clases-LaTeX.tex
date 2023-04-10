@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 
 \usefonttheme{professionalfonts}
-\usetheme{Darmstadt}
+\usetheme{Madrid}
 % Bergen, Boadilla, Copenhagen, Dresden, Hannover, Luebeck, AnnArbor, Berkeley, Darmstadt, Frankfurt, Ilmenau, Madrid, Warsaw, Antibes, Berlin, CambridgeUS, Malmoe, PaloAlto
 %\setBeamercovered{transparent}
 \usepackage{minted} 
@@ -63,22 +63,26 @@ $\bullet$ Facilidades para insertar objetos
                              & $\bullet$ Limitaciones por formatos de archivo \\[1ex]
 $\bullet$ Lento y malo para tratar expresiones matemáticas
                              & $\bullet$ Muy bueno para expresiones matemáticas \\
-$\bullet$ 'Enfasis en Dise\~no & $\bullet$ Énfasis en Contenido         
+$\bullet$ énfasis en Dise\~no & $\bullet$ Énfasis en Contenido         
 \end{tabular}
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{?`Por qu'e usar \LaTeX?}
+\begin{frame}[fragile]\frametitle{\LaTeX vs Word}
+\begin{center}
+	\includegraphics[height=7cm]{figs/LaTeX_vs_Word-2.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{?`Por qué usar \LaTeX?}
 \begin{itemize}
 \item Produce documentos con calidad de imprenta.
 \item Utilizado por editoriales, revistas y congresos especializados.
 \item Indispensable para físic@s, geofísic@s, astrónom@s, matemátic@s, etc.
-\item Es la mejor opción para escribir su \emph{tesis}!.
+\item ¡Es la mejor opción para escribir su \emph{tesis}!.
 \end{itemize}
-\begin{center}
-	\includegraphics[height=5cm]{figs/LaTeX_vs_Word.pdf}
-\end{center}
 \end{frame}
+
 
 
 \begin{frame}[fragile]\frametitle{Filosofía de \LaTeX}
@@ -87,7 +91,7 @@ $\bullet$ 'Enfasis en Dise\~no & $\bullet$ Énfasis en Contenido
 
 \bigskip
 \begin{block}{}
-La persona que escribe debe de preocuparse del \textit{contenido} de sus documentos, y no (directamente) de la \textit{apariencia} que 'estos tendrán en el resultado final.
+La persona que escribe debe de preocuparse del \textit{contenido} de sus documentos, y no (directamente) de la \textit{apariencia} que éstos tendrán en el resultado final.
 \end{block}
 \end{frame}
 
@@ -124,7 +128,7 @@ Hola. Este es mi primer documento.
 %\end{center}
 %\end{frame}
 
-\begin{frame}[fragile]\frametitle{Proceso de compilación}
+\begin{frame}[fragile]\frametitle{Proceso de compilación (creación de archivo .pdf)}
 
 \begin{block}{Forma tradicional}
 \begin{itemize}
@@ -141,6 +145,7 @@ Hola. Este es mi primer documento.
 %\texttt{> ps2pdf archivo.ps archivo.pdf}
 \end{itemize}
 \end{block}
+\setbeamercolor{block title}{use=structure,fg=black,bg=green}
 \begin{block}{Forma rápida (Recomendada)}
 \begin{itemize}
 \item Compilar directamente a pdf: \par
@@ -151,18 +156,21 @@ Hola. Este es mi primer documento.
 
 
 \begin{frame}[fragile]\frametitle{Clases de documentos}
-Clases estándares
+\begin{itemize}
+\item Clases estándar
 \begin{itemize}
   \item \texttt{article} -- Artículo.
   \item \texttt{report} -- Reporte.
   \item \texttt{book} -- Libro.
   \item \texttt{letter} -- Cartas.
 \end{itemize}
-Clases extras
+
+\item Clases extras
 \begin{itemize}
   \item \texttt{beamer} -- Presentaciones.
   \item \texttt{prosper} -- Presentaciones.
   \item \texttt{poster} -- Poster.
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -283,7 +291,7 @@ dos enteros \dots
 \begin{itemize}
 \item \verb|\emph{...}| enfatiza parte del texto.
 \item \emph{!`Piensa en contenido, no en formato!}
-%\item Los t'erminos nuevos en definiciones usualmente se enfatizan.
+%\item Los términos nuevos en definiciones usualmente se enfatizan.
 \end{itemize}
 \end{frame}
 
@@ -296,7 +304,7 @@ es Sir Isaac Newton\footnote{Isaac Newton: 25 de
 diciembre de 1642 (jul.) / 4 de enero de 1643 (greg) 
 -- 20 de marzo (jul.) / 31 de marzo de 1727 (greg.) 
 fue un físico, filósofo, teólogo, inventor, 
-alquimista y matemático ingl\'es.} quien, entre 
+alquimista y matemático inglés.} quien, entre 
 otras cosas, desarrolló los fundamentos de la 
 \emph{Mecánica}.
 \end{minted}
@@ -307,7 +315,7 @@ Sir Isaac Newton\footnote{Isaac Newton: 25 de diciembre de
 1642 (jul.) / 4 de enero de 1643 (greg) -- 20 de marzo 
 (jul.) / 31 de marzo de 1727 (greg.) fue un físico, 
 filósofo, teólogo, inventor, alquimista y matemático 
-ingl\'es.} quien, entre otras cosas, desarrolló los 
+inglés.} quien, entre otras cosas, desarrolló los 
 fundamentos de la \emph{Mecánica}.
 \end{frame}
 
@@ -369,7 +377,7 @@ Forma tradicional
      \verb+í+  &   í        \\
      \verb+\~n+  &   \~n     \\
      \verb+\~N+  &   \~N     \\
-     \verb+?`+  &   ?`     \\
+     \verb+¿+  &   ¿     \\
      \verb+!`+  &   !`  
   \end{tabular}
 \end{center}
@@ -598,7 +606,7 @@ Pasando a otros temas \dots
 
 
 \begin{quote}
-\dots y despu\'es de muchos cálculos llegamos a la
+\dots y después de muchos cálculos llegamos a la
 inevitable conclusión que 
 \begin{equation}
   \lim_{x \to 0} \frac{\sin(x)}{x} = 1.
@@ -658,7 +666,7 @@ Pasando a otros temas \dots
 
 \begin{frame}[fragile]\frametitle{Arreglos y matrices}
 \begin{itemize}
-  \item Los comandos \verb|\left| y \verb|\right| agregan par'entesis que se adaptan al tama\~no del conenido que encierran. Se pueden usar combinaciones de: \verb|(|, \verb|)|, \verb|[|, \verb|]|,    \verb|\{|, \verb|\}|, \verb#|# y \verb|.|
+  \item Los comandos \verb|\left| y \verb|\right| agregan paréntesis que se adaptan al tama\~no del conenido que encierran. Se pueden usar combinaciones de: \verb|(|, \verb|)|, \verb|[|, \verb|]|,    \verb|\{|, \verb|\}|, \verb#|# y \verb|.|
   \item El entorno \verb|array| recibe una lista de las columnas del arreglo,
      una letra: \verb|l| (left), \verb|c| (center), \verb|r| (right) para
      indicar la alíneación de cada columna.
@@ -723,11 +731,11 @@ El paquete Babel se encarga de gestionar los cortes de palabras al final de las 
 \end{block}
 \begin{block}{}
 \begin{minted}{tex}
-'a, 'e, í, 'o, 'u, ~n, 'N, ?` y !`
+'a, é, í, 'o, 'u, ~n, 'N, ?` y !`
 \end{minted}
 producen
 \begin{center}
-'a, 'e, í, 'o, 'u, ~n, 'N, ?` y !`
+'a, é, í, 'o, 'u, ~n, 'N, ¿ y !`
 \end{center}
 \end{block}
 \end{frame}
