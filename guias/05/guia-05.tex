@@ -4,11 +4,6 @@
 \usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
 
-\usepackage{minted} 
-\usemintedstyle{emacs}
-\usepackage{tcolorbox} % colores para el fondo
-\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
-
 \pagestyle{headandfoot}
 
 \begin{document}
@@ -18,9 +13,9 @@
 %\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
 %\runningfootrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 05}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2022-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\lhead{\bf\normalsize Computación Científica\\ Guía 05}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
 \lfoot{\tiny GR}
@@ -32,118 +27,33 @@
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\begin{center}
-%\texttt{Fecha de Entrega: Jueves 28 de Agosto. Env'ie a gfrubi@udec.cl los archivos .py que resuelven cada uno de los problemas propuestos.}
-%\end{center}
 \begin{questions}
+\item Conozca uno de los editores de texto especializados en edición de código \LaTeX. La persona encargada de la práctica les mostrará las funcionalidades básicas del programa \href{http://www.xm1math.net/texmaker/}{TexMaker} (multiplataforma, existen versiones para Linux, Windows y MacOS) o bien de \href{https://kile.sourceforge.io/}{Kile} (versiones para Linux y Windows). Estos programas son muy similares\footnote{De hecho, TexMaker es la ``continuación'' del proyecto Kile, por el mismo autor (Pascal Brachet) que escribió originalemente este íltimo software.} y proporcionan muchas características que hacen de la edición de código \LaTeX\, una labor más rápida y cómoda. En esta semana, intente usar exclusivamente uno de estos programas.
 
-\item Cree un nuevo documento \texttt{.tex} que cargue los paquetes \texttt{amsmath} y \texttt{amsfonts} 
+\item Lea el contenido de las páginas 31 a 36 del \href{https://udec.instructure.com/courses/17852/pages/latex-pdf-presentacion?module_item_id=531012}{pdf de clases}. Reproduzca los ejemplos ahí descritos. Si tiene dudas, consulte con su ayudante.
 
-(use \verb|\usepackage{amsmath,amsfonts}|) y que genere las siguientes expresiones matem\'aticas:
-\begin{itemize}
+\item Entre los temas discutidos en el punto anterior está el entorno \texttt{equation}. Este entorno define una línea especial para ingresar expresiones en modo matemático, de modo que éstas aparecen centradas en la página, con un tamaño un poco más grande, y con una numeración automática a la derecha. Reproduzca los ejemplos de la página 33 y 34, es decir, escriba el código indicado en un archivo \texttt{.tex} y verifique que realiza lo señalado.
 
-\item La siguiente ecuaci'on numerada:
-\begin{equation}\label{asinNnu}
-Y_\nu(x)\approx \sqrt{\frac{2}{\pi x}}\sen\left(x-\frac{\nu\pi}{2}-\frac{\pi}{4}\right), 
-\qquad x\gg\left|\nu^2-\frac{1}{4}\right|.
-\end{equation}
-Usando 
-
-\begin{minted}[bgcolor=bg]{tex}
-	\begin{equation}
-
-	\end{equation}
-\end{minted}
-\item La siguiente ecuaci'on no numerada:
-\begin{equation*}
-\int_{0}^{\infty }\frac{\log (x)}{x^{2}}dx=-\left. \frac{\log (x)}{x}\right]
-_{0}^{\infty }+\int_{0}^{\infty }\frac{1}{x^{2}}dx
-\end{equation*}
-Usando
-
-\begin{minted}[bgcolor=bg]{tex}
-	\begin{equation*}
-
-	\end{equation*}
-\end{minted}
-\item La siguiente expresi'on del m'ultiples l'ineas:
-\begin{align} 
-(a+b)^4 &= (a+b)^2 (a+b)^2 \\
- &= (a^2+2ab+b^2) (a^2+2ab+b^2) \\
- &= a^4+4 a^3 b + 6 a^2 b^2 +4 a b^3 +b^4
-\end{align}
-Usando (ver páginas 46-47 de la \href{https://udec.instructure.com/courses/29314/pages/latex-pdf-presentacion?module_item_id=1039048}{presentación de clases})
-
-\begin{minted}[bgcolor=bg]{tex}
-
-	\begin{align} 
-	 ... &= ...\\
-	 ... &= ...\\
-	 ... &= ...
-	\end{align} 
-\end{minted}
-
-\item Una expresi'on enmarcada, usando el comando \verb|\boxed{}| de \texttt{amsmath}:
-\newline
-\begin{equation*}
-\boxed{\int u \, dv=u\,v-\int v \, du}
-\end{equation*}
-
-\item Diferentes tipografías matem\'aticas con fuentes de \texttt{amsfonts}:
-\begin{itemize}
-\item 
+\item Una de las preguntas de un certamen de a\~nos anteriores consisti'o en pedirle a l@s estudiantes que escribieran (con lapiz y papel) el c'odigo \LaTeX\ que reproduce la famosa ecuaci'on de \href{https://es.wikipedia.org/wiki/Erwin_Schr\%C3\%B6dinger}{Schr\"odinger} (una de la ecuaciones fundamentales de la Mec'anica Cu'antica):
 \begin{equation}
-\mathsf{C}_{ijkl}=\boldsymbol{\mathsf{C}}
+-\frac{\hbar^2}{2m}\nabla^2\Psi+V(\vec{x})\Psi=i\hbar\frac{\partial\Psi}{\partial t}.
 \end{equation}
-Usando
+Escriba el c'odigo \LaTeX\ que reproduce esta hermosa ecuaci'on.
 
-\begin{minted}[bgcolor=bg]{tex}
-	\mathsf{C}_{ijkl}=\boldsymbol{\mathsf{C}}.
-\end{minted}
+\item Ahora que sabe c'omo escribir la ecuaci'on de Schr\"odinger en \LaTeX, mire el art'iculo de Wikipedia correspondiente, \href{https://es.wikipedia.org/wiki/Ecuaci\%C3\%B3n_de_Schr\%C3\%B6dinger}{aqu\'i}. Encuentre alguna de las versiones all'i escritas de esta ecuaci'on e ingrese al link marcado como [\texttt{editar}] m'as cercano. Observe ah'i c'omo luce el c'odigo que genera el art'iculo en cuesti'on. Como puede ver, las ecuaciones en Wikipedia se generan con un c'odigo que es esencialmente \LaTeX, acompa\~nado con algunos otros c'odigos especiales. Entonces, a partir de ahora usted sabe c'omo editar/agregar ecuaciones en art'iculos de Wikipedia!
 
-\item 
+\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciendo estas expresiones:
 \begin{equation}
-\mathcal{A} \neq \boldsymbol{\mathcal{A}}
-\end{equation}
-Usando
-
-\begin{minted}[bgcolor=bg]{tex}
-	\mathcal{A} \neq \boldsymbol{\mathcal{A}}
-\end{minted}
-
-
-\end{itemize}
-\end{itemize}
-\item La siguiente expresi\'on
-\begin{equation}
- |x| = \left\{ \begin{array}{ll}
-         x & \mbox{si $x \geq 0$},\\
-        -x & \mbox{si $x < 0$}.\end{array} \right.
-\end{equation}
-
-\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciento estas expresiones:
-\begin{equation}
-\Lambda^{\mu'}{}_\nu = \begin{pmatrix}
-\gamma & -\beta\gamma/c & 0 & 0\\
--\beta\gamma c & \gamma & 0 & 0\\
-0 & 0 & 1 & 0\\
-0 & 0 & 0 & 1 \end{pmatrix},
+\int \sin^2(x)\,dx=\frac{x-\sin (x)\,\cos (x)}{2}  ,
 \end{equation}
 \begin{equation}
-U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
-\begin{pmatrix} \gamma \\ \gamma v_x \\ \gamma v_y \\ \gamma v_z \end{pmatrix}.
+v = c \ \sqrt{1- \frac{{m^2 c^4}}{{(mc^2+K)^2}}},
+\end{equation}
+\begin{equation}
+\vec{F} = \frac{\text{d}\vec{p}}{\text{d}t} = \frac{\text{d}(\gamma m \vec{v})}{\text{d}t} = m \gamma^3 \vec{a} = \frac{m \vec{a}}{[1-(v^2/c^2)]^{3/2}}.
 \end{equation}
 
-\item En su archivo de trabajo, agregue algunas referencias bibliogr'aficas, siguiendo el ejemplo en la página página 52 de la \href{https://udec.instructure.com/courses/29314/pages/latex-pdf-presentacion?module_item_id=1039048}{presentación de clases}.
 
-\item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea c'omo afecta al resultado obtenido.
-
-\item Agregue ahora el paquete \texttt{hyperref} agregando 
-\verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega autom'aticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los n'umeros de ecuaciones citados, as'i como en los n'umeros correspondientes a las referencias bibliogr'aficas. Note que \texttt{hyperref} tambi'en agrega hyperlinks a la tabla de contenidos de su pdf, si 'esta existe.
-
-\item El paquete \texttt{hyperref} tambi'en permite incluir \textit{hyperlinks externos} a su pdf. Existen b'asicamente dos formas: La m'as simple es incluir comandos como \verb|\url{http://www.cfm.cl}|, que agrega un hyperlink a la direcci'on se\~nalada. Agregue un ejemplo de este tipo a su archivo de trabajo y vea el resultado.
-
-\item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direcci'on anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
-
+\item En \href{https://github.com/gfrubi/CC/blob/master/guias/04/ejemplo-g4.pdf}{este archivo pdf} encontrar'a el extracto de un texto simple de F'isica (Mec'anica) que hace uso de ecuaciones (entorno \texttt{equation}), f'ormulas en l'inea, (sub)secciones, y diversos s'imbolos matem'aticos. Escriba un c'odigo \LaTeX\ que reproduzca lo m'as fielmente posible el contenido de este pdf.
 \end{questions}
 \end{document} 
