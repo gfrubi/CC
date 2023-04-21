@@ -233,7 +233,7 @@ Para libros, artículos y reportes:
       \item Con algunos puntos \dots
       \item \dots importantes.
     \end{itemize}
-    \item Y el \'ultimo elemento.
+    \item Y el último elemento.
   \end{enumerate}
 \end{frame}
 
@@ -251,7 +251,7 @@ Para libros, artículos y reportes:
       \item Con algunos puntos \dots
       \item \dots importantes.
     \end{itemize}
-    \item Y el \'ultimo elemento.
+    \item Y el último elemento.
   \end{enumerate}
 \end{minted}
 \end{block}
@@ -279,12 +279,11 @@ mientras miraba a su futuro aprendiz.
 
 \begin{frame}[fragile]\frametitle{Texto Enfatizado}
 
-Decimos que un n\'umero es \emph{racional} si existen dos enteros \dots
+Decimos que un número es \emph{racional} si existen dos enteros \dots
 
 \begin{block}{}
 \begin{minted}{tex}
-Decimos que un n\'umero es \emph{racional} si existen 
-dos enteros \dots
+Decimos que un número es \emph{racional} si existen dos enteros \dots
 \end{minted}
 \end{block}
 
@@ -365,22 +364,25 @@ Y \verb|\mathcal{}| $\mathcal{CAL}$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX}
-Forma tradicional
+\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX: Forma tradicional}
   \begin{center}
   \begin{tabular}{c|c}
      Input      &   Resultado \\ 
      \hline
-     \verb+\'o+  &   ó       \\
-     \verb+\'u+  &   'u       \\
      \verb+\'a+  &   á       \\
-     \verb+\'i+  &   í        \\
-     \verb+\~n+  &   \~n     \\
-     \verb+\~N+  &   \~N     \\
+     \verb+\'e+  &   é       \\
+     \verb+\'i+  &   í       \\
+     \verb+\'o+  &   ó        \\
+     \verb+\'u+  &   ú        \\
+     \verb+\~n+  &   ñ     \\
+     \verb+\~N+  &   Ñ     \\
      \verb+?`+  &   ¿     \\
-     \verb+!`+  &   !`  
+     \verb+!`+  &   ¡  
   \end{tabular}
 \end{center}
+\begin{block}{}
+En instalaciones actuales de \LaTeX, en las que los archivos .tex se almacenan en formato UTF-8, usualmente no es necesario introducir las tildes de esta forma tradicional, ya que se pueden ingresar directamente como á, é, í, ó, ú, etc.
+\end{block}
 \end{frame}
 
 
@@ -436,7 +438,7 @@ Observe también que $0 < x^{2} < 1$.
 
 \begin{frame}[fragile]\frametitle{Símbolos Especiales}
 \begin{itemize}
-  \item Letras griegas min'usculas
+  \item Letras griegas minúsculas
    \begin{center}
       \begin{tabular}{clcl}
         $\alpha$ & \verb+\alpha+ & $\theta$   & \verb+\theta+    \\
@@ -445,7 +447,7 @@ Observe también que $0 < x^{2} < 1$.
         $\lambda$& \verb+\lambda+& $\varsigma$& \verb+\varsigma+ 
       \end{tabular}
     \end{center}
-   \item Legras griegas may'usculas
+   \item Legras griegas mayúsculas
    \begin{center}
    \begin{tabular}{llcllcll}
    $\Gamma $ & \verb|\Gamma| & & $\Xi $ & \verb|\Xi| & &$\Phi $ & \verb|\Phi|  \\
@@ -525,7 +527,7 @@ $\ell $& \verb|\ell| & &$\top $& \verb|\top| \\
 
 \begin{frame}[fragile]\frametitle{Símbolos Especiales}
   \begin{itemize}
-   \item Nombres de funciones de uso com'un: \verb|\sin|, \verb|\cos|, \verb|\log|, \verb|\lim|, \dots
+   \item Nombres de funciones de uso común: \verb|\sin|, \verb|\cos|, \verb|\log|, \verb|\lim|, \dots
    \item Algunos comandos típicos:
    
 \begin{center}
@@ -720,24 +722,24 @@ En general, cada paquete particular que quiera ser usado en un documento debe se
 \end{block}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX: Babel}
+\begin{frame}[fragile]\frametitle{Espa\~nol y \LaTeX: babel}
 \begin{block}{}
 \begin{minted}{tex}
-\usepackage[spanish, activeacute]{babel}
+\usepackage[spanish]{babel}
 \end{minted}
 \end{block}
 \begin{block}{}
-El paquete Babel se encarga de gestionar los cortes de palabras al final de las líneas (muy \'util!). La opción \texttt{spanish} selecciona nuestro idioma, y \texttt{activeacute} permite acortar un poco la introducción de tildes y caracteres latinos
+El paquete Babel se encarga de gestionar los cortes de palabras al final de las líneas (muy útil!). La opción \texttt{spanish} selecciona nuestro idioma.
 \end{block}
-\begin{block}{}
-\begin{minted}{tex}
-'a, é, í, 'o, 'u, ~n, 'N, ?` y !`
-\end{minted}
-producen
-\begin{center}
-'a, é, í, 'o, 'u, ~n, 'N, ¿ y !`
-\end{center}
-\end{block}
+%\begin{block}{}
+%\begin{minted}{tex}
+%'a, é, í, 'o, 'u, ~n, 'N, ?` y !`
+%\end{minted}
+%producen
+%\begin{center}
+%'a, é, í, 'o, 'u, ~n, 'N, ¿ y !`
+%\end{center}
+%\end{block}
 \end{frame}
 
 
@@ -800,7 +802,7 @@ al preámbulo del documento.
 I &=&I_{\rm cm}+MD^{2} \\
 &=&\frac{1}{12}ML^2 +M\left( \frac{L}{2}-\frac{L}{5}\right)^2 \\
 &=&\frac{13}{75}L^2 M \\
-&\approx&9,7067\times 10^{-2} [kg\,m^2] .
+&\approx&9,7067\times 10^{-2} [\rm kg\,m^2] .
 \end{eqnarray}
 \end{frame}
 
@@ -812,7 +814,7 @@ I &=&I_{\rm cm}+MD^{2} \\
      &=&\frac{1}{12} ML^2 + M\left( \frac{L}{2}
      	-\frac{L}{5} \right)^2 \\
      &=&\frac{13}{75} L^{2} M \\
-     &\approx & 9,7067 \times 10^{-2} [kg\,m^2].
+     &\approx & 9,7067 \times 10^{-2} [\rm kg\,m^2].
 \end{eqnarray}
 \end{minted}
 \end{block}
@@ -824,7 +826,7 @@ El paquete \texttt{amsmath} suministra el entorno \texttt{align}, con una sintax
 I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}-\frac{L}{5}\right)^2 \\
 &= \frac{13}{75} L^2M \\
-&\approx 9,7067 \times 10^{-2} [kg\,m^2].
+&\approx 9,7067 \times 10^{-2} [\rm kg\,m^2].
 \end{align}
 \end{frame}
 
@@ -836,7 +838,7 @@ I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}
 	-\frac{L}{5}\right)^2 \\
 &= \frac{13}{75} L^2M \\
-&\approx 9,7067 \times 10^{-2} [kg\,m^2].
+&\approx 9,7067 \times 10^{-2} [\rm kg\,m^2].
 \end{align}
 \end{minted}
 \end{block}
@@ -1100,14 +1102,14 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 
 \begin{frame}[fragile]\frametitle{Insertar Figuras}
 \begin{itemize}
-  \item (Cuando se generan archivos \texttt{.ps} (compilando con \texttt{latex}) se pueden insertar imágenes en formato \texttt{.eps}, \texttt{.ps}.)
+%  \item (Cuando se generan archivos \texttt{.ps} (compilando con \texttt{latex}) se pueden insertar imágenes en formato \texttt{.eps}, \texttt{.ps}.)
   \item Cuando se generan archivos \texttt{.pdf} (compilando con \texttt{pdflatex}) se pueden insertar imágenes en formato \texttt{.jpg}, \texttt{.png}, \texttt{.pdf}.
-  \item Recomiendo Inkscape, Python, LibreOffice  para crear \textit{gráficos vectoriales} (.svg, .ps, .eps, .pdf); Gimp para fotos (.png, .jpg).
-\end{itemize}
-\end{frame}
+  \item Recomiendo:
+  	\begin{itemize}
+  		\item \href{https://inkscape.org/}{Inkscape}, Python, LibreOffice  para crear \textit{gráficos vectoriales} (.svg, .ps, .eps, .pdf)
+  		\item \href{https://www.gimp.org/}{Gimp} para fotos (.png, .jpg).
+	\end{itemize}
 
-\begin{frame}[fragile]\frametitle{Insertar Figuras}
-\begin{itemize}
 \item La opción  \verb|[width=6cm]| se puede usar para modificar el ancho
   tama\~no de una imagen. También existe la opción \texttt{height}, p.ej. \verb|[height=5cm]|.
 \item También puede usarse la opción \verb|[scale=0.6]| para re-escalar la figura.
@@ -1124,10 +1126,11 @@ En \LaTeX\ existen diversos tipos de \textbf{elementos flotantes}, cuya posició
 los índices de figuras y tablas respectivamente.
 \item En los índices se agregan sólo las figuras y tablas que hayas agregado como
 elementos flotantes.
+\item Tal como ocurre con \verb|\tableofcontents|, estos comandos requieres compilar (al menos) dos veces para que se despliege los números correctos de página (ya que la primera vez se registran los números de página correspondientes en el archivo \texttt{.aux}, que luego se lee para incorporar los valores correctos en el pdf final).
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Presentaciones}
+\begin{frame}[fragile]\frametitle{Presentaciones con Beamer}
 	\begin{itemize}
 		\item La clase \href{https://github.com/josephwright/beamer}{\texttt{beamer}} permite crear presentaciones 
 			\begin{block}{}
@@ -1135,7 +1138,7 @@ elementos flotantes.
 				\documentclass{beamer}
 			\end{minted}
 			\end{block}
-		\item Recomiendo usar las opciones \verb|[hyperref={colorlinks},aspectratio=169]|
+		\item Recomiendo usar las opciones \verb|[hyperref={colorlinks},aspectratio=169]|.
 
 		\item Cada lámina/página es creada usando el entorno \texttt{frame}.
 		\item Puede definir un ``bloque'', usando el entorno \texttt{block}.
