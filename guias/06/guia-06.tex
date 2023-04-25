@@ -1,7 +1,7 @@
 \documentclass[11pt]{exam}
 \usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,epsfig}
+\usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
 
 \usepackage{minted} 
@@ -18,9 +18,9 @@
 %\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
 %\runningfootrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 06}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2021-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\lhead{\bf\normalsize Computación Científica\\ Guía 06}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
 \lfoot{\tiny GR}
@@ -32,11 +32,122 @@
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\begin{center}
+%\texttt{Fecha de Entrega: Jueves 28 de Agosto. Env'ie a gfrubi@udec.cl los archivos .py que resuelven cada uno de los problemas propuestos.}
+%\end{center}
 \begin{questions}
-%\item Vea el video resumen sobre el uso de referencias cruzadas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/17852/pages/referencias-cruzadas?module_item_id=667756}{aquí}.
-%\item Vea el video resumen sobre el uso de referencias bibliográficas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/17852/pages/referencias-bibliograficas?module_item_id=667757}{aquí}.
-%\item Vea el video resumen sobre la creación de tablas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/17852/pages/tablas?module_item_id=667758}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
-\item Vea el video resumen sobre cómo incluir gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/29314/pages/figuras?module_item_id=1039065}{aquí}.
+
+\item Cree un nuevo documento \texttt{.tex} que cargue los paquetes \texttt{amsmath} y \texttt{amsfonts} 
+
+(use \verb|\usepackage{amsmath,amsfonts}|) y que genere las siguientes expresiones matem\'aticas:
+\begin{itemize}
+
+\item La siguiente ecuaci'on numerada:
+\begin{equation}\label{asinNnu}
+Y_\nu(x)\approx \sqrt{\frac{2}{\pi x}}\sin\left(x-\frac{\nu\pi}{2}-\frac{\pi}{4}\right), 
+\qquad x\gg\left|\nu^2-\frac{1}{4}\right|.
+\end{equation}
+Usando 
+
+\begin{minted}[bgcolor=bg]{tex}
+	\begin{equation}
+
+	\end{equation}
+\end{minted}
+\item La siguiente ecuaci'on no numerada:
+\begin{equation*}
+\int_{0}^{\infty }\frac{\log (x)}{x^{2}}dx=-\left. \frac{\log (x)}{x}\right]
+_{0}^{\infty }+\int_{0}^{\infty }\frac{1}{x^{2}}dx
+\end{equation*}
+Usando
+
+\begin{minted}[bgcolor=bg]{tex}
+	\begin{equation*}
+
+	\end{equation*}
+\end{minted}
+\item La siguiente expresi'on del m'ultiples l'ineas:
+\begin{align} 
+(a+b)^4 &= (a+b)^2 (a+b)^2 \\
+ &= (a^2+2ab+b^2) (a^2+2ab+b^2) \\
+ &= a^4+4 a^3 b + 6 a^2 b^2 +4 a b^3 +b^4
+\end{align}
+Usando (ver páginas 47-48 de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de clases})
+
+\begin{minted}[bgcolor=bg]{tex}
+
+	\begin{align} 
+	 ... &= ...\\
+	 ... &= ...\\
+	 ... &= ...
+	\end{align} 
+\end{minted}
+
+\item Una expresi'on enmarcada, usando el comando \verb|\boxed{}| de \texttt{amsmath}:
+\newline
+\begin{equation*}
+\boxed{\int u \, dv=u\,v-\int v \, du}
+\end{equation*}
+
+\item Diferentes tipografías matem\'aticas con fuentes de \texttt{amsfonts}:
+\begin{itemize}
+\item 
+\begin{equation}
+\mathsf{C}_{ijkl}=\boldsymbol{\mathsf{C}}
+\end{equation}
+Usando
+
+\begin{minted}[bgcolor=bg]{tex}
+	\mathsf{C}_{ijkl}=\boldsymbol{\mathsf{C}}.
+\end{minted}
+
+\item 
+\begin{equation}
+\mathcal{A} \neq \boldsymbol{\mathcal{A}}
+\end{equation}
+Usando
+
+\begin{minted}[bgcolor=bg]{tex}
+	\mathcal{A} \neq \boldsymbol{\mathcal{A}}
+\end{minted}
+
+
+\end{itemize}
+\end{itemize}
+\item La siguiente expresi\'on
+\begin{equation}
+ |x| = \left\{ \begin{array}{ll}
+         x & \mbox{si $x \geq 0$},\\
+        -x & \mbox{si $x < 0$}.\end{array} \right.
+\end{equation}
+
+%\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciendo estas expresiones:
+%\begin{equation}
+%\Lambda^{\mu'}{}_\nu = \begin{pmatrix}
+%\gamma & -\beta\gamma/c & 0 & 0\\
+%-\beta\gamma c & \gamma & 0 & 0\\
+%0 & 0 & 1 & 0\\
+%0 & 0 & 0 & 1 \end{pmatrix},
+%\end{equation}
+%\begin{equation}
+%U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
+%\begin{pmatrix} \gamma \\ \gamma v_x \\ \gamma v_y \\ \gamma v_z \end{pmatrix}.
+%\end{equation}
+
+\item En su archivo de trabajo, agregue algunas referencias bibliogr'aficas, siguiendo el ejemplo en la página página 53 de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de clases}.
+
+\item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea c'omo afecta al resultado obtenido.
+
+\item Agregue ahora el paquete \texttt{hyperref} agregando 
+\verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega autom'aticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los n'umeros de ecuaciones citados, as'i como en los n'umeros correspondientes a las referencias bibliogr'aficas. Note que \texttt{hyperref} tambi'en agrega hyperlinks a la tabla de contenidos de su pdf, si 'esta existe.
+
+\item El paquete \texttt{hyperref} tambi'en permite incluir \textit{hyperlinks externos} a su pdf. Existen b'asicamente dos formas: La m'as simple es incluir comandos como \verb|\url{http://www.cfm.cl}|, que agrega un hyperlink a la direcci'on se\~nalada. Agregue un ejemplo de este tipo a su archivo de trabajo y vea el resultado.
+
+\item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direcci'on anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
+
+\item Vea el video resumen sobre la creación de tablas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/tablas?module_item_id=1465510}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
+
+\item Vea el video resumen sobre cómo incluir figuras/gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/figuras?module_item_id=1465511}{aquí}.
 \item En alg'un archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
 \begin{figure}[h!]
 \begin{center}
@@ -64,15 +175,5 @@ El t'itulo, autor(a), y resumen puede ser incorporados usando los siguientes com
 Este es el resumen del artículo...
 \end{abstract}
 \end{minted}
-
-\item Finalmente, cree una presentación usando la clase \texttt{Beamer}.
-\begin{parts}
-\item Lea la página 66 del \href{https://udec.instructure.com/courses/29314/pages/latex-pdf-presentacion?module_item_id=1039048}{pdf de clases}.
-\item Descargue el archivo de ejemplo \href{https://github.com/gfrubi/CC/blob/master/guias/06/ejemplo-beamer.tex}{ejemplo-beamer.tex} y estudie su contenido.
-\item Explore cómo lucen los distintos temas disponibles en Beamer, cambiando la opción \verb|\usetheme{}|.
-\item Adapte este ejemplo para crear su propia, única y espectacular presentación. Ésta debe incluir al menos: una ecuación (entorno \texttt{equation}), una ecuación alineada (entorno \texttt{eqnarray} o \texttt{align}), una tabla y una figura.
-\item Comparta una copia del archivo pdf su presentación en el \href{https://teams.microsoft.com/l/channel/19\%3a39b89cfa8e2d4deaa611d18190ed6c9d\%40thread.tacv2/02\%2520Pr\%25C3\%25A1cticas?groupId=787ade39-1121-4cac-99ae-cc187b6e6587&tenantId=56582b9e-8824-49d0-a665-cd328c0e004a}{canal de prácticas} del grupo de Teams del curso.
-\end{parts}
 \end{questions}
-
 \end{document} 
