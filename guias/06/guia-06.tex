@@ -1,5 +1,5 @@
 \documentclass[11pt]{exam}
-\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[spanish]{babel} % Permite el idioma español.
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
@@ -33,16 +33,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\begin{center}
-%\texttt{Fecha de Entrega: Jueves 28 de Agosto. Env'ie a gfrubi@udec.cl los archivos .py que resuelven cada uno de los problemas propuestos.}
+%\texttt{Fecha de Entrega: Jueves 28 de Agosto. Envíe a gfrubi@udec.cl los archivos .py que resuelven cada uno de los problemas propuestos.}
 %\end{center}
 \begin{questions}
 
 \item Cree un nuevo documento \texttt{.tex} que cargue los paquetes \texttt{amsmath} y \texttt{amsfonts} 
 
-(use \verb|\usepackage{amsmath,amsfonts}|) y que genere las siguientes expresiones matem\'aticas:
+(use \verb|\usepackage{amsmath,amsfonts}|) y que genere las siguientes expresiones matemáticas:
 \begin{itemize}
 
-\item La siguiente ecuaci'on numerada:
+\item La siguiente ecuación numerada:
 \begin{equation}\label{asinNnu}
 Y_\nu(x)\approx \sqrt{\frac{2}{\pi x}}\sin\left(x-\frac{\nu\pi}{2}-\frac{\pi}{4}\right), 
 \qquad x\gg\left|\nu^2-\frac{1}{4}\right|.
@@ -54,7 +54,7 @@ Usando
 
 	\end{equation}
 \end{minted}
-\item La siguiente ecuaci'on no numerada:
+\item La siguiente ecuación no numerada:
 \begin{equation*}
 \int_{0}^{\infty }\frac{\log (x)}{x^{2}}dx=-\left. \frac{\log (x)}{x}\right]
 _{0}^{\infty }+\int_{0}^{\infty }\frac{1}{x^{2}}dx
@@ -66,7 +66,7 @@ Usando
 
 	\end{equation*}
 \end{minted}
-\item La siguiente expresi'on del m'ultiples l'ineas:
+\item La siguiente expresión del múltiples líneas:
 \begin{align} 
 (a+b)^4 &= (a+b)^2 (a+b)^2 \\
  &= (a^2+2ab+b^2) (a^2+2ab+b^2) \\
@@ -83,13 +83,13 @@ Usando (ver páginas 47-48 de la \href{https://udec.instructure.com/courses/4017
 	\end{align} 
 \end{minted}
 
-\item Una expresi'on enmarcada, usando el comando \verb|\boxed{}| de \texttt{amsmath}:
+\item Una expresión enmarcada, usando el comando \verb|\boxed{}| de \texttt{amsmath}:
 \newline
 \begin{equation*}
 \boxed{\int u \, dv=u\,v-\int v \, du}
 \end{equation*}
 
-\item Diferentes tipografías matem\'aticas con fuentes de \texttt{amsfonts}:
+\item Diferentes tipografías matemáticas con fuentes de \texttt{amsfonts}:
 \begin{itemize}
 \item 
 \begin{equation}
@@ -114,7 +114,7 @@ Usando
 
 \end{itemize}
 \end{itemize}
-\item La siguiente expresi\'on
+\item La siguiente expresión
 \begin{equation}
  |x| = \left\{ \begin{array}{ll}
          x & \mbox{si $x \geq 0$},\\
@@ -134,35 +134,35 @@ Usando
 %\begin{pmatrix} \gamma \\ \gamma v_x \\ \gamma v_y \\ \gamma v_z \end{pmatrix}.
 %\end{equation}
 
-\item En su archivo de trabajo, agregue algunas referencias bibliogr'aficas, siguiendo el ejemplo en la página página 53 de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de clases}.
+\item En su archivo de trabajo, agregue algunas referencias bibliográficas, siguiendo el ejemplo en la página página 53 de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de clases}.
 
-\item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea c'omo afecta al resultado obtenido.
+\item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea cómo afecta al resultado obtenido.
 
 \item Agregue ahora el paquete \texttt{hyperref} agregando 
-\verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega autom'aticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los n'umeros de ecuaciones citados, as'i como en los n'umeros correspondientes a las referencias bibliogr'aficas. Note que \texttt{hyperref} tambi'en agrega hyperlinks a la tabla de contenidos de su pdf, si 'esta existe.
+\verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega automáticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los números de ecuaciones citados, así como en los números correspondientes a las referencias bibliográficas. Note que \texttt{hyperref} también agrega hyperlinks a la tabla de contenidos de su pdf, si ésta existe.
 
-\item El paquete \texttt{hyperref} tambi'en permite incluir \textit{hyperlinks externos} a su pdf. Existen b'asicamente dos formas: La m'as simple es incluir comandos como \verb|\url{http://www.cfm.cl}|, que agrega un hyperlink a la direcci'on se\~nalada. Agregue un ejemplo de este tipo a su archivo de trabajo y vea el resultado.
+\item El paquete \texttt{hyperref} también permite incluir \textit{hyperlinks externos} a su pdf. Existen básicamente dos formas: La más simple es incluir comandos como \verb|\url{http://www.cfm.cl}|, que agrega un hyperlink a la dirección señalada. Agregue un ejemplo de este tipo a su archivo de trabajo y vea el resultado.
 
-\item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direcci'on anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
+\item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direccion anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
 
 \item Vea el video resumen sobre la creación de tablas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/tablas?module_item_id=1465510}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
 
 \item Vea el video resumen sobre cómo incluir figuras/gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/figuras?module_item_id=1465511}{aquí}.
-\item En alg'un archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
+\item En algún archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=4cm]{marcaderecha.png}
 \end{center}
-\caption{Marca alineaci'on derecha, Formato PNG.}
+\caption{Marca alineación derecha, Formato PNG.}
 \label{fig:escudo}
 \end{figure}
 
-Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} p'agina para conocer otras variaciones oficiales del escudo de la UdeC. 
-Puede encontrar m'as informaci'on acerca de las normas gr'aficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} p'agina.
+Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} página para conocer otras variaciones oficiales del escudo de la UdeC. 
+Puede encontrar más información acerca de las normas gráficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} página.
 
-\item Ahora su misi'on es escribir su primer ``art'iculo cient'ifico'' en \LaTeX, que debe reproducir lo m'as fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/06/ejemplo-articulo.pdf}{este} ejemplo. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/06/fig-ajuste-lineal.pdf}{aqu\'i}.
+\item Ahora su misión es escribir su primer ``artículo científico'' en \LaTeX, que debe reproducir lo más fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/06/ejemplo-articulo.pdf}{este} ejemplo. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/06/fig-ajuste-lineal.pdf}{aquí}.
 
-El t'itulo, autor(a), y resumen puede ser incorporados usando los siguientes comandos despu'es del conocido \verb|\documentclass|:
+El título, autor(a), y resumen puede ser incorporados usando los siguientes comandos después del conocido \verb|\documentclass|:
 
 \begin{minted}[bgcolor=bg]{tex}
 \title{Escribiendo mi primer artículo con formato Científico, en \LaTeX}
