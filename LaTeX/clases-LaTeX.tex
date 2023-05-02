@@ -1130,23 +1130,113 @@ elementos flotantes.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Presentaciones con Beamer}
+\section{Presentaciones con Beamer}
+\begin{frame}[fragile=singleslide] %opción fragile=singleslide necesaria para que minted no pare al encontrar end{frame}
+\frametitle{La clase Beamer} 
+\begin{itemize}
+	\item La clase \href{https://github.com/josephwright/beamer}{\texttt{Beamer}}, creada por Till Tantau y mantenida por \href{https://research-portal.uea.ac.uk/en/persons/joseph-wright}{Joseph Wright} y Vedran Miletić, permite crear presentaciones en \LaTeX. Para usarla, el preámbulo debe contener
+		\begin{block}{}
+		\begin{minted}{tex}
+\documentclass{beamer}
+		\end{minted}
+		\end{block}
+	\item Existen distintos ``temas'' que modifican el aspecto de la presentación. Éstos se definen con el comando \verb|\usetheme|, como en el siguiente ejemplo, en el que se selecciona el estilo ``\texttt{Madrid}'':
+		\begin{block}{}
+		\begin{minted}{tex}
+\usetheme{Madrid}
+		\end{minted}
+		\end{block}
+	\item Los estilos disponibles (ver \href{https://ctan.dcc.uchile.cl/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{manual}) son: \texttt{Bergen, Boadilla, Copenhagen, Dresden, Hannover, Luebeck, AnnArbor, Berkeley, Darmstadt, Frankfurt, Ilmenau, Madrid, Warsaw, Antibes, Berlin, CambridgeUS, Malmoe, PaloAlto}.
+\end{itemize}
+\end{frame}	
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Definiendo una lámina}
+\begin{itemize}
+	\item En \texttt{Beamer} cada ``lámina'' o página de la presentación es creada usando el entorno \texttt{frame}. El siguiente código ejemplo define una lámina simple:
+	\begin{block}{}
+		\begin{minted}{tex}
+\begin{frame}\frametitle{Título de la lámina}
+Contenido de la lámina
+\end{frame}
+		\end{minted}
+	\end{block}
+	\item El comando \verb|\frametitle| es opcional y define el título de la lámina, que aparecerá (típicamente) en la parte superior.
+\end{itemize}
+\end{frame}	
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Bloques}
+\begin{itemize}
+	\item Puede definir un ``bloque'', usando el entorno \texttt{block}. Por ejemplo, el código
+	\begin{block}{}
+		\begin{minted}{tex}
+\begin{block}{Nombre del bloque}
+Contenido del bloque
+\end{block}
+		\end{minted}
+	\end{block}
+produce un bloque como el siguiente:
+\begin{block}{Nombre del bloque}
+Contenido del bloque
+\end{block}
+\end{itemize}
+\end{frame}	
+
+\begin{frame}[fragile=singleslide]\frametitle{Bloques de alerta}
+Existen distintos tipos de bloques, con distintos colores (ver \href{https://ctan.dcc.uchile.cl/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{manual}), definidos por sus respectivos entornos.
 	\begin{itemize}
-		\item La clase \href{https://github.com/josephwright/beamer}{\texttt{beamer}} permite crear presentaciones 
-			\begin{block}{}
-			\begin{minted}{tex}
-				\documentclass{beamer}
-			\end{minted}
-			\end{block}
-		\item Recomiendo usar las opciones \verb|[colorlinks,aspectratio=169]|.
+	\item El entorno \texttt{alertblock} produce un bloque ``de alerta''. Por ejemplo,
+		\begin{block}{}
+		\begin{minted}{tex}
+\begin{alertblock}{Bloque de alerta}
+Contenido del bloque de alerta
+\end{alertblock}
+		\end{minted}
+	\end{block}
+produce un bloque como el siguiente:
+\begin{alertblock}{Bloque de alerta}
+Contenido del bloque de alerta
+\end{alertblock}
+\end{itemize}
+\end{frame}	
 
-		\item Cada lámina/página es creada usando el entorno \texttt{frame}.
-		\item Puede definir un ``bloque'', usando el entorno \texttt{block}.
-		\item Puede también cambiar el tipo de letra usada, por ejemplo con \verb|\usefonttheme{professionalfonts}|.
-		\item Puede cambiar el aspecto general con \verb|\usetheme{Darmstadt}|.
-		\item Temas disponibles (ver \href{https://ctan.dcc.uchile.cl/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{manual}): Bergen, Boadilla, Copenhagen, Dresden, Hannover, Luebeck, AnnArbor, Berkeley, Darmstadt, Frankfurt, Ilmenau, Madrid, Warsaw, Antibes, Berlin, CambridgeUS, Malmoe, PaloAlto.
+\begin{frame}[fragile=singleslide]\frametitle{Bloques de ejemplo}	
+Similarmente, el entorno \texttt{exampleblock} produce un bloque ``de ejemplo'', de modo que
+		\begin{block}{}
+		\begin{minted}{tex}
+\begin{exampleblock}{Bloque de ejemplo}
+Contenido del bloque de ejemplo
+\end{exampleblock}
+		\end{minted}
+	\end{block}
+produce 
+\begin{exampleblock}{Bloque de ejemplo}
+Contenido del bloque de ejemplo
+\end{exampleblock}
 
+\end{frame}	
+
+\begin{frame}[fragile]\frametitle{Recomendaciones}
+\begin{itemize}
+\item Recomiendo usar las opciones \verb|[colorlinks,aspectratio=169]|, es decir, 
+	\begin{block}{}
+	\begin{minted}{tex}
+\documentclass[colorlinks,aspectratio=169]{beamer}
+	\end{minted}
+	\end{block}
+	\begin{itemize}
+		 \item \texttt{colorlinks} cambia el color de los elementos clickeables (hyperlinks) para que sea más fácil identificarlos.
+		 \item \texttt{aspectratio=169} ajusta relación ancho/alto a 16:9, que es más apropiado para pantallas modernas.
 	\end{itemize}
+\item Puede también cambiar el tipo de letra usada, por ejemplo con la opción
+\begin{block}{}
+	\begin{minted}{tex}
+\usefonttheme{professionalfonts}
+	\end{minted}
+\end{block}
+en el preámbulo del documento. Esto cambia el tipo de letra usada en los textos y además tiene el efecto de que las expresiones matemáticas se despliegan con el mismo estilo que por defecto es usado en un documento \LaTeX\, normal (artículo, libro, etc.).
+\end{itemize}
 \end{frame}
 %
 %\part{Definir nuevas macros}
