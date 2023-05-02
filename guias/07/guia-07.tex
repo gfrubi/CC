@@ -36,7 +36,14 @@
 \item Vea el video en el que se explica el uso de la clase Beamer para la creación de presentaciones, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/presentaciones-en-beamer}{aquí}.
 \item Lea las páginas 66 a 71 del \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{pdf de clases}.
 \item Descargue el archivo de ejemplo \href{https://raw.githubusercontent.com/gfrubi/CC/master/LaTeX/ejemplo-beamer.tex}{ejemplo-beamer.tex} y estudie su contenido. Asegúrese de entender qué hace cada línea de código.
-\item Explore cómo lucen los distintos temas disponibles en Beamer, cambiando la opción \verb|\usetheme{}|.
+\item Explore cómo lucen los distintos temas disponibles en Beamer, cambiando la opción \verb|\usetheme{}|. Puede visualizar los distintos temas en \href{https://deic.uab.cat/~iblanes/beamer_gallery/index_by_theme.html}{esta página}.
+
+\item Además de los temas anteriores, es posible cambiar el esquema de colores usado, con el comando \verb|\usecolortheme|. Por ejemplo, incluyendo el comando 
+\begin{minted}[bgcolor=bg]{tex}
+\usecolortheme{crane}
+\end{minted}
+en el preámbulo se selecciona el esquema de colores ``\texttt{crane}''. Los esquemas de colores disponibles son: \texttt{albatross, beaver, beetle, crane, default, dolphin, dove, fly, lily, orchid, rose, seagull, seahorse, sidebartab, structure, whale, wolverine}. Puede visualizar estos esquemas de colores en \href{https://deic.uab.cat/~iblanes/beamer_gallery/index_by_color.html}{esta página}. Pruebe algunos de estos colores y seleccione el que más le guste.
+
 \item Adapte el archivo de ejemplo para crear su propia, única y espectacular presentación. Ésta debe incluir \textit{como mínimo}: el logo de la UdeC en la portada, la tabla de contenidos, una hermosa expresión matemática (entorno \texttt{equation}), una ecuación alineada (entorno \texttt{eqnarray} o \texttt{align}), una tabla y alguna linda figura.
 \item Comparta una copia del archivo pdf su presentación en el \href{https://teams.microsoft.com/l/channel/19\%3a71886676efd74657a9520b2c075c7c3f\%40thread.tacv2/02\%2520Pr\%25C3\%25A1cticas?groupId=221daffe-974a-46b7-b9ef-311b29bce6b4&tenantId=56582b9e-8824-49d0-a665-cd328c0e004a}{canal de prácticas} del grupo de Teams del curso.
 \end{questions}
