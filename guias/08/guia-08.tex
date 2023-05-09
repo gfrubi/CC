@@ -1,7 +1,7 @@
 \documentclass[11pt]{exam}
-\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[spanish]{babel} % Permite el idioma español.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,epsfig}
+\usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
 
 \usepackage{minted} 
@@ -19,12 +19,12 @@
 %\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
 %\runningfootrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 08}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2019-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\lhead{\bf\normalsize Computación Científica\\ Guía 07}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
-\lfoot{\tiny FB/GR}
+\lfoot{\tiny GR}
 \begin{flushleft}
 \vspace{0.2in}
 %\hbox to \textwidth{Nombre: \enspace \hrulefill}
@@ -33,68 +33,199 @@
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Estructuras de control}
-\section{Repetitivas}
-\begin{enumerate}
- \item 
-Escriba un programa en Fortran 90 que permita contar en forma creciente de 1 a $N$, donde $N$ es 
-ingresado por el usuario a trav\'es del teclado. Primero use la estructura repetitiva DO y despu\'es un DO WHILE.
+\begin{questions}
+\item  El lenguaje Python, además de ser usado para interpretar y ejecutar programas ya escritos (con extensión \texttt{.py}), puede ser usado en forma \textit{interactiva}, es decir, ingresando comandos que serán ejecutados inmediatamente en la consola. Para esto, realice las siguientes tareas:
 
-\item 
-Escriba un programa en Fortran 90 que permita contar en forma decreciente de $N$ a $-N$, 
-donde $N$ es ingresado por el usuario a trav\'es del teclado.
+\begin{parts}
+\item Abra una consola y ejecute el intérprete de Python (es decir, ejecute el comando \texttt{python}, sin indicar un arhivo \texttt{.py}). ¿Qué versión de Python está instalada?
+\item Ejecute los siguientes comandos en forma consecutiva:
 
-\item 
-Escriba un programa que permita calcular la suma de los primeros $N$ n\'umeros enteros, 
-donde $N$ es ingresado por el usuario a trav\'es del teclado.
+\begin{minted}[bgcolor=bg]{python}
+x = 1
+y = 2
+print(x,y)
+print("El valor de x es ",x," y el valor de y es ",y)
+\end{minted}
+\item ejecute \texttt{quit()} para salir del intérprete interactivo y volver a la consola (Bash).
+\item Vuelva a ingresar a una sesión interactiva de Python y ahora ejecute:
 
-\item 
-Escriba un programa que permita calcular la suma de los primeros $N$ n\'umeros enteros pares, donde $N$ es ingresado por el usuario a trav\'es del teclado.
+\begin{minted}[bgcolor=bg]{python}
+sx = str(x)
+type(sx)
+\end{minted}
 
-\item 
-Calcular el producto de los primero $N$ pares con los primeros $N$ impares.
+¿Qué tipo de variable es \texttt{sx}? Entonces, ¿qué hace la función \texttt{str()}?
+\item Ahora ejecute:
 
-\item 
-Escriba un programa que permita calcular el factorial de un n\'umero entero.
-\item 
-Escriba un programa  que muestre en pantalla, los primeros $N$ elementos de la sucesi\'on $a_{n}=\dfrac{1}{2^{n}}$.
+\begin{minted}[bgcolor=bg]{python}
+mensaje = "El valor de x es " + str(x) + " y el valor de y es " + str(y)
+print(mensaje)
+\end{minted}
 
-\item 
-La serie de Fibonacci: 1, 1, 2, 3, 5, 8, 13,\dots se define que cada t\'ermino subsiguiente 
- est\'a dado por la suma de los dos t\'erminos anteriores: $1+1=2$;  $1+2=3$;  $2+3= 5$ \dots . Escriba un programa que muestre en pantalla los primero 100 t\'erminos de esta serie.
-Modifique el programa anterior para determinar la suma de los primeros $N$ elemento de la sucesi\'on.
-\item 
-Escriba un programa  que permita ver las 100 primeras iteraciones del mapa
-$x_{n+1}=A\,x_{n}(1-x_{n}) $  para $A= 3.3$,  $A= 3.5$   y  $A=3. 57$. Use $x_{0}= 0.5$.
+¿Qué diferencia observa en el resultado?
+\item Conozca la función \texttt{len()}, para esto ejecute:
 
-\end{enumerate}
-\section{Condicional}
-\begin{enumerate}
+\begin{minted}[bgcolor=bg]{python}
+n = len(mensaje)
+print(n)
+type(n)
+\end{minted}
 
- \item 
+¿Qué valor entrega la función \texttt{len()} aplicada a un string\footnote{``String"\, es el nombre usado comúnmente para una \textit{cadena} de caracteres alfanuméricos.}?, ¿Qué tipo de variable suministra? (pruebe aplicándola a otros strings).
 
-Escriba un programa que ordene de menor a mayor, una secuencia de 3 n\'umeros que son 
-entrados a trav\'es  del teclado, adem\'as que calcule el promedio de ellos.
-\item 
- Ingrese dos n\'umeros reales por teclado. Si $a$ es mayor que $b$ muestre la suma, en caso contrario el producto, y que si $a$ es igual a $b$ muestre la resta. 
-\item 
-Escriba un programa para determinar si un  entero es par o impar. 
-\item 
-Escriba un programa para determinar si un  entero es cuadrado perfecto. 
-\item
-Escriba un programa que le permita resolver la ecuaci\'on de segundo grado, $ax^{2}+bx+c=0$ donde los valores
- de $a$, $b$ y $c$ son valores reales, ingresados por el usuario a trav\'es del teclado.  Adem\'as, debe indicar 
-si NO tiene ra\'ices reales e incluir el caso si $a = 0$.
-\item
- Dada la sucesi\'on $S_n=80*n-n^2+200$ con $n$ variando de 1 a 100. Determinar cu\'antos elementos son 
-positivos, negativos  y ceros.
-\item
-A partir de que valor de $n$ la sucesi\'on $a_{n}=\dfrac{1}{2n+4}$ varia menos del  2\%. 
-Definiendo variaci\'on relativa como $\vert\frac{a_{n+1}-a_{n}}{a_{n}}\vert$.
-\item 
-Escriba un programa que le permita obtener los d\'ias de los meses del a\~no, ingresando el mes (1-12).
+\end{parts}
+\item Existen diversas operaciones definidas entre distintos tipos de variables. Para aprender cómo funcionan algunas de ellas defina primero las siguientes variables y verifique su tipo:
+\begin{itemize}
 
-\item Ingresar la hora del d\'ia por teclado y el programa lo debe saludar con: buenos d\'ias, buenas tardes o buenas noches.
-\end{enumerate}
+\begin{minted}[bgcolor=bg]{python}
+a = 3.14
+b = 2
+c = 5
+d = 6+2j
+e = "hola "
+f = "mechones"
+g = True
+\end{minted}
+A continuación imprima el valor y el tipo del resultado de las siguientes operaciones: \texttt{a+b, a+d, a+e, b+c, b+d, b+e, f+e, e+f, a*b, a*d, a*e, b*c, b*d, c*e, e*f, a**b, a**d, a**e, b**c, e**a, e**b, e**f, a/b, a/d, a/e, b/c, b/d, b/e, c/b, d/a, d/b, e/a, e/b, e/f,  a*g, b*g, not(g), g and False, g and True, g or False, g or True}. ¿Cuáles de estas operaciones no están definidas?
+\item También existen operaciones que generan valores de un tipo a partir de variables de otro tipo. Por ejemplo, como continuación del ejercicio anterior, evalúe y verifique el valor y el tipo de las siguientes operaciones: \texttt{int(a), float(b), d.real, d.imag, a==b, a>b}.
 
-\end{document}
+\item Cree un programa Python llamado \texttt{test01.py} e incluya como primeras líneas el siguiente código:
+
+\begin{minted}[bgcolor=bg]{python}
+print("Resolveremos la ecuación a*x**2 + b*x + c = 0")
+a = float(input("Valor de a = "))
+b = float(input("Valor de b = "))
+c = float(input("Valor de c = "))
+\end{minted}
+
+Este pequeño programa Python, al ser ejecutado con el comando \texttt{python test.py}, pregunta al usuario por los valores de las variables $a$, $b$ y $c$, que son asignadas como valores decimales (float). Ahora modifique el programa para que además \textit{calcule e imprima} las dos soluciones de la ecuación cuadrática, es decir, los valores 
+\begin{equation}
+x_\pm=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+\end{equation}
+Para calcular la raiz cuadrada involucrada eleve el valor correspondiente la potencia $0.5$, es decir, use el hecho que $\sqrt{\alpha}=\alpha^{0.5}$.
+\end{itemize}
+
+\item Los caracteres individuales que forman una cadena alfanumérica (string) pueden ser accesados usando el número del \textit{índice} correspondiente. En Python \textbf{el valor de los índices siempre comienza en 0}, luego 1, 2, etc. Para ilustrar esto, abra un intérprete Python y ejecute los siguientes comandos:
+
+\begin{minted}[bgcolor=bg]{python}
+x = "Hola estudiantes de primer semestre"
+print(x[0])
+print(x[1])
+print(x[2])
+print(x[3])
+\end{minted}
+
+\item Como comprobó anteriormente la función \texttt{len()} entrega el largo del string, es decir, el número de caracteres que contiene. Por lo tanto
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[len(x)-1])
+\end{minted}
+
+imprime el último caracter del string, cuyo índice es \texttt{len(x)-1}, debido que el índice del primer caracter es 0. El mismo resultado, puede ser conseguido usando
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[-1])
+\end{minted}
+
+Similarmente,
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[-2])
+\end{minted}
+
+imprime el penúltimo caracter, y asú sucesivamente. Por ejemplo, ejecute
+
+\begin{minted}[bgcolor=bg]{python}
+x[-3] == x[len(x)-3]
+\end{minted}
+
+para comprobar que se refieren al mismo caracter.
+
+\item También es posible acceder a un subconjunto de caracteres del string usando, en nuestro caso, \texttt{x[inicio:fin:paso]}, donde \texttt{inicio} y \texttt{fin} son los índices de los caracteres iniciales y finales y \texttt{paso} es un entero que define el paso. Si \texttt{paso} no es ingresado, el intérprete considera que \texttt{paso = 1} . Por ejemplo, ejecute y verifique qué hacen los siguientes comandos
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[0:4:1])
+print(x[0:4])
+print(x[5:16])
+print(x[1:20:2])
+\end{minted}
+
+Note que el caracter correspondiente al índice \texttt{fin} \underline{NO} es desplegado. En lenguaje matemático podrúamos decir que \texttt{x[inicio:fin]} suministra los caracteres de \texttt{x} con índices en el intervalo desde \texttt{inicio} \textit{cerrado} hasta \texttt{fin} \textit{abierto}.
+
+\item Además, si no se especifica \texttt{inicio} se asume el valor 0 (inicio del string) y si no se especifica \texttt{fin} se asume el valor \texttt{len(x)} (fin del string). Verifique esto ejecutando:
+
+\begin{minted}[bgcolor=bg]{python}
+print(x[:4])
+print(x[5:])
+print(x[5:-3])
+print(x[::-1])
+\end{minted}
+
+\item \textbf{Bonus track}: 
+
+¿Qué hace cada uno de los siguientes comandos?, ¿Modifican el valor de \texttt{x}?
+
+\begin{minted}[bgcolor=bg]{python}
+x.upper()
+x.replace("a","e")
+x.find("p")
+x.find("semestre")
+\end{minted}
+
+\item Otro concepto muy importante en Python es el de \textit{listas}. Las listas son  similares a las cadenas, excepto que cada elemento puede ser de un tipo diferente. La sintaxis para crear listas en Python es [..., ..., ...]. Por ejemplo, ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+lista = [1, "hola", 1.0, 1-1j, True]
+type(lista)
+print(lista)
+\end{minted}
+
+Como puede ver, la variable \texttt{lista} es un nuevo tipo de objeto: `list'. En este caso, es una lista cuyos elementos son un entero, un string, un float, un complejo, y un booleano. Para verificar esto, imprima el valor y el tipo de cada elemento de la lista. Por ejemplo,
+
+\begin{minted}[bgcolor=bg]{python}
+print(lista[0],type(lista[0]))
+print(lista[1],type(lista[1]))
+\end{minted}
+
+Este ejemplo también muestra que los índices de cada elemento de la lista son numerados de la misma manera que en un string:
+
+\begin{minted}[bgcolor=bg]{python}
+print(lista[0:3])
+print(lista[::2])
+\end{minted}
+
+\item Los elementos de una lista pueden tener cualquier tipo reconocido por Python, por ejemplo, pueden ser otra lista!:
+
+\begin{minted}[bgcolor=bg]{python}
+superlista = ["cool",lista]
+print(superlista)
+\end{minted}
+
+Imprima el valor y el tipo de cada elementos de esta lista. ¿Cuántos elementos tiene la lista \texttt{superlista}? (respuesta, use la función \texttt{len()}).
+
+\item Existen diversas funciones en Python que crean listas. La función \texttt{list()} crea una lista, por ejemplo, a partir de un string. Usando el string \texttt{x} definido anteriormente, ejecute
+
+\begin{minted}[bgcolor=bg]{python}
+y = list(x)
+print(y)
+print(type(y))
+\end{minted}
+
+\item Otra función que crea listas útiles, esta vez de números \textit{enteros}, es \texttt{range(inicio,fin,paso)}, que crea una lista de valores desde \texttt{inicio} (cerrado) hasta \texttt{fin} (abierto!!), con paso \texttt{paso}. Ejecute,
+
+\begin{minted}[bgcolor=bg]{python}
+z = list(range(2,26,3))
+print(z)
+\end{minted}
+
+\item ¿Qué hacen los siguientes comandos?, ¿Modifican el valor de \texttt{x} y/o \texttt{lista}?
+
+\begin{minted}[bgcolor=bg]{python}
+x.split(" ")
+x.split("e")
+lista.append("chao")
+lista.insert(2,"cool")
+\end{minted}
+
+\end{questions}
+\end{document} 
