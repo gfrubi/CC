@@ -1,0 +1,93 @@
+\documentclass[11pt]{exam}
+\usepackage[spanish]{babel} % Permite el idioma español.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Computación Científica\\ Guía 09}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
+%\rfoot{\thepage\ / pages}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+\item En Python, tal como en todo lenguaje de programación moderno, existen comandos de  \textbf{control de flujo}, que permiten escribir programas que se comporten en formas distintas dependiendo de algunas condiciones que se definan. Para familirizarse con la lógica y la sintaxis de los comandos de control de flujo en Pyhon vea los videos en \href{https://udec.instructure.com/courses/40179/pages/control-de-flujo-if-elif-else?module_item_id=1465535}{esta página} de Canvas y reproduzca los ejemplos ahí explicados.
+
+\item Estudie los distintos casos de uso de los comandos \texttt{if}, \texttt{elif} y \texttt{else} descritos en \href{https://udec.instructure.com/courses/40179/files/folder/Python?preview=2549485}{este pdf} disponible en Canvas. Realice una modificación del código de cada caso, agregando una función \texttt{input} para que se pueda ingresar el valor de \texttt{x} desde el teclado, y asegúrese que entiende la logica de cómo funciona su código.
+
+\item Escriba un programa que al ejecutarlo pregunte al usuario un número e imprima su valor absoluto. Recuerde que el valor absoluto (o módulo) $|x|$ de un valor real $x$ es definido por
+\begin{equation}
+|x|:=\left\{\begin{array}{cl}
+x, &\text{si } x>0 \\
+-x, & \text{si } x<0 \\
+\end{array}\right. .
+\end{equation}
+
+\item Usando lo que aprendió sobre el comando \texttt{if} y asociados, modifique el programa \texttt{test.py} que creó en la guía 08 y que resuelve la ecuación cuadrática $ax^2+bx+c=0$, para que ahora el programa informe que existen dos soluciones reales, y las imprima, si el discriminante $b^2-4ac$ es positivo, o que informe que no existe solución real (si el discriminante es negativo), o bien que informe que existe sólo una solución real, y la imprima (si el discriminante es nulo).
+
+
+\item Escriba un programa que ordene (e imprima) de menor a mayor, una secuencia de 3 números que son entrados a través del teclado, además que calcule e imprima el promedio de ellos.
+
+\item Escriba un programa que permita ingresar dos números reales ($a$ y $b$) por el teclado. Si $a$ es mayor que $b$ el programa calcula e imprime la suma, en caso contrario el producto, y que si $a$ es igual a $b$ muestre la resta. 
+
+\item Escriba un programa para determinar si un entero ingresado por el teclado es par o impar. 
+
+\item Escriba un programa para determinar si un entero ingresado por el teclado es o no un cuadrado perfecto. 
+
+\item Descargue el libro ``\textit{Algoritmos y Programación I: Aprendiendo a programar usando Python como herramienta}", de la Facultad de Ingeniería de la Universidad de Buenos Aires, desde el sitio \url{https://algoritmos1rw.ddns.net/} (sección ``Material", archivo ``Apunte"). Link directo \href{https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view}{aqu\'i}. Atesórelo y estúdielo el resto de sus días.
+
+\item Escriba un programa que resuelva el ejercicio 4.6.5 a) planteado en el libro descargado en el punto anterior (página 63).
+
+\item Vea \href{https://udec.instructure.com/courses/40179/pages/ciclos-for?module_item_id=1465536}{este video} en el que se explica el funcionamiento de los ciclos \texttt{for} en Python. Anote sus dudas y discútalas junto a su ayudante.
+
+\item Una partícula realiza un movimiento vertical bajo la influencia de la gravedad de modo que su altura $z(t)$ respecto al suelo es dada por la siguiente ecuación de la trayectoria,
+\begin{equation}
+z(t)=z_0 + v_0 t -\frac{1}{2}gt^2,
+\end{equation}
+con $g=9.8 {\ \rm m/s^2}$. Considere el caso en que $z_0=1 {\ \rm m}$ y $v_0=24 {\ \rm m/s}$.
+
+Escriba un programa en Python que, usando un ciclo \texttt{for}, calcule e imprima el valor de la altura $z(t)$ para los siguientes valores de tiempo (en segundos): $t=0, 0.1, 0.2, \dots 5.0$ (51 valores distintos de tiempo).
+
+\item Modifique el programa anterior, para que ahora éste pregunte al usuario los valores de $z_0$ y $v_0$. Para esto, use el comando \texttt{input} que aprendió en su trabajo con la guía 08.
+
+\item Escriba un programa en Python (que use un ciclo \texttt{for}) que calcule e imprima la suma de los primeros 1000 números enteros, es decir, el valor de 
+\begin{equation}
+1 + 2 + 3 + 4  + \cdots + 999 + 1000.
+\end{equation}
+
+\item El factorial de un número entero positivo $n$, denotado por $n!$ es definido por
+\begin{equation}
+n!=1\cdot 2\cdot 3\cdots (n-1)\cdot n.
+\end{equation}
+Por ejemplo, $3!=1\cdot 2\cdot 3=6$ y $10!=3628800$.
+Escriba un programa en Python que pregunte al usuario por el valor de $n$, y que calcule e imprima su factorial, es decir, $n!$.
+
+\item Modifique ahora el código que creó para calcular el factorial de un número entero para que ahora su programa verifique, antes de calcular el factorial, que el número suministrado es realmente un entero positivo, y sólo calcule el factorial en ese caso, y que en caso contrario informe al usuario que el número ingresado no es apropiado.
+
+\item Escriba un programa que pregunte al usuario el valor algún número natural e imprima todos los números primos que hay hasta ese número. Por ejemplo, si se ingresa el número 8, el programa debe imprimir los números 2, 3, 5 y 7.
+
+\end{questions}
+\end{document} 
