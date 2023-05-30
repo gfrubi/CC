@@ -1,7 +1,7 @@
 \documentclass[11pt]{exam}
-\usepackage[activeacute,spanish]{babel} % Permite el idioma español.
+\usepackage[spanish]{babel} % Permite el idioma español.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,epsfig}
+\usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
 
 \usepackage{minted} 
@@ -15,214 +15,54 @@
 \begin{document}
 
 \firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 10}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2022-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\runningfootrule
+\lhead{\bf\normalsize Computación Científica\\ Guía 10}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
+%\rfoot{\thepage\ / pages}
 \cfoot{ }
 \lfoot{\tiny GR}
 \begin{flushleft}
 \vspace{0.2in}
-
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
 \vspace{0.25cm}
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{questions}
-\item  El lenguaje Python, además de ser usado para interpretar y ejecutar programas ya escritos (con extensión \texttt{.py}), puede ser usado en forma \textit{interactiva}, es decir, ingresando comandos que serán ejecutados inmediatamente en la consola. Para esto, realice las siguientes tareas:
+\item Escriba un programa que imprima en pantalla si un número entero positivo ingresado desde el teclado es o no un número primo. Utilice un ciclo \texttt{while}.
 
-\begin{parts}
-\item Abra una consola y ejecute el int'erprete de Python (es decir, ejecute el comando \texttt{python}, sin indicar un arhivo \texttt{.py}). ?`Qu'e versi'on de Python est'a instalada?
-\item Ejecute los siguientes comandos en forma consecutiva:
-
-\begin{minted}[bgcolor=bg]{python}
-x = 1
-y = 2
-print(x,y)
-print("El valor de x es ",x," y el valor de y es ",y)
-\end{minted}
-\item ejecute \texttt{quit()} para salir del intérprete interactivo y volver a la consola (Bash).
-\item Vuelva a ingresar a una sesión interactiva de Python y ahora ejecute:
-
-\begin{minted}[bgcolor=bg]{python}
-sx = str(x)
-type(sx)
-\end{minted}
-
-?`Qu'e tipo de variable es \texttt{sx}? Entonces, ?`qu'e hace la funci'on \texttt{str()}?
-\item Ahora ejecute:
-
-\begin{minted}[bgcolor=bg]{python}
-mensaje = "El valor de x es " + str(x) + " y el valor de y es " + str(y)
-print(mensaje)
-\end{minted}
-
-?`Qu'e diferencia observa en el resultado?
-\item Conozca la funci'on \texttt{len()}, para esto ejecute:
-
-\begin{minted}[bgcolor=bg]{python}
-n = len(mensaje)
-print(n)
-type(n)
-\end{minted}
-
-?`Qu'e valor entrega la funci'on \texttt{len()} aplicada a un string\footnote{``String"\, es el nombre usado com'unmente para una \textit{cadena} de caracteres alfanum'ericos.}?, ?`Qu'e tipo de variable suministra? (pruebe aplic'andola a otros strings).
-
-\end{parts}
-\item Existen diversas operaciones definidas entre distintos tipos de variables. Para aprender c'omo funcionan algunas de ellas defina primero las siguientes variables y verifique su tipo:
-\begin{itemize}
-
-\begin{minted}[bgcolor=bg]{python}
-a = 3.14
-b = 2
-c = 5
-d = 6+2j
-e = "hola "
-f = "mechones"
-g = True
-\end{minted}
-A continuaci'on imprima el valor y el tipo del resultado de las siguientes operaciones: \texttt{a+b, a+d, a+e, b+c, b+d, b+e, f+e, e+f, a*b, a*d, a*e, b*c, b*d, c*e, e*f, a**b, a**d, a**e, b**c, e**a, e**b, e**f, a/b, a/d, a/e, b/c, b/d, b/e, c/b, d/a, d/b, e/a, e/b, e/f,  a*g, b*g, not(g), g and False, g and True, g or False, g or True}. ?`Cu'ales de estas operaciones no est'an definidas?
-%\item ?`Qu'e pas'o en los casos \texttt{b/c} y \texttt{c/b}?. Busque en las referencias sugeridas la explicaci'on de este comportamiento.
-\item Tambi'en existen operaciones que transforman el tipo de variable. Por ejemplo, como continuaci'on del ejercicio anterior, evalúe y verifique el tipo de las siguientes operaciones: \texttt{int(a), float(b), d.real, d.imag, a==b, a>b}.
-
-\item Cree un programa Python llamado \texttt{test01.py} e incluya como primeras l'ineas el siguiente c'odigo:
-
-\begin{minted}[bgcolor=bg]{python}
-print("Resolveremos la ecuacion a*x**2 + b*x + c = 0")
-a = float(input("Valor de a = "))
-b = float(input("Valor de b = "))
-c = float(input("Valor de c = "))
-\end{minted}
-
-Este pequeño programa Python, al ser ejecutado con el comando \texttt{python test.py}, pregunta al usuario por los valores de las variables $a$, $b$ y $c$, que son asignadas como valores decimales (float). Ahora modifique el programa para que adem'as \textit{calcule e imprima} las dos soluciones de la ecuaci'on cuadr'atica, es decir, los valores 
+\item Considere una pelota que se lanza verticalmente desde una altura inicial $z_0=3\,\rm m$, con una velocidad inicial $v_0 = 1 \,\rm m/s$ hacia arriba. Calcule e imprima en pantalla los valores de la altura
 \begin{equation}
-x_\pm=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+ z(t) = z_0 + v_0 t -\frac{g}{2}t^2,
+\end{equation} 
+y el correspondiente tiempo $t$ para $t=0,0.01,0.02,\dots$ hasta (justo antes) que la pelota llegue al suelo (es decir, llegue a $z=0$). Utilice un ciclo \texttt{while} y considere $g=9.8\,\rm m/s^2$.
+
+\item Vea \href{https://udec.instructure.com/courses/40179/pages/funciones?module_item_id=1465539}{este video} disponible en Canvas, en el que se explica la definición de \textbf{funciones} en Python. Reproduzca y verifique todos los ejemplos ahí descritos.
+
+\item Modifique el código que creó para calcular el factorial de un número entero (guía 09) para que ahora se defina una función \texttt{mifactorial}, de modo que el factorial de $n$ se pueda luego llamar como \texttt{mifactorial(n)}.
+
+\item La exponencial $e^x$ de un número real $x$ puede ser calculada usando la siguiente serie
+\begin{equation}\label{e}
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}=1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots
 \end{equation}
-Para calcular la raiz cuadrada involucrada eleve el valor correspondiente la potencia $0.5$, es decir, use el hecho que $\sqrt{\alpha}=\alpha^{0.5}$.
-\end{itemize}
+Reutilizando su código para calcular factoriales, escriba un programa que pregunte al usuario el valor de $x$ y calcule e imprima el valor de $e^x$, usando la expresión \eqref{e}. Para el cálculo considere 100 términos en la suma \eqref{e}, es decir, que el programa calcule la suma hasta el término $x^{99}/{99!}$. 
 
-\item Los caracteres individuales que forman una cadena alfanum'erica (string) pueden ser accesados usando el n'umero del \textit{'indice} correspondiente. En Python \textbf{el valor de los 'indices siempre comienza en 0}, luego 1, 2, etc. Para ilustrar esto, abra un int'erprete Python y ejecute los siguientes comandos:
+\textbf{Nota 1}: En el caso $n=0$, se define el factorial de $0$ igual al valor $1$, es decir, $0! :=1$.
 
-\begin{minted}[bgcolor=bg]{python}
-x = "Hola estudiantes de primer semestre"
-print(x[0])
-print(x[1])
-print(x[2])
-print(x[3])
-\end{minted}
+\textbf{Nota 2}: El ``truncar'' la serie (es decir, evaluarla hasta cierto número de términos) tiene como consecuencia que el valor calculado es sólo una \textit{aproximación} del valor exacto ($e^x$). Esta aproximación es mejor si se incluyen más términos.
 
-\item Como comprob'o anteriormente la funci'on \texttt{len()} entrega el largo del string, es decir, el n'umero de caracteres que contiene. Por lo tanto
+\item Utilice el programa que acaba de escribir para calcular (una aproximación d)el valor de $e$ (el número de Euler). Compare su resultado con el valor listado en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_e}{artículo de wikipedia}.
 
-\begin{minted}[bgcolor=bg]{python}
-print(x[len(x)-1])
-\end{minted}
-
-imprime el 'ultimo caracter del string, cuyo 'indice es \texttt{len(x)-1}, debido que el 'indice del primer caracter es 0. El mismo resultado, puede ser conseguido usando
-
-\begin{minted}[bgcolor=bg]{python}
-print(x[-1])
-\end{minted}
-
-Similarmente,
-
-\begin{minted}[bgcolor=bg]{python}
-print(x[-2])
-\end{minted}
-
-imprime el pen'ultimo caracter, y as'i sucesivamente. Por ejemplo, ejecute
-
-\begin{minted}[bgcolor=bg]{python}
-x[-3] == x[len(x)-3]
-\end{minted}
-
-para comprobar que se refieren al mismo caracter.
-
-\item Tambi'en es posible acceder a un subconjunto de caracteres del string usando, en nuestro caso, \texttt{x[inicio:fin:paso]}, donde \texttt{inicio} y \texttt{fin} son los 'indices de los caracteres iniciales y finales y \texttt{paso} es un entero que define el paso. Si \texttt{paso} no es ingresado, el int'erprete considera que \texttt{paso = 1} . Por ejemplo, ejecute y verifique qu'e hacen los siguientes comandos
-
-\begin{minted}[bgcolor=bg]{python}
-print(x[0:4:1])
-print(x[0:4])
-print(x[5:16])
-print(x[1:20:2])
-\end{minted}
-
-Note que el caracter correspondiente al 'indice \texttt{fin} \underline{NO} es desplegado. En lenguaje matem'atico podr'iamos decir que \texttt{x[inicio:fin]} suministra los caracteres de \texttt{x} con 'indices en el intervalo desde \texttt{inicio} \textit{cerrado} hasta \texttt{fin} \textit{abierto}.
-
-\item Adem'as, si no se especifica \texttt{inicio} se asume el valor 0 (inicio del string) y si no se especifica \texttt{fin} se asume el valor \texttt{len(x)} (fin del string). Verifique esto ejecutando:
-
-\begin{minted}[bgcolor=bg]{python}
-print(x[:4])
-print(x[5:])
-print(x[5:-3])
-print(x[::-1])
-\end{minted}
-
-\item \textbf{Bonus track}: 
-
-?`Qu'e hace cada uno de los siguientes comandos?, ?`Modifican el valor de \texttt{x}?
-
-\begin{minted}[bgcolor=bg]{python}
-x.upper()
-x.replace("a","e")
-x.find("p")
-x.find("semestre")
-\end{minted}
-
-\item Otro concepto muy importante en Python es el de \textit{listas}. Las listas son  similares a las cadenas, excepto que cada elemento puede ser de un tipo diferente. La sintaxis para crear listas en Python es [..., ..., ...]. Por ejemplo, ejecute:
-
-\begin{minted}[bgcolor=bg]{python}
-lista = [1, "hola", 1.0, 1-1j, True]
-type(lista)
-print(lista)
-\end{minted}
-
-Como puede ver, la variable \texttt{lista} es un nuevo tipo de objeto: `list'. En este caso, es una lista cuyos elementos son un entero, un string, un float, un complejo, y un booleano. Para verificar esto, imprima el valor y el tipo de cada elemento de la lista. Por ejemplo,
-
-\begin{minted}[bgcolor=bg]{python}
-print(lista[0],type(lista[0]))
-print(lista[1],type(lista[1]))
-\end{minted}
-
-Este ejemplo tambi'en muestra que los 'indices de cada elemento de la lista son numerados de la misma manera que en un string:
-
-\begin{minted}[bgcolor=bg]{python}
-print(lista[0:3])
-print(lista[::2])
-\end{minted}
-
-\item Los elementos de una lista pueden tener cualquier tipo reconocido por Python, por ejemplo, pueden ser otra lista!:
-
-\begin{minted}[bgcolor=bg]{python}
-superlista = ["cool",lista]
-print(superlista)
-\end{minted}
-
-Imprima el valor y el tipo de cada elementos de esta lista. ?`Cu'antos elementos tiene la lista \texttt{superlista}? (respuesta, use la funci'on \texttt{len()}).
-
-\item Existen diversas funciones en Python que crean listas. La funci'on \texttt{list()} crea una lista, por ejemplo, a partir de un string. Usando el string \texttt{x} definido anteriormente, ejecute
-
-\begin{minted}[bgcolor=bg]{python}
-y = list(x)
-print(y)
-print(type(y))
-\end{minted}
-
-\item Otra funci'on que crea listas 'utiles, esta vez de n'umeros \textit{enteros}, es \texttt{range(inicio,fin,paso)}, que crea una lista de valores desde \texttt{inicio} (cerrado) hasta \texttt{fin} (abierto!!), con paso \texttt{paso}. Ejecute,
-
-\begin{minted}[bgcolor=bg]{python}
-z = list(range(2,26,3))
-print(z)
-\end{minted}
-
-\item ?`Qu'e hacen los siguientes comandos?, ?`Modifican el valor de \texttt{x} y/o \texttt{lista}?
-
-\begin{minted}[bgcolor=bg]{python}
-x.split(" ")
-x.split("e")
-lista.append("chao")
-lista.insert(2,"cool")
-\end{minted}
+\item Escriba un programa que evalúe (una aproximación de) el número $\pi$. Para esto, use la siguiente expresión en serie (desarrollada por el gran \href{https://es.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}),
+\begin{equation}
+\pi = \sum_{n=0}^{\infty}\frac{2^{n+1}(n!)^2}{(2n+1)!}=\left[2^1\frac{(0!)^2}{1!} + 2^2\frac{(1!)^2}{3!} + 2^3\frac{(2!)^2}{5!} + 2^4 \frac{(3!)^2}{7!} + \cdots \right].
+\end{equation}
+Lo anterior es un ejemplo de un método con el que se puede calcular el valor de $\pi$, con precisión cada vez mayor al agregar más y más términos. Dado que $\pi$ es un número irracional, sólo se conoce su valor (calculado con métodos similares) hasta un cierto número de decimales. El record actual lo tiene Shigeru Kondo, quien logró calcular $\pi$ con $10 000 000 000 000$ decimales!. Compare el valor que usted obtenido con el listado en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_pi}{artículo de wikipedia}.
 
 \end{questions}
-
-
 \end{document} 
