@@ -1,0 +1,191 @@
+\documentclass[colorlinks,aspectratio=169]{beamer}
+
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usefonttheme{professionalfonts}
+\usetheme{Madrid}
+% Bergen, Boadilla, Copenhagen, Dresden, Hannover, Luebeck, AnnArbor, Berkeley, Darmstadt, Frankfurt, Ilmenau, Madrid, Warsaw, Antibes, Berlin, CambridgeUS, Malmoe, PaloAlto
+%\setBeamercovered{transparent}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,
+                calc, chains,
+                quotes,
+                positioning,
+                shapes.geometric}
+
+\usepackage{minted} 
+
+\begin{document}
+
+\begin{frame}[fragile]\frametitle{if's sucesivos (pasos condicionales)}
+\hspace{1cm}\begin{minipage}{0.4\textwidth}
+\begin{minted}{python}
+x = 5
+if x < 10:
+	print('Menor a 10')
+if x > 20:
+	print('Mayor a 20')
+print('Fin')
+\end{minted}
+\end{minipage}
+\hspace{1cm}\begin{minipage}{0.4\textwidth}
+\begin{tikzpicture}[scale=.7, transform shape,
+%    node distance = 8mm and 16mm,
+      start chain = A going below,
+      base/.style = {draw, align=center, on chain=A},
+ startstop/.style = {base, rectangle, rounded corners, fill=red!30},
+   process/.style = {base, rectangle, fill=orange!30},
+  decision/.style = {base, diamond, fill=green!30},
+  every edge quotes/.style = {auto=right}]
+                    
+\node[process]{$x=5$};
+\node[decision]{$x<10$?};
+\node[process,right=of A-2, yshift=-1cm]{\mintinline{python}|print('Menor a 10')|};
+\node[decision, below=of A-2]{$x>20$};
+\node[process,right=of A-4, yshift=-1cm]{\mintinline{python}|print('Mayor a 20')|};
+\node[startstop, below=of A-4]{\mintinline{python}|print('Fin')|};
+
+  
+\draw[arrows=-Stealth] (A-1) -- (A-2);
+\draw[arrows=-Stealth] (A-2) -| node[above]{Sí} (A-3);
+\draw[arrows=-Stealth] (A-2) -- node[right]{No} (A-4);
+\draw[arrows=-Stealth] (A-4) -| node[above]{Sí} (A-5);
+\draw[arrows=-Stealth] (A-4) -- node[right]{No} (A-6);
+\draw[arrows=-Stealth] (A-3) |- (A-4.north);
+\draw[arrows=-Stealth] (A-5) |- (A-6.east);
+\end{tikzpicture}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{if's anidados}
+\hspace{0.5cm}\begin{minipage}[c][3in]{0.4\textwidth}
+\small
+\begin{minted}{python}
+if x > 1:
+	print('Mayor a 1')
+	if x < 100:
+		print('Menor a 100')
+print('Fin')
+\end{minted}
+\end{minipage}
+\hspace{0.5cm}\begin{minipage}{0.4\textwidth}
+\begin{tikzpicture}[scale=.7, transform shape,
+      start chain = A going below,
+      base/.style = {draw, align=center, on chain=A},
+ startstop/.style = {base, rectangle, rounded corners, fill=red!30},
+   process/.style = {base, rectangle, fill=orange!30},
+        io/.style = {base, trapezium, 
+                     trapezium left angle=70, trapezium right angle=110,
+                     fill=blue!30},
+  decision/.style = {base, diamond, fill=green!30},
+  every edge quotes/.style = {auto=right}]
+                    
+\node[decision]{$x>1$};
+\node[process,right=of A-1, yshift=-1cm]{\mintinline{python}|print('Mayor a 1')|};
+\node[decision, below=of A-2, yshift=+0.3cm]{$x<100$};
+\node[process,right=of A-3, yshift=-1cm]{\mintinline{python}|print('Menor a 100')|};
+\node[startstop, below=of A-1, yshift=-3cm]{\mintinline{python}|print('Fin')|};
+%\node[inner sep=0,minimum size=0,above=of A-5, yshift=-0.3cm](dummy){};
+\node[inner sep=0,minimum size=0, above=of A-1](dummy0){};   
+
+\draw[arrows=-Stealth] (A-1) -| node[above]{Sí} (A-2);
+\draw[arrows=-Stealth] (A-1) -- node[right] {No} (A-5);
+\draw[arrows=-Stealth] (A-2) -- (A-3);
+\draw[arrows=-Stealth] (A-3) -| node[near start,above]{Sí} (A-4);
+\draw[arrows=-Stealth] (A-3.south) |- node[above left] {No} (A-5);
+\draw[arrows=-Stealth] (A-4.south) |- node[above left] {No} (A-5);
+\draw[arrows=-Stealth] (dummy0) to (A-1) ;
+
+\end{tikzpicture}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{if y else (decisiones bidireccionales)}
+\hspace{0.5cm}\begin{minipage}[c][3in]{0.4\textwidth}
+\begin{minted}{python}
+if x < 0:
+	print('negativo')
+else:
+	print('no-negativo')
+print('Fin')
+\end{minted}
+\end{minipage}
+\hspace{0.2cm}\begin{minipage}{0.4\textwidth}
+\begin{tikzpicture}[scale=.7, transform shape,
+      start chain = A going below,
+      base/.style = {draw, align=center, on chain=A},
+ startstop/.style = {base, rectangle, rounded corners, fill=red!30},
+   process/.style = {base, rectangle, fill=orange!30},
+        io/.style = {base, trapezium, 
+                     trapezium left angle=70, trapezium right angle=110,
+                     fill=blue!30},
+  decision/.style = {base, diamond, fill=green!30},
+  every edge quotes/.style = {auto=right}]
+
+\node[decision]{$x<0$};
+\node[process,left=of A-1,yshift=-1cm]{\mintinline{python}|print('no-negativo')|};
+\node[process,right=of A-1,yshift=-1cm]{\mintinline{python}|print('negativo')|};
+\node[inner sep=0,minimum size=0, below=of A-1, yshift=-0.5cm](dummy){};
+\node[startstop, below=of dummy]{\mintinline{python}|print('Fin')|};
+\node[inner sep=0,minimum size=0, above=of A-1](dummy0){};                    ]
+  
+\draw[arrows=-Stealth] (A-1) -| node[near start, above left] {Sí} (A-3.north);
+\draw[arrows=-Stealth] (A-1) -| node[near start, above right] {No} (A-2.north);
+\draw[arrows=-Stealth] (A-2) |- (dummy);
+\draw[arrows=-Stealth] (A-3) |- (dummy);
+\draw[arrows=-Stealth] (dummy) to (A-4) ;
+\draw[arrows=-Stealth] (dummy0) to (A-1) ;
+\end{tikzpicture}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{If, else y elif}
+\hspace{1cm}\begin{minipage}[c][3in]{0.4\textwidth}
+\begin{minted}{python}
+if x < 2:
+	print('pequeño')
+elif x < 10:
+	print('mediano')
+else:
+	print('grande')
+print('Fin')
+\end{minted}
+\end{minipage}
+\hspace{1cm}\begin{minipage}{0.4\textwidth}
+\begin{tikzpicture}[scale=.7, transform shape,
+      start chain = A going below,
+      base/.style = {draw, align=center, on chain=A},
+ startstop/.style = {base, rectangle, rounded corners, fill=red!30},
+   process/.style = {base, rectangle, fill=orange!30},
+        io/.style = {base, trapezium, 
+                     trapezium left angle=70, trapezium right angle=110,
+                     fill=blue!30},
+  decision/.style = {base, diamond, fill=green!30},
+  every edge quotes/.style = {auto=right}]
+                    ]
+\node[decision]{$x<2$};
+\node[process,right=of A-1]{\mintinline{python}|print('pequeño')|};
+\node[decision,below=of A-1]{$x<10$};
+\node[process,right=of A-3]{\mintinline{python}|print('mediano')|};
+\node[process,below=of A-3]{\mintinline{python}|print('grande')|};
+\node[inner sep=0,minimum size=0, below=of A-5](dummy){};
+\node[startstop, below=of dummy]{\mintinline{python}|print('Fin')|};
+\node[inner sep=0,minimum size=0, right=of A-2, xshift=-0.7cm](dummy2){};
+\node[inner sep=0,minimum size=0, right=of A-4, xshift=-0.7cm](dummy3){};
+\node[inner sep=0,minimum size=0, above=of A-1](dummy0){};  
+
+\draw[arrows=-Stealth] (A-1) -- node[near start, above right] {Sí}  (A-2);
+\draw[arrows=-Stealth] (A-1) -- node[right] {No}  (A-3);
+\draw[arrows=-Stealth] (A-3) -- node[near start, above right] {Sí} (A-4);
+\draw[arrows=-Stealth] (A-3) -- node[right] {No}  (A-5);
+\draw[arrows=-Stealth] (A-5) -- (A-6);
+\draw[arrows=-Stealth] (A-2.east) -- (dummy2) |- (dummy.east);
+\draw[arrows=-Stealth] (A-4.east) -- (dummy3) |- (dummy.east);
+\draw[arrows=-Stealth] (dummy0) to (A-1) ;
+\end{tikzpicture}
+\end{minipage}
+\end{frame}
+\end{document}
