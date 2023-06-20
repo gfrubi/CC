@@ -1,7 +1,7 @@
 \documentclass[11pt]{exam}
-\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[spanish]{babel} % Permite el idioma español.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,epsfig}
+\usepackage{amsmath}
 \usepackage[colorlinks]{hyperref}
 
 \usepackage{minted} 
@@ -15,78 +15,112 @@
 \begin{document}
 
 \firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 12}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2022-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+%\runningfootrule
+\lhead{\bf\normalsize Computación Científica\\ Guía 12}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
+%\rfoot{\thepage\ / pages}
 \cfoot{ }
 \lfoot{\tiny GR}
 \begin{flushleft}
 \vspace{0.2in}
-
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
 \vspace{0.25cm}
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{questions}
+\item En esta práctica usted ejercitará y explorará algunas características del poderoso módulo \texttt{Numpy}. Para esto, cargue el módulo usando:
 
+\begin{minted}[bgcolor=bg]{python}
+import numpy as np
+\end{minted}
 
-\item Modifique el c'odigo que cre'o para calcular el factorial de un n'umero entero (gu'ia 11) para que ahora se defina una funci'on \texttt{mifactorial}, de modo que el factorial de $n$ se pueda luego llamar como \texttt{mifactorial(n)}.
+y vea \href{https://udec.instructure.com/courses/40179/pages/numpy-01}{este video} introductorio.
 
-\item La exponencial $e^x$ de un n'umero real $x$ puede ser calculada usando la siguiente serie
-\begin{equation}\label{e}
-e^x = \sum_{n=0}^\infty \frac{x^n}{n!}=1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots
-\end{equation}
-Reutilizando su c'odigo para calcular factoriales, escriba un programa que pregunte al usuario el valor de $x$ y calcule e imprima el valor de $e^x$, usando la expresi'on \eqref{e}. Para el c'alculo considere 100 términos en la suma \eqref{e}, es decir, que el programa calcule la suma hasta el t'ermino $x^{99}/{99!}$. 
+\item En \texttt{Numpy} existe una función llamada \texttt{arange} que es muy similar a la ya conocida función \texttt{range}. La diferencia es que \texttt{range} genera una \textit{lista} mientras que \texttt{arange} genera un \textit{arreglo de \texttt{Numpy}}. Para comprobar esto, ejecute:
 
-\textbf{Nota 1}: En el caso $n=0$, se define el factorial de $0$ igual al valor $1$, es decir, $0! :=1$.
+\begin{minted}[bgcolor=bg]{python}
+x = range(10)
+y = np.arange(10)
+print(x,type(x))
+print(y,type(y))
+\end{minted}
 
-\textbf{Nota 2}: El ``truncar'' la serie (es decir, evaluarla hasta cierto n'umero de t'erminos) tiene como consecuencia que el valor calculado es s'olo una \textit{aproximaci'on} del valor exacto ($e^x$). Esta aproximaci'on es mejor si se incluyen m'as t'erminos.
+En otras palabras, \texttt{np.arange(10)} es equivalente a \texttt{np.array(range(10))}.
 
-\item Utilice el programa que acaba de escribir para calcular (una aproximaci'on d)el valor de $e$ (el n\'umero de Euler). Compare su resultado con el valor listado en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_e}{art\'iculo de wikipedia}.
-
-\item Escriba un programa que eval'ue (una aproximaci'on de) el n'umero $\pi$. Para esto, use la siguiente expresi'on en serie (desarrollada por el gran \href{https://es.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}),
+\item Usando arreglos de \texttt{Numpy} es posible realizar muchos cálculos en forma rápida y eficiente, sin necesidad de recurrir a ciclos (\texttt{for} o \texttt{while}). Por ejemplo, puede calcular la misma suma considerada en el problema 3 de la guía 11, es decir, 
 \begin{equation}
-\pi = \sum_{n=0}^{\infty}\frac{2^{n+1}(n!)^2}{(2n+1)!}=\left[2^1\frac{(0!)^2}{1!} + 2^2\frac{(1!)^2}{3!} + 2^3\frac{(2!)^2}{5!} + 2^4 \frac{(3!)^2}{7!} + \cdots \right].
+1 + 2 + 3 + 4  + \cdots + 999 + 1000,
 \end{equation}
-Lo anterior es un ejemplo de un m'etodo con el que se puede calcular el valor de $\pi$, con precisi'on cada vez mayor al agregar m'as y m'as t'erminos. Dado que $\pi$ es un n'umero irracional, s'olo se conoce su valor (calculado con m'etodos similares) hasta un cierto n'umero de decimales. El record actual lo tiene Shigeru Kondo, quien logr'o calcular $\pi$ con $10 000 000 000 000$ decimales!. Compare el valor que usted obtenido con el listado en en este \href{https://es.wikipedia.org/wiki/N\%C3\%BAmero_pi}{art\'iculo de wikipedia}.
-
-\item Copie los códigos que escribió anteriormente y que definen su implementación de  la función \texttt{mifactorial(n)}, y además el código que calcula de su aproximación de $\pi$ (almacenada ahora en la variable \texttt{mipi}) en un nuevo archivo llamado \texttt{mimodulo.py}. Este archivo puede usarse para definir un nuevo módulo. A continuación, en una sesión interactiva de Python, importe su función usando primero \texttt{import mimodulo} y llame a las funciones que están ahí definidas. 
-
-\item El factorial es una función comúnmente usada, y ya está implementada en diversos módulos populares de Python, por ejemplo, en el módulo \texttt{math}. Para verificar esto, importe el módulo \texttt{math} y verifique que la función \texttt{math.factorial} entrega los mismos valores ya calculados por usted. Lo mismo ocurre con el valor del número $\pi$ (\texttt{math.pi}). 
-
-\item Aproveche que tiene cargado el módulo \texttt{math} e investigue qué funciones y variables están definidas en este módulo. Para esto, en una sesión interactiva de Python ejecute \texttt{dir(math)}, o bien el comando \texttt{help(math)} para revisar qué contiene. Alternativamente, o revise la \href{https://docs.python.org/3/library/math.html}{documentaci\'on en l\'inea} disponible.
-
-\item Una instalación típica de Python incluye los módulos de la ``\textit{librería estandar}'', con diversas herramientas para realizar una gran variedad de tareas en Python. Ver por ejemplo, \href{https://docs.python.org/es/3/library/index.html}{esta página} para breve introducción.
-
-\item En el módulo \texttt{glob} de la librería estándar está implementada la función \texttt{glob.glob}, que crea una \textit{lista} de los strings de los nombres de los archivos y/o carpetas disponibles en la carpeta del computador en la que se está ejecutando un programa. Para verificar esto, ejecute
+pero ahora usando las función \texttt{sum} de \texttt{Numpy} (que suma todos los elementos de un arreglo):
 
 \begin{minted}[bgcolor=bg]{python}
-import glob
-
-lista_todos = glob.glob('*')
-print('Lista de todos los archivos y carpetas en la carpeta actual:')
-print(lista_todos)
-
-lista_py = glob.glob('*.py')
-print('Lista de todos los archivos .py en la carpeta actual:')
-print(lista_py)
-print('Numero total de archivos .py en la carpeta actual = ', len(lista_py))
+n = np.arange(1001)
+suma = np.sum(n)
+print(suma)
 \end{minted}
+o, en una sola línea
 
-\item En el módulo \texttt{os} puede encontrar herramientas para manipular archivos. Por ejemplo \\ \texttt{os.rename(antiguo,nuevo)} renombra el archivo cuyo nombre original está dado por el string \texttt{antiguo} a un nuevo nombre correspondiente al string \texttt{nuevo}. Así, si en la carpeta donde se está ejecutando su programa existe un archivo llamado ``\texttt{01.py}'', entonces el comando 
 \begin{minted}[bgcolor=bg]{python}
-os.rename('01.py','01-old.py')
+print(np.sum(np.arange(1001)))
 \end{minted}
+Verifique lo anterior y asegúrese de entender qué se está calculando.
 
-lo renombrará a ``\texttt{01-old.py}''
+\item Adapte la idea del cálculo en el punto anterior para implementar un cálculo alternativo para el factorial de un número $n$ (entero positivo), pero esta vez usando un arreglo de \texttt{Numpy} y la función \texttt{prod()} que calcula el producto de cada componente de un arreglo de \texttt{Numpy} (similarmente a como \texttt{sum()} calcula la suma).
 
-\item Note que el módulo \texttt{os} también implementa una función similar a \texttt{glob.glob}, llamada \texttt{os.listdir}. Para comprobarlo, ejecute
+\item Usando Numpy, calcule el valor de la suma de los primeros 101 términos de la forma
+\begin{equation}
+1+\left(\frac{1}{2}\right)+\left(\frac{1}{2}\right)^2+\left(\frac{1}{2}\right)^3+\dots +\left(\frac{1}{2}\right)^{100}.
+\end{equation}
+\item Verifique que, a diferencia de su pariente \texttt{range()}, la función \texttt{arange()} también funciona con pasos decimales, por ejemplo
+
 \begin{minted}[bgcolor=bg]{python}
-os.listdir()
+print(np.arange(1,10,0.3))
 \end{minted}
 
-\item Usando lo anterior, escriba un programa en Python que renombre todos los archivos de extensión \texttt{.txt} en una carpeta, asignándoles un nuevo nombre con un número correlativo (es decir `\texttt{01.txt}', `\texttt{02.txt}', `\texttt{03.txt}', etc.).
+\item Otra función muy útil para crear arreglos de valores en un intervalo es \texttt{linspace()}, que tiene el formato \texttt{linspace(desde,hasta,numerodeelementos)}. Por ejemplo, ejecute los siguientes comandos:
+
+\begin{minted}[bgcolor=bg]{python}
+x = np.linspace(1,10,20)
+y = np.linspace(-np.pi,np.pi,100)
+print(x,np.size(x))
+print(y,np.size(y))
+\end{minted}
+
+\item Otra propiedad importante de los arreglos es que sus elementos pueden usarse para iterar en un ciclo \texttt{for}. Para ver esto, ejecute:
+
+\begin{minted}[bgcolor=bg]{python}
+x = np.arange(11)
+y = x**2
+for i in x:
+	print ("la componente "+str(i)+" de y es igual a "+str(y[i]))
+\end{minted}
+
+\item Vea \href{https://udec.instructure.com/courses/40179/pages/numpy-02}{este video} en Canvas, en el que se explican los aspectos básicos de los arreglos bidimensionales en Numpy.
+ 
+\item Lea sobre el comandos \texttt{shape} y \texttt{len} y \texttt{size} y sobre el\textit{ indexado de arreglos} (tanto uni- como bi-dimensionales) en el \href{https://github.com/gfrubi/CC/blob/master/Python/02-Numpy.ipynb}{archivo sobre Numpy} en el repositorio. Asegúrese de entender los ejemplos ahí discutidos.
+
+\item Descargue el archivo de datos \href{https://udec.instructure.com/courses/29314/files/folder/guias?preview=2014739}{datos.txt} y guárdelo en la carpeta donde está trabajando. El módulo \texttt{Numpy} contiene una función llamada \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensión apropiada. Ejecute (en la misma carpeta donde está el archivo \texttt{datos.txt}) los siguientes comandos:
+
+\begin{minted}[bgcolor=bg]{python}
+d = np.genfromtxt("datos.txt")
+x = d[:,0]
+y = d[:,1]
+\end{minted}
+
+La primera línea carga los datos al arreglo \texttt{d}. Las últimas dos líneas asignan la primera columna de datos al arreglo \texttt{x} y la segunda columna a \texttt{y}. Usando las funciones \texttt{shape} y \texttt{size} de \texttt{Numpy}, verifique la forma y tamaño de los arreglos \texttt{d, x} e \texttt{y}. Asegúrese de entender qué es lo que realiza exactamente cada comando anterior.
+
+
+\item Usando lo anterior, calcule e imprima:
+\begin{parts}
+\item El promedio de los valores de la primera columna. (puede usar la función \texttt{sum} y \texttt{len} para calcular el promedio, o bien la función \texttt{mean} de \texttt{Numpy}).
+\item El promedio \textit{de los cuadrados} de los valores de la segunda columna.
+\item La suma de los productos de cada elemento de la primera con la segunda columna (es decir, $0.1*0.738 + 0.25 *	0.826 + 0.41 * 0.981 +\cdots$).
+\end{parts}
 \end{questions}
-
 \end{document} 
