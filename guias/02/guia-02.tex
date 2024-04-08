@@ -18,9 +18,9 @@
 %\firstpagefooter{}{Pagina \thepage\ de \pages}{}
 \runningheadrule
 %\runningfootrule
-\lhead{\bf\normalsize Computaci\'on Cient\'ifica\\ Gu\'ia 02}
-\rhead{\bf\normalsize Cs. F\'is., Astro., Geof\'is. \\ 2023-1}
-\chead{\bf\normalsize Depto. de F\'isica \\ Universidad de Concepci\'on}
+\lhead{\bf\normalsize Computación Científica\\ Guía 02}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
+\chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
 \lfoot{\tiny GR}
@@ -54,7 +54,7 @@ cat test01.txt test02.txt
 
 Observe cómo los dos archivos se despliegan en pantalla, uno luego del otro.
 
-\item ?`Cuál es la diferencia del comando anterior respecto a 
+\item ¿Cuál es la diferencia del comando anterior respecto a 
 
 \begin{minted}[bgcolor=bg]{bash}
 cat *.txt
@@ -83,7 +83,7 @@ Esto creará cinco archivos con extensión \textbf{.txt}.
 
 \item Usando \texttt{grep}, busque todas las ocurrencias de la palabra \textbf{Mancha} en cada uno de los cinco archivos originales del Quijote (\textbf{c1.txt} \dots \textbf{c5.txt})
 
-\item Agregue la opción \texttt{-n} al comando \texttt{grep} usado anteriormente (es decir, use \texttt{grep -n}). ?`Qu'e efecto tiene sobre el resultado?
+\item Agregue la opción \texttt{-n} al comando \texttt{grep} usado anteriormente (es decir, use \texttt{grep -n}). ¿Qu'e efecto tiene sobre el resultado?
 \end{parts}
 
 \item Puede escribir y ejecutar una secuencia de comandos almacenados en un ``\textit{script}'' (archivo de comandos).
@@ -99,16 +99,6 @@ bash mi-script.sh
 \end{minted}
 \end{parts}
 
-
-\item Usando comandos Bash, encuentre todas líneas del texto del Quijote en las que se menciona la palabra ``Mancha'' (primera letra en mayúsculas!), y almacene el texto de estas líneas en el archivo \textbf{Manchas.txt}.
-
-\item En Linux, los archivos cuyo nombre comienzan con un punto (es decir, el caracter ``.'') son considerados como ``archivos ocultos'', que por defecto no son listados por el comando \texttt{ls} (ni por los administradores gráficos de archivos). Aparte de esta característica, son archivos normales, pero que son usados como archivos de configuración del sistema o de algunos programas. La opción \texttt{-a} del comando \texttt{ls} es usada para listar todos los archivos en una carpeta, incluyendo los ocultos. Usando comandos \texttt{Bash}, realice las siguientes tareas
-\begin{parts}
-\item Liste todos los archivos de la carpeta en la que está trabajando, incluyendo los ocultos.
-\item Filtre la lista de archivos, usando el comando \texttt{grep}, para listar sólo los archivos ocultos.
-\item Guarde la lista obtenida en el punto anterior en un nuevo archivo con nombre \texttt{ocultos.txt}.
-\item Cambie el nombre a algún archivo que haya creado para convertirlo en archivo oculto. Verifique que ahora \texttt{ls} no lo lista por defecto.
-\end{parts}
 
 \item Entre las funcionalidades más interesantes y útiles del uso de comandos en Linux es el de las ``tuberías'' (``pipes"\ en inglés), que permiten redireccionar el resultado de un comando (su ``salida") a (la ``entrada" de) otro. Para esto, usamos el símbolo \texttt{|}. Por ejemplo, el comando
 \begin{minted}[bgcolor=bg]{bash}
@@ -130,7 +120,19 @@ Aprenda un poco más sobre las opciones disponibles para este comando llamando a
 \begin{minted}[bgcolor=bg]{bash}
 man rm
 \end{minted}
-\item Investigue qué efecto tiene la opción \texttt{-o} en el comando \texttt{grep} y ejecute algunos comandos de prueba para verificar su funcionamiento. Luego de esto, ejecute comandos \texttt{Bash} que cuenten cuántas veces se repite la letra ``a'' en el extracto de el Quijote que usó en la \href{https://github.com/gfrubi/CC/tree/master/guias/01}{guía 01} (archivos \texttt{c1.txt} a \texttt{c5.txt}). Si usó las característias de redireccionamiento de \texttt{Bash} (el caracter \texttt{|}) debiese realizar esta tarea con una única línea de comando.
+
+
+\item Usando comandos Bash, encuentre todas líneas del texto del Quijote en las que se menciona la palabra ``Mancha'' (primera letra en mayúsculas!), y almacene el texto de estas líneas en el archivo \textbf{Manchas.txt}.
+
+\item En Linux, los archivos cuyo nombre comienzan con un punto (es decir, el caracter ``.'') son considerados como ``archivos ocultos'', que por defecto no son listados por el comando \texttt{ls} (ni por los administradores gráficos de archivos). Aparte de esta característica, son archivos normales, pero que son usados como archivos de configuración del sistema o de algunos programas. La opción \texttt{-a} del comando \texttt{ls} es usada para listar todos los archivos en una carpeta, incluyendo los ocultos. Usando comandos \texttt{Bash}, realice las siguientes tareas
+\begin{parts}
+\item Liste todos los archivos de la carpeta en la que está trabajando, incluyendo los ocultos.
+\item Filtre la lista de archivos, usando el comando \texttt{grep}, para listar sólo los archivos ocultos.
+\item Guarde la lista obtenida en el punto anterior en un nuevo archivo con nombre \texttt{ocultos.txt}.
+\item Cambie el nombre a algún archivo que haya creado para convertirlo en archivo oculto. Verifique que ahora \texttt{ls} no lo lista por defecto.
+\end{parts}
+
+\item Investigue qué efecto tiene la opción \texttt{-o} en el comando \texttt{grep} y ejecute algunos comandos de prueba para verificar su funcionamiento. Luego de esto, ejecute comandos \texttt{Bash} que cuenten cuántas veces se repite la letra ``a'' en el extracto de el Quijote que usó en esta guía (archivos \texttt{c1.txt} a \texttt{c5.txt}). Si usó las característias de redireccionamiento de \texttt{Bash} (el caracter \texttt{|}) debiese realizar esta tarea con una única línea de comando.
 
 %\item Vea \href{https://youtu.be/VSH1XpWN1us}{este video} para aprender un poco más sobre el uso de \texttt{|}. Reproduzca/adapte los ejemplos ahí mostrados.
 %
