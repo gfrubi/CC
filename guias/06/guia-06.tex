@@ -19,7 +19,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 06}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -121,20 +121,20 @@ Usando
         -x & \mbox{si $x < 0$}.\end{array} \right.
 \end{equation}
 
-%\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciendo estas expresiones:
-%\begin{equation}
-%\Lambda^{\mu'}{}_\nu = \begin{pmatrix}
-%\gamma & -\beta\gamma/c & 0 & 0\\
-%-\beta\gamma c & \gamma & 0 & 0\\
-%0 & 0 & 1 & 0\\
-%0 & 0 & 0 & 1 \end{pmatrix},
-%\end{equation}
-%\begin{equation}
-%U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
-%\begin{pmatrix} \gamma \\ \gamma v_x \\ \gamma v_y \\ \gamma v_z \end{pmatrix}.
-%\end{equation}
+\item Siga entrenando sus poderes en lenguaje \LaTeX, reproduciendo estas expresiones:
+\begin{equation}
+\Lambda^{\mu'}{}_\nu = \begin{pmatrix}
+\gamma & -\beta\gamma/c & 0 & 0\\
+-\beta\gamma c & \gamma & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1 \end{pmatrix},
+\end{equation}
+\begin{equation}
+U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
+\begin{pmatrix} \gamma \\ \gamma v_x \\ \gamma v_y \\ \gamma v_z \end{pmatrix}.
+\end{equation}
 
-\item En su archivo de trabajo, agregue algunas referencias bibliográficas, siguiendo el ejemplo en la página página 53 de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de clases}.
+\item En su archivo de trabajo, agregue algunas referencias bibliográficas, siguiendo el ejemplo en la página página 53 de la \href{https://udec.instructure.com/courses/51022/pages/latex-pdf-presentacion?module_item_id=1904611}{presentación de clases}.
 
 \item Agregue el paquete de idiomas \texttt{babel}, usando \verb|\usepackage[spanish]{babel}| y vea cómo afecta al resultado obtenido.
 
@@ -145,35 +145,35 @@ Usando
 
 \item La segunda forma de agregar hyperlinks usando \texttt{hyperref} es con un comando de la forma \verb|\url{link}{texto}|, por ejemplo \verb|\href{http://www.cfm.cl}{FCFM}|, que genera un link a la misma direccion anterior, pero que ahora aparece bajo el texto ``FCFM'' en el pdf. Incluya un ejemplo de esto en su archivo de trabajo.
 
-\item Vea el video resumen sobre la creación de tablas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/tablas?module_item_id=1465510}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
+\item Vea el video resumen sobre la creación de tablas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/51022/pages/referencias-cruzadas}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
 
-\item Vea el video resumen sobre cómo incluir figuras/gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/figuras?module_item_id=1465511}{aquí}.
-\item En algún archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=4cm]{marcaderecha.png}
-\end{center}
-\caption{Marca alineación derecha, Formato PNG.}
-\label{fig:escudo}
-\end{figure}
-
-Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} página para conocer otras variaciones oficiales del escudo de la UdeC. 
-Puede encontrar más información acerca de las normas gráficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} página.
-
-\item Ahora su misión es escribir su primer ``artículo científico'' en \LaTeX, que debe reproducir lo más fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/06/ejemplo-articulo.pdf}{este} ejemplo. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/06/fig-ajuste-lineal.pdf}{aquí}.
-
-El título, autor(a), y resumen puede ser incorporados usando los siguientes comandos después del conocido \verb|\documentclass|:
-
-\begin{minted}[bgcolor=bg]{tex}
-\title{Escribiendo mi primer artículo con formato Científico, en \LaTeX}
-\author{Su nombre (autor(a))}
-
-\begin{document}
-
-\maketitle
-\begin{abstract}
-Este es el resumen del artículo...
-\end{abstract}
-\end{minted}
+%\item Vea el video resumen sobre cómo incluir figuras/gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/figuras?module_item_id=1465511}{aquí}.
+%\item En algún archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=4cm]{marcaderecha.png}
+%\end{center}
+%\caption{Marca alineación derecha, Formato PNG.}
+%\label{fig:escudo}
+%\end{figure}
+%
+%Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} página para conocer otras variaciones oficiales del escudo de la UdeC. 
+%Puede encontrar más información acerca de las normas gráficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} página.
+%
+%\item Ahora su misión es escribir su primer ``artículo científico'' en \LaTeX, que debe reproducir lo más fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/06/ejemplo-articulo.pdf}{este} ejemplo. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/06/fig-ajuste-lineal.pdf}{aquí}.
+%
+%El título, autor(a), y resumen puede ser incorporados usando los siguientes comandos después del conocido \verb|\documentclass|:
+%
+%\begin{minted}[bgcolor=bg]{tex}
+%\title{Escribiendo mi primer artículo con formato Científico, en \LaTeX}
+%\author{Su nombre (autor(a))}
+%
+%\begin{document}
+%
+%\maketitle
+%\begin{abstract}
+%Este es el resumen del artículo...
+%\end{abstract}
+%\end{minted}
 \end{questions}
 \end{document} 
