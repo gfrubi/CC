@@ -19,7 +19,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 07}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -33,6 +33,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{questions}
+%\item Vea el video resumen sobre cómo incluir figuras/gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/figuras?module_item_id=1465511}{aquí}.
+\item En algún archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=4cm]{marcaderecha.png}
+\end{center}
+\caption{Marca alineación derecha, Formato PNG.}
+\label{fig:escudo}
+\end{figure}
+
+Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} página para conocer otras variaciones oficiales del escudo de la UdeC. 
+Puede encontrar más información acerca de las normas gráficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} página.
+
+\item Ahora su misión es escribir su primer ``artículo científico completo'' en \LaTeX, que debe reproducir lo más fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/07/ejemplo-articulo.pdf}{este ejemplo}. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/06/fig-ajuste-lineal.pdf}{aquí}.
+
+El título, autor(a), y resumen puede ser incorporados usando los siguientes comandos después del conocido \verb|\documentclass|:
+
+\begin{minted}[bgcolor=bg]{tex}
+\title{Escribiendo mi primer artículo con formato Científico, en \LaTeX}
+\author{Su nombre (autor(a))}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Este es el resumen del artículo...
+\end{abstract}
+\end{minted}
+
 \item Vea el video en el que se explica el uso de la clase Beamer para la creación de presentaciones, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/presentaciones-en-beamer}{aquí}.
 \item Lea las páginas 66 a 71 del \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{pdf de clases}.
 \item Descargue el archivo de ejemplo \href{https://raw.githubusercontent.com/gfrubi/CC/master/LaTeX/ejemplo-beamer.tex}{ejemplo-beamer.tex} y estudie su contenido. Asegúrese de entender qué hace cada línea de código.
