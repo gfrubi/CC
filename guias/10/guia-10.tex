@@ -20,7 +20,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 10}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -34,6 +34,32 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{questions}
+\item Una partícula realiza un movimiento vertical bajo la influencia de la gravedad de modo que su altura $z(t)$ respecto al suelo es dada por la siguiente ecuación de la trayectoria,
+\begin{equation}
+z(t)=z_0 + v_0 t -\frac{1}{2}gt^2,
+\end{equation}
+con $g=9.8 {\ \rm m/s^2}$. Considere el caso en que $z_0=1 {\ \rm m}$ y $v_0=24 {\ \rm m/s}$.
+
+Escriba un programa en Python que, usando un ciclo \texttt{for}, calcule e imprima el valor de la altura $z(t)$ para los siguientes valores de tiempo (en segundos): $t=0, 0.1, 0.2, \dots, 5.0$ (51 valores distintos de tiempo).
+
+\item Modifique el programa anterior, para que ahora éste pregunte al usuario los valores de $z_0$ y $v_0$. Para esto, use el comando \texttt{input} que aprendió en su trabajo con la guía 08.
+
+%\item Escriba un programa en Python (que use un ciclo \texttt{for}) que calcule e imprima la suma de los primeros 1000 números enteros, es decir, el valor de 
+%\begin{equation}
+%1 + 2 + 3 + 4  + \cdots + 999 + 1000.
+%\end{equation}
+
+\item El factorial de un número entero positivo $n$, denotado por $n!$ es definido por
+\begin{equation}
+n!=1\cdot 2\cdot 3\cdots (n-1)\cdot n.
+\end{equation}
+Por ejemplo, $3!=1\cdot 2\cdot 3=6$ y $10!=3628800$.
+Escriba un programa en Python que pregunte al usuario por el valor de $n$, y que calcule e imprima su factorial, es decir, $n!$.
+
+\item Modifique ahora el código que creó para calcular el factorial de un número entero para que ahora su programa verifique, antes de calcular el factorial, que el número suministrado es realmente un entero positivo, y sólo calcule el factorial en ese caso, y que en caso contrario informe al usuario que el número ingresado no es apropiado.
+
+\item Escriba un programa que pregunte al usuario el valor de algún número natural e imprima todos los números primos que hay hasta ese número. Por ejemplo, si se ingresa el número 8, el programa debe imprimir los números 2, 3, 5 y 7.
+
 \item Escriba un programa que imprima en pantalla si un número entero positivo ingresado desde el teclado es o no un número primo. Utilice un ciclo \texttt{while}.
 
 \item Considere una pelota que se lanza verticalmente desde una altura inicial $z_0=3\,\rm m$, con una velocidad inicial $v_0 = 1 \,\rm m/s$ hacia arriba. Calcule e imprima en pantalla los valores de la altura
@@ -42,7 +68,7 @@
 \end{equation} 
 y el correspondiente tiempo $t$ para $t=0,0.01,0.02,\dots$ hasta (justo antes) que la pelota llegue al suelo (es decir, llegue a $z=0$). Utilice un ciclo \texttt{while} y considere $g=9.8\,\rm m/s^2$.
 
-\item Vea \href{https://udec.instructure.com/courses/40179/pages/funciones?module_item_id=1465539}{este video} disponible en Canvas, en el que se explica la definición de \textbf{funciones} en Python. Reproduzca y verifique todos los ejemplos ahí descritos.
+\item Vea \href{https://udec.instructure.com/courses/51022/pages/funciones?module_item_id=1904636}{este video} disponible en Canvas, en el que se explica la definición de \textbf{funciones} en Python. Reproduzca y verifique todos los ejemplos ahí descritos.
 
 \item Modifique el código que creó para calcular el factorial de un número entero (guía 09) para que ahora se defina una función \texttt{mifactorial}, de modo que el factorial de $n$ se pueda luego llamar como \texttt{mifactorial(n)}.
 
