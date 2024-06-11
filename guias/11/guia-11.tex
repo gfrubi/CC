@@ -20,7 +20,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 11}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -34,7 +34,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{questions}
-\item Vea el video en el que se explican los aspectos básicos del uso de módulos en Python, disponible \href{https://udec.instructure.com/courses/40179/pages/modulos}{aquí}.
+\item Vea el video en el que se explican los aspectos básicos del uso de módulos en Python, disponible \href{https://udec.instructure.com/courses/51022/pages/modulos?module_item_id=1904638}{aquí}.
 
 \item Copie los códigos que escribió anteriormente y que definen su implementación de la función \texttt{mifactorial(n)}, y además el código que calcula su aproximación de $\pi$ (almacenada ahora en la variable \texttt{mipi}) en un nuevo archivo llamado \texttt{mimodulo.py}. Este archivo puede usarse para definir un nuevo módulo. A continuación, en una sesión interactiva de Python, importe su función usando primero \texttt{import mimodulo} y llame a las funciones que están ahí definidas. 
 
@@ -43,6 +43,7 @@
 \item Aproveche que tiene cargado el módulo \texttt{math} e investigue qué funciones y variables están definidas en este módulo. Para esto, en una sesión interactiva de Python ejecute \texttt{dir(math)}, o bien el comando \texttt{help(math)} para revisar qué contiene. Alternativamente, o revise la \href{https://docs.python.org/3/library/math.html}{documentaci\'on en l\'inea} disponible.
 
 \item Una instalación típica de Python incluye los módulos de la ``\textit{librería estandar}'', con diversas herramientas para realizar una gran variedad de tareas en Python. Ver por ejemplo, \href{https://docs.python.org/es/3/library/index.html}{esta página} para breve introducción.
+
 
 \item En el módulo \texttt{glob} de la librería estándar está implementada la función \texttt{glob.glob}, que crea una \textit{lista} de los strings de los nombres de los archivos y/o carpetas disponibles en la carpeta del computador en la que se está ejecutando un programa. Para verificar esto, ejecute
 
@@ -72,6 +73,9 @@ os.listdir()
 \end{minted}
 
 \item Usando lo anterior, escriba un programa en Python que renombre todos los archivos de extensión \texttt{.txt} en una carpeta, asignándoles un nuevo nombre con un número correlativo (es decir `\texttt{01.txt}', `\texttt{02.txt}', `\texttt{03.txt}', etc.).
+
+
+\item Revise los links a módulos de interés en Física, Geofísica y Astronomía listados en el documento disponible \href{https://github.com/gfrubi/CC/blob/master/Python/01-Introduccion-a-la-Programacion-en-Python.ipynb}{aquí} (busque la parte donde dice ``Aquí listamos algunos módulos generales útiles ..."). Intente familiarizarse con lo que hace cada uno de estos módulos.
 \end{questions}
 
 \end{document} 
