@@ -17,7 +17,7 @@
 \firstpageheadrule
 \runningheadrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 13}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2022-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 \cfoot{ }
 \lfoot{\tiny GR}
@@ -30,9 +30,10 @@
 
 \begin{questions}
 
-\item En esta práctica Usted se familiarizará con el poderoso módulo \href{https://matplotlib.org/}{Matplotlib} que permite crear gráficos de variados tipos. Explore los distintos tipos de gráficos que este módulo puede crear visitando la galeria oficial del proyecto, siguiente \href{https://matplotlib.org/stable/gallery/index}{este link}. Seleccione un par de estos de ejemplos, ingresando al correspondiente link en la imagen, copie el código Python del ejemplo. Incorpórelo a un archivo Python y ejecútelo para que vea qué hace.
+\item En esta práctica Usted se familiarizará con el poderoso módulo \href{https://matplotlib.org/}{Matplotlib} que permite crear gráficos de variados tipos. Explore los distintos tipos de gráficos que este módulo puede crear visitando la galeria oficial del proyecto, siguiente \href{https://matplotlib.org/stable/gallery/index}{este link}. Seleccione un par de estos ejemplos, ingresando al correspondiente link en la imagen, copie el código Python del ejemplo, incorpórelo a un archivo Python y ejecútelo para que vea qué hace.
 
-\item En \href{https://udec.instructure.com/courses/40179/pages/matplotlib?module_item_id=1576193}{este video} disponible en Canvas, se explican los aspectos básicos de Matplotlib. Vaya desarrollando esta guía consultando simultaneamente el video y \href{https://github.com/PythonUdeC/CPC21/blob/main/04-Matplotlib.ipynb}{este tutorial} (que es un Jupyter Notebook que puede también descargar).
+\item En \href{https://udec.instructure.com/courses/51022/pages/matplotlib?module_item_id=1904643}{este video} disponible en Canvas, se explican los aspectos básicos de Matplotlib. Puede consultarlo si tiene dudas, o bien leer el siguiente \href{https://github.com/PythonUdeC/CPC21/blob/main/04-Matplotlib.ipynb}{este tutorial}. 
+%(que es un Jupyter Notebook que puede también descargar).
 
 \item Escriba y ejecute el siguiente programa, que hace uso de \texttt{Numpy} y del módulo gráfico \texttt{Matplotlib}
 
@@ -52,7 +53,8 @@ plt.legend()
 plt.savefig("g1.pdf")
 \end{minted}
 
-Este programa grafica los datos en las listas \texttt{x} e \texttt{y} usando círculos verdes, que guarda en el archivo \texttt{g1.pdf}.
+Este programa grafica los datos en las listas \texttt{x} e \texttt{y} usando círculos verdes, que guarda en el archivo \texttt{g1.pdf}. El archivo de datos \texttt{datos.txt} puede ser descargado desde \href{https://udec.instructure.com/courses/51022/pages/numpy?module_item_id=1904641}{aquí}.
+
 \item Copie el archivo \texttt{g1.py} a \texttt{g2.py}, que en adelante usará para realizar pruebas. 
 \item La opción \texttt{marker="\,o"} indica que los puntos son representados por círculos. Note que, por defecto, estos puntos son unidos por rectas. Otros símbolos (``markers'') disponibles son listados en la tabla \ref{t}. Por ejemplo, la opción \texttt{marker="s"} indica al comando \texttt{plot} que grafique cuadrados. 
 Además, la opción \texttt{color} puede adoptar los valores \texttt{blue} (b), \texttt{green} (g), \texttt{red} (r), \texttt{cyan} (c), \texttt{magenta} (m), \texttt{yellow} (y), \texttt{black} (k) y \texttt{white} (w). Puede encontrar más colores listados \href{http://matplotlib.org/examples/color/named_colors.html}{aquí}. Cambie los colores y símbolos del grafico en \texttt{g2.py} para familiarizarse con estas opciones.
