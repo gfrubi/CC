@@ -20,7 +20,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 12}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2023-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -40,9 +40,9 @@
 import numpy as np
 \end{minted}
 
-y vea \href{https://udec.instructure.com/courses/40179/pages/numpy-01}{este video} introductorio.
+y (si no asistió a la clase de esta semana) vea el primero de los videos introductorios disponibles en Canvas \href{https://udec.instructure.com/courses/51022/pages/numpy}{aquí}.
 
-\item En \texttt{Numpy} existe una función llamada \texttt{arange} que es muy similar a la ya conocida función \texttt{range}. La diferencia es que \texttt{range} genera una \textit{lista} mientras que \texttt{arange} genera un \textit{arreglo de \texttt{Numpy}}. Para comprobar esto, ejecute:
+\item En \texttt{Numpy} existe una función llamada \texttt{arange} que es muy similar a la ya conocida función \texttt{range}. La diferencia es que \texttt{range} sirve para generar una \textit{lista} mientras que \texttt{arange} genera un \textit{arreglo de \texttt{Numpy}}. Para comprobar esto, ejecute:
 
 \begin{minted}[bgcolor=bg]{python}
 x = range(10)
@@ -101,11 +101,11 @@ for i in x:
 	print ("la componente "+str(i)+" de y es igual a "+str(y[i]))
 \end{minted}
 
-\item Vea \href{https://udec.instructure.com/courses/40179/pages/numpy-02}{este video} en Canvas, en el que se explican los aspectos básicos de los arreglos bidimensionales en Numpy.
+\item Vea el segundo video disponible en Canvas \href{https://udec.instructure.com/courses/51022/pages/numpy}{aquí}, en el que se explican los aspectos básicos de los arreglos bidimensionales en Numpy.
  
 \item Lea sobre el comandos \texttt{shape} y \texttt{len} y \texttt{size} y sobre el\textit{ indexado de arreglos} (tanto uni- como bi-dimensionales) en el \href{https://github.com/gfrubi/CC/blob/master/Python/02-Numpy.ipynb}{archivo sobre Numpy} en el repositorio. Asegúrese de entender los ejemplos ahí discutidos.
 
-\item Descargue el archivo de datos \href{https://udec.instructure.com/courses/29314/files/folder/guias?preview=2014739}{datos.txt} y guárdelo en la carpeta donde está trabajando. El módulo \texttt{Numpy} contiene una función llamada \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensión apropiada. Ejecute (en la misma carpeta donde está el archivo \texttt{datos.txt}) los siguientes comandos:
+\item Descargue el archivo de datos \href{https://udec.instructure.com/courses/51022/pages/numpy}{datos.txt} y guárdelo en la carpeta donde está trabajando. El módulo \texttt{Numpy} contiene una función llamada \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensión apropiada. Ejecute (en la misma carpeta donde está el archivo \texttt{datos.txt}) los siguientes comandos:
 
 \begin{minted}[bgcolor=bg]{python}
 d = np.genfromtxt("datos.txt")
