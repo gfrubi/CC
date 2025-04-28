@@ -453,7 +453,7 @@ Observe también que $0 < x^{2} < 1$.
    \begin{center}
      \begin{tabular}{clclclcl}
         $A$ & \verb|A| & $H$ & \verb|H| & $N$ & \verb|N| & $\Upsilon$ & \verb|\Upsilon| \\ 
-        $B$ & \verb|B| & $Z$ & \verb|Z| & $\Xi$ & \verb|\Xi| & $\Phi$ & \verb|\Phi|  \\         
+        $B$ & \verb|B| & $\Theta$ & \verb|\Theta| & $\Xi$ & \verb|\Xi| & $\Phi$ & \verb|\Phi|  \\         
         $\Gamma$ & \verb|\Gamma| & $I$ & \verb|I| & $\Pi$ & \verb|\Pi| & $X$ & \verb|X|  \\
         $\Delta$ & \verb|\Delta| & $K$ & \verb|K| & $P$ & \verb|P| & $\Psi$ & \verb|\Psi|  \\
         $E$ & \verb|E| & $\Lambda$ & \verb|\Lambda| & $\Omega$ & \verb|\Omega|  & $T$ & \verb|T| \\
@@ -552,7 +552,7 @@ Más símbolos en:
 \begin{itemize}
   \item Exponentes: \verb|x^2|: $x^2$
   \item Subíndices: \verb|x_i|: $x_i$
-  \item Para usar exponentes y subíndices de más de un caracter, usar \verb|{}|. Ejemplos
+  \item Para generar exponentes y subíndices de más de un caracter, use \verb|{}|. Ejemplos
   \begin{center}
   \begin{tabular}{ll}
     \verb|x^{2\pi}|      & $x^{2\pi}$ \\
@@ -566,8 +566,8 @@ Más símbolos en:
 
 \begin{frame}[fragile]\frametitle{Límites y sumatorias}
 \begin{itemize}
-  \item Comandos: \verb|\lim|, \verb|\sum|, \verb|\int|
-  \item Ejemplos:
+  \item Comandos: \verb|\lim| (límite), \verb|\sum| (suma), \verb|\int| (integral)
+  \item Ejemplos (expresiones en línea):
 \end{itemize}
   \begin{center}
   \begin{tabular}{ll}
@@ -578,7 +578,7 @@ Más símbolos en:
   \end{center}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Entorno ``equation''}
+\begin{frame}[fragile]\frametitle{Entorno \texttt{equation}}
 \begin{block}{}
 \begin{minted}{tex}
 La suma de cuadrados
@@ -598,7 +598,7 @@ tiene una expresión muy sencilla.
 \end{quote}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Entorno ``equation''}
+\begin{frame}[fragile]\frametitle{Entorno \texttt{equation}}
 \begin{block}{}
 \begin{minted}{tex}
 \dots y después de muchos cálculos llegamos a la
@@ -674,7 +674,7 @@ Pasando a otros temas \dots
 \begin{frame}[fragile]\frametitle{Arreglos y matrices}
 \begin{itemize}
   \item Los comandos \verb|\left| y \verb|\right| agregan paréntesis que se adaptan al tama\~no del conenido que encierran. Se pueden usar combinaciones de: \verb|(|, \verb|)|, \verb|[|, \verb|]|,    \verb|\{|, \verb|\}|, \verb#|# y \verb|.|
-  \item El entorno \verb|array| recibe una lista de las columnas del arreglo,
+  \item El entorno \texttt{array} recibe una lista de las columnas del arreglo,
      una letra: \verb|l| (left), \verb|c| (center), \verb|r| (right) para
      indicar la alíneación de cada columna.
   \item Las columnas se separan con \verb|&| y los líneas con \verb|\\|.
@@ -714,7 +714,7 @@ Pasando a otros temas \dots
 
 \begin{frame}[fragile]\frametitle{Extendiendo \LaTeX\ paquetes/módulos adicionales}
 \begin{block}{}
-Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quizás miles) de paquetes disponibles. Una lista de los principales paquetes, ordenada alfabéticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
+Las funcionalidades de \LaTeX\ pueden ampliarse casi indefinidamente cargando \textit{paquetes}. Existen cientos (quizás miles) de paquetes disponibles. Una lista con información de los principales paquetes, ordenada alfabéticamente, puede encontrarse en \href{https://ctan.org/pkg/}{este link}.
 \end{block}
 
 \begin{block}{Cargando paquetes}
@@ -802,16 +802,16 @@ al preámbulo del documento.
 %\end{verbatim}
 %\end{frame}
 
-\begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas}
+\begin{frame}[fragile]\frametitle{Múltiples ecuaciones alineadas}
 \begin{eqnarray}
 I &=&I_{\rm cm}+MD^{2} \\
 &=&\frac{1}{12}ML^2 +M\left( \frac{L}{2}-\frac{L}{5}\right)^2 \\
 &=&\frac{13}{75}L^2 M \\
-&\approx&9,7067\times 10^{-2} [\rm kg\,m^2] .
+&\approx&9,7067\times 10^{-2} {\rm\  kg\,m^2}.
 \end{eqnarray}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas}
+\begin{frame}[fragile]\frametitle{Múltiples ecuaciones alineadas}
 \begin{block}{}
 \begin{minted}{tex}
 \begin{eqnarray}
@@ -819,23 +819,23 @@ I &=&I_{\rm cm}+MD^{2} \\
      &=&\frac{1}{12} ML^2 + M\left( \frac{L}{2}
      	-\frac{L}{5} \right)^2 \\
      &=&\frac{13}{75} L^{2} M \\
-     &\approx & 9,7067 \times 10^{-2} [\rm kg\,m^2].
+     &\approx & 9,7067 \times 10^{-2} {\rm\ kg\,m^2}.
 \end{eqnarray}
 \end{minted}
 \end{block}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas:  \texttt{align} de \texttt{amsmath}}
+\begin{frame}[fragile]\frametitle{Múltiples ecuaciones alineadas:  \texttt{align} de \texttt{amsmath}}
 El paquete \texttt{amsmath} suministra el entorno \texttt{align}, con una sintaxis casi igual a \texttt{eqnarray}, pero con algunas mejoras en detalles de alineación:
 \begin{align}
 I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}-\frac{L}{5}\right)^2 \\
 &= \frac{13}{75} L^2M \\
-&\approx 9,7067 \times 10^{-2} [\rm kg\,m^2].
+&\approx 9,7067 \times 10^{-2} {\rm\ kg\,m^2}.
 \end{align}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{M\'ultiples ecuaciones alineadas:  \texttt{align} de \texttt{amsmath}}
+\begin{frame}[fragile]\frametitle{Múltiples ecuaciones alineadas:  \texttt{align} de \texttt{amsmath}}
 \begin{block}{}
 \begin{minted}{tex}
 \begin{align}
@@ -843,7 +843,7 @@ I &= I_{\rm cm} + MD^2 \\
 &= \frac{1}{12} ML^2 + M\left(\frac{L}{2}
 	-\frac{L}{5}\right)^2 \\
 &= \frac{13}{75} L^2M \\
-&\approx 9,7067 \times 10^{-2} [\rm kg\,m^2].
+&\approx 9,7067 \times 10^{-2} {\rm\  kg\,m^2}.
 \end{align}
 \end{minted}
 \end{block}
@@ -896,14 +896,14 @@ que \dots
 
 \begin{frame}[fragile]\frametitle{Referencias Cruzadas}
 \begin{itemize}
-\item Se puede poner \verb|\label{..}| después de:
+\item Se puede etiquetar un objeto usando \verb|\label{..}| después de:
   \begin{itemize}
     \item \verb|\begin{equation}|, \verb|\begin{eqnarray}|, \dots
     \item \verb|\begin{table}|, \verb|\begin{figure}|, \dots
     \item \verb|\chapter{..}|, \verb|\section{..}|, \dots
     \item Casi cualquier cosa que numere.
   \end{itemize}
-\item Se puede poner \verb|\ref{..}|:
+\item Se puede hacer referencia a un objeto etiquedado usando \verb|\ref{..}|:
   \begin{itemize}
     \item !`Donde quieras en el documento!
   \end{itemize}
@@ -920,9 +920,11 @@ que \dots
 %    \item No olvides usar `\verb|~|'{} en lugar de espacio.
 %  \end{itemize}
   \item Usa nombres descriptivos para las etiquetas, que puedas recordar fácilmente cuando necesites hacer referencia al objeto:
+  
   \begin{itemize}
     \item \texttt{newton}, \texttt{maxwellhom}, \texttt{solucion2}
   \end{itemize}
+
   \item Evita usar nombres que no te dicen nada:
   \begin{itemize}
     \item \texttt{tdmapmu}, \texttt{ec2}, \texttt{p}
