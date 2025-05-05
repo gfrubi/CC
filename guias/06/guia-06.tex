@@ -19,7 +19,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 06}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2025-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -42,37 +42,25 @@
 (use \verb|\usepackage{amsmath,amsfonts}|) y que genere las siguientes expresiones matemáticas:
 \begin{itemize}
 
-\item La siguiente ecuación numerada:
+\item La siguiente ecuación numerada (usando el entorno \texttt{equation}):
 \begin{equation}\label{asinNnu}
 Y_\nu(x)\approx \sqrt{\frac{2}{\pi x}}\sin\left(x-\frac{\nu\pi}{2}-\frac{\pi}{4}\right), 
 \qquad x\gg\left|\nu^2-\frac{1}{4}\right|.
 \end{equation}
-Usando 
 
-\begin{minted}[bgcolor=bg]{tex}
-	\begin{equation}
-
-	\end{equation}
-\end{minted}
-\item La siguiente ecuación no numerada:
+\item La siguiente ecuación no numerada (usando el entorno \texttt{equation*}):
 \begin{equation*}
 \int_{0}^{\infty }\frac{\log (x)}{x^{2}}dx=-\left. \frac{\log (x)}{x}\right]
 _{0}^{\infty }+\int_{0}^{\infty }\frac{1}{x^{2}}dx
 \end{equation*}
-Usando
 
-\begin{minted}[bgcolor=bg]{tex}
-	\begin{equation*}
-
-	\end{equation*}
-\end{minted}
 \item La siguiente expresión del múltiples líneas:
 \begin{align} 
 (a+b)^4 &= (a+b)^2 (a+b)^2 \\
  &= (a^2+2ab+b^2) (a^2+2ab+b^2) \\
  &= a^4+4 a^3 b + 6 a^2 b^2 +4 a b^3 +b^4
 \end{align}
-Usando (ver páginas 47-48 de la \href{https://udec.instructure.com/courses/40179/pages/latex-pdf-presentacion?module_item_id=1465499}{presentación de clases})
+Usando
 
 \begin{minted}[bgcolor=bg]{tex}
 
@@ -82,6 +70,8 @@ Usando (ver páginas 47-48 de la \href{https://udec.instructure.com/courses/4017
 	 ... &= ...
 	\end{align} 
 \end{minted}
+
+Ver páginas 47-48 de la \href{https://udec.instructure.com/courses/62342/pages/latex-pdf-presentacion?module_item_id=2334210}{presentación de clases} y/o el \href{https://udec.instructure.com/courses/62342/pages/clase-28-04?module_item_id=2422455}{video de la clase} correspondiente.
 
 \item Una expresión enmarcada, usando el comando \verb|\boxed{}| de \texttt{amsmath}:
 \newline
@@ -136,7 +126,7 @@ U^\mu = \frac{\text{d}x^\mu}{\text{d}\tau} =
 
 %\item En su archivo de trabajo, agregue algunas referencias bibliográficas, siguiendo el ejemplo en la página página 53 de la \href{https://udec.instructure.com/courses/51022/pages/latex-pdf-presentacion?module_item_id=1904611}{presentación de clases}.
 
-\item Vea el video resumen sobre referencias cruzadas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/51022/pages/referencias-cruzadas?module_item_id=1904618}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
+%\item Vea el video resumen sobre referencias cruzadas en \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/51022/pages/referencias-cruzadas?module_item_id=1904618}{aquí}. Siga las sugerencias ahí descritas para familiarizarse con las distintas posibilidades disponibles.
 
 \item Agregue ahora el paquete \texttt{hyperref} agregando 
 \verb|\usepackage[colorlinks]{hyperref}| a su archivo (antes del comando \verb|\begin{document}|). Este paquete agrega automáticamente \textit{hyperlinks} a su pdf. Verique que ahora puede hacer click en los números de ecuaciones citados, así como en los números correspondientes a las referencias bibliográficas (que veremos más adelante). Note que \texttt{hyperref} también agrega hyperlinks a la tabla de contenidos de su pdf, si ésta existe.
