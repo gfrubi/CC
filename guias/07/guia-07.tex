@@ -19,7 +19,7 @@
 \runningheadrule
 %\runningfootrule
 \lhead{\bf\normalsize Computación Científica\\ Guía 07}
-\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2024-1}
+\rhead{\bf\normalsize Cs. Fís., Astro., Geofís. \\ 2025-1}
 \chead{\bf\normalsize Depto. de Física \\ Universidad de Concepción}
 %\rfoot{\thepage\ / pages}
 \cfoot{ }
@@ -34,7 +34,9 @@
 
 \begin{questions}
 %\item Vea el video resumen sobre cómo incluir figuras/gráficos en un documento \LaTeX, disponible en Canvas \href{https://udec.instructure.com/courses/40179/pages/figuras?module_item_id=1465511}{aquí}.
-\item En algún archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo \url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
+\item En algún archivo .tex que ya tenga hecho, inserte el escudo de la UdeC, contenido en el archivo 
+\href{https://educacion.udec.cl/wp-content/uploads/2024/03/marcaderecha.png}{marcaderecha.png}:
+%\url{http://www.udec.cl/normasgraficas/sites/default/files/marcaderecha.png}:
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=4cm]{marcaderecha.png}
@@ -43,8 +45,8 @@
 \label{fig:escudo}
 \end{figure}
 
-Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} página para conocer otras variaciones oficiales del escudo de la UdeC. 
-Puede encontrar más información acerca de las normas gráficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} página.
+%Vea \href{http://www.udec.cl/normasgraficas/node/7}{esta} página para conocer otras variaciones oficiales del escudo de la UdeC. 
+%Puede encontrar más información acerca de las normas gráficas de nuestra Universidad en \href{http://www.udec.cl/normasgraficas}{esta} página.
 
 \item Ahora su misión es escribir su primer ``artículo científico completo'' en \LaTeX, que debe reproducir lo más fielmente posible \href{https://github.com/gfrubi/CC/blob/master/guias/07/ejemplo-articulo.pdf}{este ejemplo}. Para eso, use todo lo aprendido (en particular, use referencias cruzadas a las ecuaciones, tablas, figuras y referencias). El archivo .pdf de la figura lo puede descargar desde \href{https://github.com/gfrubi/CC/blob/master/guias/07/fig-ajuste-lineal.pdf}{aquí}.
 
@@ -62,8 +64,9 @@ Este es el resumen del artículo...
 \end{abstract}
 \end{minted}
 
-\item Vea el video en el que se explica el uso de la clase Beamer para la creación de presentaciones, disponible en Canvas \href{https://udec.instructure.com/courses/51022/pages/presentaciones-en-beamer?module_item_id=1904623}{aquí}.
-\item Lea las páginas 66 a 71 del \href{https://udec.instructure.com/courses/51022/pages/latex-pdf-presentacion?module_item_id=1904611}{pdf de clases}.
+%\item Vea el video en el que se explica el uso de la clase Beamer para la creación de presentaciones, disponible en Canvas \href{https://udec.instructure.com/courses/51022/pages/presentaciones-en-beamer?module_item_id=1904623}{aquí}.
+
+%\item Lea las páginas 66 a 71 del \href{https://udec.instructure.com/courses/51022/pages/latex-pdf-presentacion?module_item_id=1904611}{pdf de clases}.
 \item Descargue el archivo de ejemplo \href{https://raw.githubusercontent.com/gfrubi/CC/master/LaTeX/ejemplo-beamer.tex}{ejemplo-beamer.tex} y estudie su contenido. Asegúrese de entender qué hace cada línea de código.
 \item Explore cómo lucen los distintos temas disponibles en Beamer, cambiando la opción \verb|\usetheme{}|. Puede visualizar los distintos temas en \href{https://deic.uab.cat/~iblanes/beamer_gallery/index_by_theme.html}{esta página}.
 
@@ -71,9 +74,9 @@ Este es el resumen del artículo...
 \begin{minted}[bgcolor=bg]{tex}
 \usecolortheme{crane}
 \end{minted}
-en el preámbulo se selecciona el esquema de colores ``\texttt{crane}''. Los esquemas de colores disponibles son: \texttt{albatross, beaver, beetle, crane, default, dolphin, dove, fly, lily, orchid, rose, seagull, seahorse, sidebartab, structure, whale, wolverine}. Puede visualizar estos esquemas de colores en \href{https://deic.uab.cat/~iblanes/beamer_gallery/index_by_color.html}{esta página}. Pruebe algunos de estos colores y seleccione el que más le guste.
+en el preámbulo se selecciona el esquema de colores ``\texttt{crane}''. Los esquemas de colores disponibles son: \texttt{albatross, beaver, beetle, crane, default, dolphin, dove, fly, lily, \\ orchid, rose, seagull, seahorse, sidebartab, structure, whale, wolverine}. Puede visualizar estos esquemas de colores en \href{https://deic.uab.cat/~iblanes/beamer_gallery/index_by_color.html}{esta página}. Pruebe algunos de estos colores y seleccione el que más le guste.
 
 \item Adapte el archivo de ejemplo para crear su propia, única y espectacular presentación. Ésta debe incluir \textit{como mínimo}: el logo de la UdeC en la portada, la tabla de contenidos, una hermosa expresión matemática (entorno \texttt{equation}), una ecuación alineada (entorno \texttt{eqnarray} o \texttt{align}), una tabla y alguna linda figura.
-\item Comparta una copia del archivo pdf su presentación en el \href{https://teams.microsoft.com/l/channel/19\%3A687f654a686c467bb9f41e0970b179a6\%40thread.tacv2/pr\%C3\%A1cticas?groupId=adc7e83d-1b47-4662-9902-fedf7923a4fb&tenantId=56582b9e-8824-49d0-a665-cd328c0e004a}{canal de prácticas} del grupo de Teams del curso.
+\item Comparta una copia del archivo pdf su presentación en el \href{https://teams.microsoft.com/l/channel/19\%3A0eb4de3be39d4ec58b358183deac148e\%40thread.tacv2/Pr\%C3\%A1cticas?groupId=af331fa5-cef0-46e7-b7b4-a49752041309&tenantId=56582b9e-8824-49d0-a665-cd328c0e004a}{canal de prácticas} del grupo de Teams del curso.
 \end{questions}
 \end{document} 
